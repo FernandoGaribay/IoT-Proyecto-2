@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 14.0.2, 2024-10-17T12:27:44. -->
+<!-- Written by QtCreator 14.0.2, 2024-10-18T11:21:29. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -153,10 +153,8 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration./home/fernando/QtProjects/Iot_Proyecto_2/login.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/fernando/QtProjects/Iot_Proyecto_2/login.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">/home/fernando/QtProjects/Iot_Proyecto_2/login.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/fernando/QtProjects/Iot_Proyecto_2</value>
     <value type="QString" key="RunConfiguration.X11Forwarding">:0</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.1">
@@ -172,7 +170,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">main.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration./home/fernando/QtProjects/Iot_Proyecto_2/main.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/fernando/QtProjects/Iot_Proyecto_2/main.py</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">/home/fernando/QtProjects/Iot_Proyecto_2/main.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

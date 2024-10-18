@@ -1,6 +1,5 @@
 {
     "files": [
-        "login.py",
         "main.py",
         "resources.qrc",
         "ui/login.ui"
