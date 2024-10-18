@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>resources/whiteIcon.png</file>
         <file>resources/loginBackground.png</file>
+        <file>resources/visiblePass.png</file>
+        <file>resources/invisiblePass.png</file>
     </qresource>
 </RCC>
