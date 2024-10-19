@@ -2,6 +2,7 @@
     "files": [
         "main.py",
         "resources.qrc",
+        "ui/dashboard.ui",
         "ui/login.ui"
     ]
 }
