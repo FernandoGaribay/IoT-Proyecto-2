@@ -10,7 +10,7 @@ class LoginWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.btnLogIn.clicked.connect(lambda: validate_log_in(self.ui.txtUsername, self.ui.txtPassword))
+        self.ui.btnLogIn.clicked.connect(lambda: validate_log_in(self.ui.txtUsername, self.ui.txtPassword, self))
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
