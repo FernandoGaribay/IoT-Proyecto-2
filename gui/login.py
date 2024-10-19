@@ -221,9 +221,10 @@ class Ui_MainWindow(object):
         self.label.setScaledContents(True)
         self.label_6 = QLabel(self.centralwidget)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(0, 330, 641, 161))
+        self.label_6.setGeometry(QRect(260, 320, 121, 161))
         self.label_6.setStyleSheet(u"")
         self.label_6.setPixmap(QPixmap(u":/resources/whiteIcon.png"))
+        self.label_6.setScaledContents(True)
         self.label_6.setAlignment(Qt.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
 
