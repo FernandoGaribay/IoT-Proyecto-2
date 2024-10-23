@@ -39,12 +39,14 @@ class Ui_MainWindow(object):
         self.centralwidget.setSizePolicy(sizePolicy)
         self.controles = QFrame(self.centralwidget)
         self.controles.setObjectName(u"controles")
-        self.controles.setGeometry(QRect(400, 0, 401, 631))
+        self.controles.setGeometry(QRect(400, 0, 401, 601))
         sizePolicy.setHeightForWidth(self.controles.sizePolicy().hasHeightForWidth())
         self.controles.setSizePolicy(sizePolicy)
-        self.controles.setStyleSheet(u"QFrame#controles {\n"
-"    background-color: rgba(255, 255, 255, 1); /* Rojo semi-transparente */\n"
+        self.controles.setStyleSheet(u"#controles {\n"
+"	background-color: rgba(255, 255, 255, 255);\n"
+"	border-bottom-right-radius: 50px;\n"
 "}\n"
+"\n"
 "")
         self.controles.setFrameShape(QFrame.StyledPanel)
         self.controles.setFrameShadow(QFrame.Raised)
@@ -91,10 +93,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.lblSignUpHeader)
 
-        self.label_7 = QLabel(self.controles)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(520, 690, 121, 31))
-        self.label_7.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
         self.label_3 = QLabel(self.controles)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(0, 90, 401, 31))
@@ -137,7 +135,7 @@ class Ui_MainWindow(object):
         self.lblSignUp.setScaledContents(True)
         self.frame_2 = QFrame(self.controles)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setGeometry(QRect(0, 260, 401, 171))
+        self.frame_2.setGeometry(QRect(0, 260, 401, 161))
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.txtUsername = QLineEdit(self.frame_2)
@@ -177,14 +175,14 @@ class Ui_MainWindow(object):
         self.txtPassword.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.label_4 = QLabel(self.frame_2)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(110, 130, 271, 31))
+        self.label_4.setGeometry(QRect(110, 120, 271, 31))
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
         self.label_4.setSizePolicy(sizePolicy1)
         font6 = QFont()
-        font6.setPointSize(13)
+        font6.setPointSize(9)
         font6.setUnderline(True)
         self.label_4.setFont(font6)
         self.label_4.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
@@ -222,7 +220,8 @@ class Ui_MainWindow(object):
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy2)
-        self.label.setPixmap(QPixmap(u":/resources/loginBackground.png"))
+        self.label.setStyleSheet(u"border-image: url(:/resources/loginBackground.png);\n"
+"border-top-left-radius: 50px")
         self.label.setScaledContents(True)
         self.label_6 = QLabel(self.centralwidget)
         self.label_6.setObjectName(u"label_6")
@@ -243,7 +242,6 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Welcome", None))
         self.lblLoginHeader.setText(QCoreApplication.translate("MainWindow", u"Login", None))
         self.lblSignUpHeader.setText(QCoreApplication.translate("MainWindow", u"SignUp", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Version 1.0.0", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Log in to your account to continue", None))
         self.btnLogIn.setText(QCoreApplication.translate("MainWindow", u"LOG IN", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Don't have an account?", None))
