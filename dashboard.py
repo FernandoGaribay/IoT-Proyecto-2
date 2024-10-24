@@ -3,7 +3,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import QPropertyAnimation, QEasingCurve
 
-from models.dashboardFunctions import UIFunctions
+from modules.dashboardFunctions import UIFunctions
 from gui.dashboard import Ui_MainWindow
 
 class DashboardWindow(QMainWindow):

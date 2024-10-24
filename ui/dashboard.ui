@@ -183,9 +183,8 @@
               <string notr="true">#topLogo {
     background-color: rgb(33, 37, 43);
     background-image: url(:/resources/whiteIcon.png);
-    background-position: center; /* Asegura que la imagen esté centrada */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-size: contain; /* Escala la imagen para que se ajuste dentro del contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 </string>
              </property>
@@ -979,7 +978,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                </layout>
               </widget>
              </item>
-             <item alignment="">
+             <item>
               <widget class="QFrame" name="rightButtons">
                <property name="minimumSize">
                 <size>

@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import Qt
 
 from gui.login import Ui_MainWindow
-from models.loginFunctions import LoginFuctions
+from modules.loginFunctions import LoginFuctions
 
 class LoginWindow(QMainWindow):
     def __init__(self):
