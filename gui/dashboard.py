@@ -77,9 +77,8 @@ class Ui_MainWindow(object):
         self.topLogo.setStyleSheet(u"#topLogo {\n"
 "    background-color: rgb(33, 37, 43);\n"
 "    background-image: url(:/resources/whiteIcon.png);\n"
-"    background-position: center; /* Asegura que la imagen est\u00e9 centrada */\n"
-"    background-repeat: no-repeat; /* Evita que la imagen se repita */\n"
-"    background-size: contain; /* Escala la imagen para que se ajuste dentro del contenedor */\n"
+"    background-position: center;\n"
+"    background-repeat: no-repeat;\n"
 "}\n"
 "")
         self.topLogo.setFrameShape(QFrame.StyledPanel)
