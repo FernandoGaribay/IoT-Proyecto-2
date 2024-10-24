@@ -4,5 +4,9 @@
         <file>resources/loginBackground.png</file>
         <file>resources/visiblePass.png</file>
         <file>resources/invisiblePass.png</file>
+        <file>resources/closeIcon.png</file>
+        <file>resources/configIcon.png</file>
+        <file>resources/layersIcon.png</file>
+        <file>resources/menuIcon.png</file>
     </qresource>
 </RCC>
