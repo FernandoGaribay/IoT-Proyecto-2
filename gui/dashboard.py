@@ -44,6 +44,7 @@ class Ui_MainWindow(object):
         self.leftMenuBg.setObjectName(u"leftMenuBg")
         self.leftMenuBg.setMinimumSize(QSize(0, 0))
         self.leftMenuBg.setMaximumSize(QSize(60, 16777215))
+        self.leftMenuBg.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.leftMenuBg.setFrameShape(QFrame.NoFrame)
         self.leftMenuBg.setFrameShadow(QFrame.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.leftMenuBg)
@@ -54,6 +55,10 @@ class Ui_MainWindow(object):
         self.topLogoInfo.setObjectName(u"topLogoInfo")
         self.topLogoInfo.setMinimumSize(QSize(0, 50))
         self.topLogoInfo.setMaximumSize(QSize(16777215, 50))
+        self.topLogoInfo.setStyleSheet(u"#topLogoInfo {\n"
+"	border: none;\n"
+"	border-bottom: 3px solid rgb(135, 206, 235);\n"
+"}")
         self.topLogoInfo.setFrameShape(QFrame.NoFrame)
         self.topLogoInfo.setFrameShadow(QFrame.Raised)
         self.label_2 = QLabel(self.topLogoInfo)
@@ -87,7 +92,7 @@ class Ui_MainWindow(object):
 
         self.leftMenuFrame = QFrame(self.leftMenuBg)
         self.leftMenuFrame.setObjectName(u"leftMenuFrame")
-        self.leftMenuFrame.setStyleSheet(u"#topMenu .QPushButton {	\n"
+        self.leftMenuFrame.setStyleSheet(u"#leftMenuFrame .QPushButton {	\n"
 "	background-position: left center;\n"
 "    background-repeat: no-repeat;\n"
 "	border: none;\n"
@@ -96,28 +101,11 @@ class Ui_MainWindow(object):
 "	text-align: left;\n"
 "	padding-left: 44px;\n"
 "}\n"
-"#topMenu .QPushButton:hover {\n"
-"	background-color: rgb(40, 44, 52);\n"
+"#leftMenuFrame .QPushButton:hover {\n"
+"	background-color: rgb(240, 248, 255);\n"
 "}\n"
-"#topMenu .QPushButton:pressed {	\n"
-"	background-color: rgb(189, 147, 249);\n"
-"	color: rgb(255, 255, 255);\n"
-"}\n"
-"#bottomMenu .QPushButton {	\n"
-"	background-position: left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 20px solid transparent;\n"
-"	background-color:transparent;\n"
-"	text-align: left;\n"
-"	padding-left: 44px;\n"
-"}\n"
-"#bottomMenu .QPushButton:hover {\n"
-"	background-color: rgb(40, 44, 52);\n"
-"}\n"
-"#bottomMenu .QPushButton:pressed {	\n"
-"	background-color: rgb(189, 147, 249);\n"
-"	color: rgb(255, 255, 255);\n"
+"#leftMenuFrame .QPushButton:pressed {	\n"
+"	background-color: rgb(173, 216, 230);\n"
 "}")
         self.leftMenuFrame.setFrameShape(QFrame.NoFrame)
         self.leftMenuFrame.setFrameShadow(QFrame.Raised)
@@ -137,23 +125,7 @@ class Ui_MainWindow(object):
         self.toggleButton = QPushButton(self.toggleBox)
         self.toggleButton.setObjectName(u"toggleButton")
         self.toggleButton.setMinimumSize(QSize(0, 45))
-        self.toggleButton.setStyleSheet(u"#toggleButton {\n"
-"	background-position: left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 20px solid transparent;\n"
-"	background-color: rgb(37, 41, 48);\n"
-"	background-image: url(:/resources/menuIcon.png);\n"
-"	text-align: left;\n"
-"	padding-left: 44px;\n"
-"	color: rgb(113, 126, 149);\n"
-"}\n"
-"#toggleButton:hover {\n"
-"	background-color: rgb(40, 44, 52);\n"
-"}\n"
-"#toggleButton:pressed {\n"
-"	background-color: rgb(189, 147, 249);\n"
-"}")
+        self.toggleButton.setStyleSheet(u"background-image: url(:/resources/menuIcon.png);")
 
         self.verticalLayout_11.addWidget(self.toggleButton)
 
@@ -209,22 +181,7 @@ class Ui_MainWindow(object):
 
         self.bottomMenu = QFrame(self.leftMenuFrame)
         self.bottomMenu.setObjectName(u"bottomMenu")
-        self.bottomMenu.setStyleSheet(u"#bottomMenu .QPushButton {	\n"
-"	background-position: left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 20px solid transparent;\n"
-"	background-color:transparent;\n"
-"	text-align: left;\n"
-"	padding-left: 44px;\n"
-"}\n"
-"#bottomMenu .QPushButton:hover {\n"
-"	background-color: rgb(40, 44, 52);\n"
-"}\n"
-"#bottomMenu .QPushButton:pressed {	\n"
-"	background-color: rgb(189, 147, 249);\n"
-"	color: rgb(255, 255, 255);\n"
-"}")
+        self.bottomMenu.setStyleSheet(u"")
         self.bottomMenu.setFrameShape(QFrame.NoFrame)
         self.bottomMenu.setFrameShadow(QFrame.Raised)
         self.verticalLayout_9 = QVBoxLayout(self.bottomMenu)
@@ -234,7 +191,8 @@ class Ui_MainWindow(object):
         self.toggleLeftBox = QPushButton(self.bottomMenu)
         self.toggleLeftBox.setObjectName(u"toggleLeftBox")
         self.toggleLeftBox.setMinimumSize(QSize(0, 45))
-        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/resources/menuIcon.png);")
+        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/resources/menuIcon.png);\n"
+"")
 
         self.verticalLayout_9.addWidget(self.toggleLeftBox)
 
@@ -262,7 +220,9 @@ class Ui_MainWindow(object):
         self.extraTopBg.setMinimumSize(QSize(0, 50))
         self.extraTopBg.setMaximumSize(QSize(16777215, 50))
         self.extraTopBg.setStyleSheet(u"#extraTopBg{	\n"
-"	background-color: rgb(189, 147, 249)\n"
+"	background-color: rgb(79, 145, 201);\n"
+"	border: none;\n"
+"	border-bottom: 2px solid rgb(135, 206, 235);\n"
 "}")
         self.extraTopBg.setFrameShape(QFrame.NoFrame)
         self.extraTopBg.setFrameShadow(QFrame.Raised)
@@ -332,6 +292,9 @@ class Ui_MainWindow(object):
 
         self.extraContent = QFrame(self.extraLeftBox)
         self.extraContent.setObjectName(u"extraContent")
+        self.extraContent.setStyleSheet(u"#extraContent {\n"
+"	background-color: rgb(173, 216, 230);\n"
+"}")
         self.extraContent.setFrameShape(QFrame.NoFrame)
         self.extraContent.setFrameShadow(QFrame.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.extraContent)
@@ -348,13 +311,13 @@ class Ui_MainWindow(object):
 "	background-color:transparent;\n"
 "	text-align: left;\n"
 "	padding-left: 44px;\n"
+"	color: rgb(50, 50, 50);\n"
 "}\n"
 "#extraTopMenu .QPushButton:hover {\n"
-"	background-color: rgb(40, 44, 52);\n"
+"	background-color: rgb(79, 145, 201);\n"
 "}\n"
 "#extraTopMenu .QPushButton:pressed {	\n"
-"	background-color: rgb(189, 147, 249);\n"
-"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(66, 123, 170);\n"
 "}")
         self.extraTopMenu.setFrameShape(QFrame.NoFrame)
         self.extraTopMenu.setFrameShadow(QFrame.Raised)
@@ -426,6 +389,11 @@ class Ui_MainWindow(object):
         self.contentTopBg.setObjectName(u"contentTopBg")
         self.contentTopBg.setMinimumSize(QSize(0, 50))
         self.contentTopBg.setMaximumSize(QSize(16777215, 50))
+        self.contentTopBg.setStyleSheet(u"#contentTopBg {\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	border: none;\n"
+"	border-bottom: 3px solid rgb(135, 206, 235);\n"
+"}")
         self.contentTopBg.setFrameShape(QFrame.NoFrame)
         self.contentTopBg.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.contentTopBg)
@@ -453,6 +421,9 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.titleRightInfo.sizePolicy().hasHeightForWidth())
         self.titleRightInfo.setSizePolicy(sizePolicy1)
         self.titleRightInfo.setMaximumSize(QSize(16777215, 45))
+        font2 = QFont()
+        font2.setPointSize(10)
+        self.titleRightInfo.setFont(font2)
 
         self.horizontalLayout_3.addWidget(self.titleRightInfo)
 
@@ -468,12 +439,12 @@ class Ui_MainWindow(object):
 "	border-radius: 5px;\n"
 "}\n"
 "#rightButtons .QPushButton:hover { \n"
-"	background-color: rgb(44, 49, 57); \n"
+"	background-color: rgb(240, 248, 255);\n"
 "	border-style: solid; \n"
 "	border-radius: 4px;\n"
 "}\n"
 "#rightButtons .QPushButton:pressed { \n"
-"	background-color: rgb(23, 26, 30); \n"
+"	background-color: rgb(173, 216, 230);\n"
 "	border-style: solid; \n"
 "	border-radius: 4px;\n"
 "}")
@@ -533,14 +504,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.content = QFrame(self.contentBottom)
         self.content.setObjectName(u"content")
+        self.content.setStyleSheet(u"background-color: rgb(240, 248, 255);")
         self.content.setFrameShape(QFrame.NoFrame)
         self.content.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.content)
         self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.horizontalLayout_6.setContentsMargins(10, 0, 10, 0)
+        self.horizontalLayout_6.setContentsMargins(10, 0, 0, 0)
         self.pagesContainer = QFrame(self.content)
         self.pagesContainer.setObjectName(u"pagesContainer")
+        self.pagesContainer.setStyleSheet(u"")
         self.pagesContainer.setFrameShape(QFrame.NoFrame)
         self.pagesContainer.setFrameShadow(QFrame.Raised)
         self.verticalLayout_16 = QVBoxLayout(self.pagesContainer)
@@ -561,23 +534,20 @@ class Ui_MainWindow(object):
 
         self.extraRightBox = QFrame(self.content)
         self.extraRightBox.setObjectName(u"extraRightBox")
-        self.extraRightBox.setMinimumSize(QSize(0, 0))
+        self.extraRightBox.setMinimumSize(QSize(200, 0))
         self.extraRightBox.setMaximumSize(QSize(0, 16777215))
+        self.extraRightBox.setStyleSheet(u"#extraRightBox .QFrame {\n"
+"	background-color: rgb(173, 216, 230);\n"
+"	border: none;\n"
+"	border-top: 2px solid rgb(79, 145, 201)\n"
+"}\n"
+"")
         self.extraRightBox.setFrameShape(QFrame.NoFrame)
         self.extraRightBox.setFrameShadow(QFrame.Raised)
         self.verticalLayout_13 = QVBoxLayout(self.extraRightBox)
         self.verticalLayout_13.setSpacing(0)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.themeSettingsTopDetail = QFrame(self.extraRightBox)
-        self.themeSettingsTopDetail.setObjectName(u"themeSettingsTopDetail")
-        self.themeSettingsTopDetail.setMaximumSize(QSize(16777215, 3))
-        self.themeSettingsTopDetail.setStyleSheet(u"#themeSettingsTopDetail { background-color: rgb(189, 147, 249); }")
-        self.themeSettingsTopDetail.setFrameShape(QFrame.NoFrame)
-        self.themeSettingsTopDetail.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_13.addWidget(self.themeSettingsTopDetail)
-
         self.contentSettings = QFrame(self.extraRightBox)
         self.contentSettings.setObjectName(u"contentSettings")
         self.contentSettings.setFrameShape(QFrame.NoFrame)
@@ -588,10 +558,28 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.topMenus = QFrame(self.contentSettings)
         self.topMenus.setObjectName(u"topMenus")
+        self.topMenus.setStyleSheet(u"#topMenus .QPushButton {\n"
+"background-position: left center;\n"
+"    background-repeat: no-repeat;\n"
+"	border: none;\n"
+"	border-left: 22px solid transparent;\n"
+"	background-color:transparent;\n"
+"	text-align: left;\n"
+"	padding-left: 44px;\n"
+"	color: rgb(50, 50, 50);\n"
+"}\n"
+"#topMenus .QPushButton:hover {\n"
+"	background-color: rgb(79, 145, 201);\n"
+"}\n"
+"#topMenus .QPushButton:pressed {	\n"
+"	background-color: rgb(66, 123, 170);\n"
+"}")
         self.topMenus.setFrameShape(QFrame.NoFrame)
         self.topMenus.setFrameShadow(QFrame.Raised)
         self.verticalLayout_15 = QVBoxLayout(self.topMenus)
+        self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.pushButton_4 = QPushButton(self.topMenus)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setMinimumSize(QSize(0, 45))
@@ -626,6 +614,7 @@ class Ui_MainWindow(object):
         self.bottomBar.setObjectName(u"bottomBar")
         self.bottomBar.setMinimumSize(QSize(0, 22))
         self.bottomBar.setMaximumSize(QSize(16777215, 22))
+        self.bottomBar.setStyleSheet(u"background-color: rgb(173, 216, 230);")
         self.bottomBar.setFrameShape(QFrame.NoFrame)
         self.bottomBar.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.bottomBar)
@@ -635,12 +624,14 @@ class Ui_MainWindow(object):
         self.label_5 = QLabel(self.bottomBar)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMaximumSize(QSize(16777215, 16))
+        self.label_5.setStyleSheet(u"color: rgb(50, 50, 50);")
 
         self.horizontalLayout_5.addWidget(self.label_5)
 
         self.label = QLabel(self.bottomBar)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(16777215, 16))
+        self.label.setStyleSheet(u"color: rgb(50, 50, 50);")
         self.label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_5.addWidget(self.label)
@@ -696,17 +687,8 @@ class Ui_MainWindow(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;\">PyDracula</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt; color:#ffffff;\">An interface created using Python and PySide (support for"
-                        " PyQt), and with colors based on the Dracula theme created by Zeno Rocha.</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt; color:#ffffff;\">MIT License</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt; color:#bd93f9;\">Created by: Wanderson M. Pimenta</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;\">Convert UI</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; col"
-                        "or:#ffffff;\">pyside6-uic main.ui &gt; ui_main.py</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;\">Convert QRC</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>", None))
-        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"QuantumBank \u2013 Automatizaci\u00f3n y control de correspondencia interna", None))
         self.settingsTopBtn.setText("")
         self.pushButton_11.setText("")
         self.pushButton_12.setText("")
@@ -714,7 +696,7 @@ class Ui_MainWindow(object):
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Internet Of Things (Iot) Project", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u00a9 2024 SoftBank. All rights reserved.", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"1.0.0", None))
     # retranslateUi
 

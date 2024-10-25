@@ -74,6 +74,9 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -109,6 +112,12 @@
               <width>16777215</width>
               <height>50</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#topLogoInfo {
+	border: none;
+	border-bottom: 3px solid rgb(135, 206, 235);
+}</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
@@ -194,7 +203,7 @@
           <item>
            <widget class="QFrame" name="leftMenuFrame">
             <property name="styleSheet">
-             <string notr="true">#topMenu .QPushButton {	
+             <string notr="true">#leftMenuFrame .QPushButton {	
 	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
@@ -203,28 +212,11 @@
 	text-align: left;
 	padding-left: 44px;
 }
-#topMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
+#leftMenuFrame .QPushButton:hover {
+	background-color: rgb(240, 248, 255);
 }
-#topMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
-	color: rgb(255, 255, 255);
-}
-#bottomMenu .QPushButton {	
-	background-position: left center;
-    background-repeat: no-repeat;
-	border: none;
-	border-left: 20px solid transparent;
-	background-color:transparent;
-	text-align: left;
-	padding-left: 44px;
-}
-#bottomMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
-}
-#bottomMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
-	color: rgb(255, 255, 255);
+#leftMenuFrame .QPushButton:pressed {	
+	background-color: rgb(173, 216, 230);
 }</string>
             </property>
             <property name="frameShape">
@@ -288,23 +280,7 @@
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">#toggleButton {
-	background-position: left center;
-    background-repeat: no-repeat;
-	border: none;
-	border-left: 20px solid transparent;
-	background-color: rgb(37, 41, 48);
-	background-image: url(:/resources/menuIcon.png);
-	text-align: left;
-	padding-left: 44px;
-	color: rgb(113, 126, 149);
-}
-#toggleButton:hover {
-	background-color: rgb(40, 44, 52);
-}
-#toggleButton:pressed {
-	background-color: rgb(189, 147, 249);
-}</string>
+                   <string notr="true">background-image: url(:/resources/menuIcon.png);</string>
                   </property>
                   <property name="text">
                    <string>PushButton</string>
@@ -427,22 +403,7 @@
              <item alignment="Qt::Qt::AlignBottom">
               <widget class="QFrame" name="bottomMenu">
                <property name="styleSheet">
-                <string notr="true">#bottomMenu .QPushButton {	
-	background-position: left center;
-    background-repeat: no-repeat;
-	border: none;
-	border-left: 20px solid transparent;
-	background-color:transparent;
-	text-align: left;
-	padding-left: 44px;
-}
-#bottomMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
-}
-#bottomMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
-	color: rgb(255, 255, 255);
-}</string>
+                <string notr="true"/>
                </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
@@ -475,7 +436,8 @@
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/resources/menuIcon.png);</string>
+                   <string notr="true">background-image: url(:/resources/menuIcon.png);
+</string>
                   </property>
                   <property name="text">
                    <string>PushButton</string>
@@ -543,7 +505,9 @@
             </property>
             <property name="styleSheet">
              <string notr="true">#extraTopBg{	
-	background-color: rgb(189, 147, 249)
+	background-color: rgb(79, 145, 201);
+	border: none;
+	border-bottom: 2px solid rgb(135, 206, 235);
 }</string>
             </property>
             <property name="frameShape">
@@ -688,6 +652,11 @@
           </item>
           <item>
            <widget class="QFrame" name="extraContent">
+            <property name="styleSheet">
+             <string notr="true">#extraContent {
+	background-color: rgb(173, 216, 230);
+}</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -721,13 +690,13 @@ background-position: left center;
 	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
+	color: rgb(50, 50, 50);
 }
 #extraTopMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
+	background-color: rgb(79, 145, 201);
 }
 #extraTopMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
-	color: rgb(255, 255, 255);
+	background-color: rgb(66, 123, 170);
 }</string>
                </property>
                <property name="frameShape">
@@ -861,14 +830,7 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;PyDracula&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; color:#ffffff;&quot;&gt;An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by Zeno Rocha.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; color:#ffffff;&quot;&gt;MIT License&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; color:#bd93f9;&quot;&gt;Created by: Wanderson M. Pimenta&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Convert UI&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; color:#ffffff;&quot;&gt;pyside6-uic main.ui &amp;gt; ui_main.py&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Convert QRC&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; color:#ffffff;&quot;&gt;pyside6-rcc resources.qrc -o resources_rc.py&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -918,6 +880,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <width>16777215</width>
               <height>50</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#contentTopBg {
+	background-color: rgb(255, 255, 255);
+	border: none;
+	border-bottom: 3px solid rgb(135, 206, 235);
+}</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
@@ -985,8 +954,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <height>45</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
                   <property name="text">
-                   <string>TextLabel</string>
+                   <string>QuantumBank – Automatización y control de correspondencia interna</string>
                   </property>
                  </widget>
                 </item>
@@ -1008,12 +982,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
 	border-radius: 5px;
 }
 #rightButtons .QPushButton:hover { 
-	background-color: rgb(44, 49, 57); 
+	background-color: rgb(240, 248, 255);
 	border-style: solid; 
 	border-radius: 4px;
 }
 #rightButtons .QPushButton:pressed { 
-	background-color: rgb(23, 26, 30); 
+	background-color: rgb(173, 216, 230);
 	border-style: solid; 
 	border-radius: 4px;
 }</string>
@@ -1164,6 +1138,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <item>
               <widget class="QFrame" name="content">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(240, 248, 255);</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
                </property>
@@ -1181,13 +1158,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <number>0</number>
                 </property>
                 <property name="rightMargin">
-                 <number>10</number>
+                 <number>0</number>
                 </property>
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
                 <item>
                  <widget class="QFrame" name="pagesContainer">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
                   </property>
@@ -1208,7 +1188,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <widget class="QFrame" name="extraRightBox">
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
+                    <width>200</width>
                     <height>0</height>
                    </size>
                   </property>
@@ -1217,6 +1197,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <width>0</width>
                     <height>16777215</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">#extraRightBox .QFrame {
+	background-color: rgb(173, 216, 230);
+	border: none;
+	border-top: 2px solid rgb(79, 145, 201)
+}
+</string>
                   </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
@@ -1240,25 +1228,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <item>
-                    <widget class="QFrame" name="themeSettingsTopDetail">
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>3</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">#themeSettingsTopDetail { background-color: rgb(189, 147, 249); }</string>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::NoFrame</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                    </widget>
-                   </item>
                    <item>
                     <widget class="QFrame" name="contentSettings">
                      <property name="frameShape">
@@ -1285,6 +1254,24 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       </property>
                       <item alignment="Qt::Qt::AlignTop">
                        <widget class="QFrame" name="topMenus">
+                        <property name="styleSheet">
+                         <string notr="true">#topMenus .QPushButton {
+background-position: left center;
+    background-repeat: no-repeat;
+	border: none;
+	border-left: 22px solid transparent;
+	background-color:transparent;
+	text-align: left;
+	padding-left: 44px;
+	color: rgb(50, 50, 50);
+}
+#topMenus .QPushButton:hover {
+	background-color: rgb(79, 145, 201);
+}
+#topMenus .QPushButton:pressed {	
+	background-color: rgb(66, 123, 170);
+}</string>
+                        </property>
                         <property name="frameShape">
                          <enum>QFrame::NoFrame</enum>
                         </property>
@@ -1292,6 +1279,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          <enum>QFrame::Raised</enum>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_15">
+                         <property name="spacing">
+                          <number>0</number>
+                         </property>
+                         <property name="leftMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="topMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="rightMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="bottomMargin">
+                          <number>0</number>
+                         </property>
                          <item>
                           <widget class="QPushButton" name="pushButton_4">
                            <property name="minimumSize">
@@ -1357,6 +1359,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <height>22</height>
                 </size>
                </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(173, 216, 230);</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
                </property>
@@ -1387,8 +1392,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <height>16</height>
                    </size>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(50, 50, 50);</string>
+                  </property>
                   <property name="text">
-                   <string>Internet Of Things (Iot) Project</string>
+                   <string>© 2024 SoftBank. All rights reserved.</string>
                   </property>
                  </widget>
                 </item>
@@ -1399,6 +1407,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <width>16777215</width>
                     <height>16</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(50, 50, 50);</string>
                   </property>
                   <property name="text">
                    <string>1.0.0</string>
