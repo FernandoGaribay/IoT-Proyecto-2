@@ -24,6 +24,9 @@ class DashboardWindow(QMainWindow):
         # Buttons left menu
         widgets.btn_home.clicked.connect(self.buttonClick)
         widgets.btn_users.clicked.connect(self.buttonClick)
+        widgets.btn_send.clicked.connect(self.buttonClick)
+        widgets.btn_template.clicked.connect(self.buttonClick)
+        widgets.btn_history.clicked.connect(self.buttonClick)
 
 
         def openCloseLeftBox():
@@ -50,19 +53,31 @@ class DashboardWindow(QMainWindow):
         btn = self.sender()
         btnName = btn.objectName()
 
-        # SHOW HOME PAGE
         if btnName == "btn_home":
-            widgets.stackedWidget.setCurrentWidget(widgets.home)
+            widgets.stackedWidget.setCurrentWidget(widgets.homePage)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # SHOW WIDGETS PAGE
         if btnName == "btn_users":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page)
+            widgets.stackedWidget.setCurrentWidget(widgets.usersPage)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # PRINT BTN NAME
+        if btnName == "btn_send":
+            widgets.stackedWidget.setCurrentWidget(widgets.sendPage)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+
+        if btnName == "btn_template":
+            widgets.stackedWidget.setCurrentWidget(widgets.templatePage)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+
+        if btnName == "btn_history":
+            widgets.stackedWidget.setCurrentWidget(widgets.historyPage)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+
         print(f'Button "{btnName}" pressed!')
 
     def show(self):
