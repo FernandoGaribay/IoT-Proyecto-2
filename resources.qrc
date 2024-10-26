@@ -8,5 +8,11 @@
         <file>resources/configIcon.png</file>
         <file>resources/layersIcon.png</file>
         <file>resources/menuIcon.png</file>
+        <file>resources/homeIcon.png</file>
+        <file>resources/maximizeIcon.png</file>
+        <file>resources/minimizeIcon.png</file>
+        <file>resources/QuantumBankLogo.png</file>
+        <file>resources/logo.png</file>
+        <file>resources/sizeGrip.png</file>
     </qresource>
 </RCC>

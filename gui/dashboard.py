@@ -75,17 +75,16 @@ class Ui_MainWindow(object):
         self.label_3.setFont(font1)
         self.topLogo = QFrame(self.topLogoInfo)
         self.topLogo.setObjectName(u"topLogo")
-        self.topLogo.setGeometry(QRect(10, 5, 42, 42))
+        self.topLogo.setGeometry(QRect(10, 3, 42, 42))
         self.topLogo.setMinimumSize(QSize(42, 42))
         self.topLogo.setMaximumSize(QSize(42, 42))
         self.topLogo.setStyleSheet(u"#topLogo {\n"
-"    background-color: rgb(33, 37, 43);\n"
-"    background-image: url(:/resources/whiteIcon.png);\n"
+"    background-image: url(:/resources/QuantumBankLogo.png);\n"
 "    background-position: center;\n"
 "    background-repeat: no-repeat;\n"
 "}\n"
 "")
-        self.topLogo.setFrameShape(QFrame.StyledPanel)
+        self.topLogo.setFrameShape(QFrame.NoFrame)
         self.topLogo.setFrameShadow(QFrame.Raised)
 
         self.verticalLayout_7.addWidget(self.topLogoInfo)
@@ -125,7 +124,7 @@ class Ui_MainWindow(object):
         self.toggleButton = QPushButton(self.toggleBox)
         self.toggleButton.setObjectName(u"toggleButton")
         self.toggleButton.setMinimumSize(QSize(0, 45))
-        self.toggleButton.setStyleSheet(u"background-image: url(:/resources/menuIcon.png);")
+        self.toggleButton.setStyleSheet(u"background-image: url(:/resources/menuIcon.png)")
 
         self.verticalLayout_11.addWidget(self.toggleButton)
 
@@ -144,7 +143,7 @@ class Ui_MainWindow(object):
         self.pushButton_6 = QPushButton(self.topMenu)
         self.pushButton_6.setObjectName(u"pushButton_6")
         self.pushButton_6.setMinimumSize(QSize(0, 45))
-        self.pushButton_6.setStyleSheet(u"background-image: url(:/resources/menuIcon.png);")
+        self.pushButton_6.setStyleSheet(u"background-image: url(:/resources/homeIcon.png);")
 
         self.verticalLayout_10.addWidget(self.pushButton_6)
 
@@ -191,7 +190,7 @@ class Ui_MainWindow(object):
         self.toggleLeftBox = QPushButton(self.bottomMenu)
         self.toggleLeftBox.setObjectName(u"toggleLeftBox")
         self.toggleLeftBox.setMinimumSize(QSize(0, 45))
-        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/resources/menuIcon.png);\n"
+        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/resources/configIcon.png);\n"
 "")
 
         self.verticalLayout_9.addWidget(self.toggleLeftBox)
@@ -458,8 +457,9 @@ class Ui_MainWindow(object):
         self.settingsTopBtn.setObjectName(u"settingsTopBtn")
         self.settingsTopBtn.setMinimumSize(QSize(28, 28))
         self.settingsTopBtn.setMaximumSize(QSize(28, 28))
+        self.settingsTopBtn.setStyleSheet(u"")
         icon1 = QIcon()
-        icon1.addFile(u":/resources/menuIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/resources/configIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.settingsTopBtn.setIcon(icon1)
 
         self.horizontalLayout_4.addWidget(self.settingsTopBtn)
@@ -468,7 +468,9 @@ class Ui_MainWindow(object):
         self.pushButton_11.setObjectName(u"pushButton_11")
         self.pushButton_11.setMinimumSize(QSize(28, 28))
         self.pushButton_11.setMaximumSize(QSize(28, 28))
-        self.pushButton_11.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u":/resources/minimizeIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_11.setIcon(icon2)
 
         self.horizontalLayout_4.addWidget(self.pushButton_11)
 
@@ -476,7 +478,9 @@ class Ui_MainWindow(object):
         self.pushButton_12.setObjectName(u"pushButton_12")
         self.pushButton_12.setMinimumSize(QSize(28, 28))
         self.pushButton_12.setMaximumSize(QSize(28, 28))
-        self.pushButton_12.setIcon(icon1)
+        icon3 = QIcon()
+        icon3.addFile(u":/resources/maximizeIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_12.setIcon(icon3)
 
         self.horizontalLayout_4.addWidget(self.pushButton_12)
 
@@ -484,7 +488,7 @@ class Ui_MainWindow(object):
         self.pushButton_13.setObjectName(u"pushButton_13")
         self.pushButton_13.setMinimumSize(QSize(28, 28))
         self.pushButton_13.setMaximumSize(QSize(28, 28))
-        self.pushButton_13.setIcon(icon1)
+        self.pushButton_13.setIcon(icon)
 
         self.horizontalLayout_4.addWidget(self.pushButton_13)
 
@@ -522,6 +526,21 @@ class Ui_MainWindow(object):
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.home = QWidget()
         self.home.setObjectName(u"home")
+        self.horizontalLayout_7 = QHBoxLayout(self.home)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.logoHome = QLabel(self.home)
+        self.logoHome.setObjectName(u"logoHome")
+        self.logoHome.setStyleSheet(u"#logoHome {\n"
+"	background-image: url(:/resources/logo.png);\n"
+"    background-position: center;\n"
+"    background-repeat: no-repeat;\n"
+"}\n"
+"")
+        self.logoHome.setScaledContents(True)
+        self.logoHome.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_7.addWidget(self.logoHome)
+
         self.stackedWidget.addWidget(self.home)
         self.new_page = QWidget()
         self.new_page.setObjectName(u"new_page")
@@ -534,7 +553,7 @@ class Ui_MainWindow(object):
 
         self.extraRightBox = QFrame(self.content)
         self.extraRightBox.setObjectName(u"extraRightBox")
-        self.extraRightBox.setMinimumSize(QSize(200, 0))
+        self.extraRightBox.setMinimumSize(QSize(0, 0))
         self.extraRightBox.setMaximumSize(QSize(0, 16777215))
         self.extraRightBox.setStyleSheet(u"#extraRightBox .QFrame {\n"
 "	background-color: rgb(173, 216, 230);\n"
@@ -620,7 +639,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5 = QHBoxLayout(self.bottomBar)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setContentsMargins(10, 0, 0, 0)
         self.label_5 = QLabel(self.bottomBar)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMaximumSize(QSize(16777215, 16))
@@ -640,6 +659,7 @@ class Ui_MainWindow(object):
         self.frame_size_grip.setObjectName(u"frame_size_grip")
         self.frame_size_grip.setMinimumSize(QSize(20, 0))
         self.frame_size_grip.setMaximumSize(QSize(20, 16777215))
+        self.frame_size_grip.setStyleSheet(u"background-image: url(:/resources/sizeGrip.png);")
         self.frame_size_grip.setFrameShape(QFrame.NoFrame)
         self.frame_size_grip.setFrameShadow(QFrame.Raised)
 
@@ -693,10 +713,11 @@ class Ui_MainWindow(object):
         self.pushButton_11.setText("")
         self.pushButton_12.setText("")
         self.pushButton_13.setText("")
+        self.logoHome.setText("")
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u00a9 2024 SoftBank. All rights reserved.", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"1.0.0", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"1.0.0     ", None))
     # retranslateUi
 
