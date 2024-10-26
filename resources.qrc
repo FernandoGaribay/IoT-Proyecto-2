@@ -4,5 +4,20 @@
         <file>resources/loginBackground.png</file>
         <file>resources/visiblePass.png</file>
         <file>resources/invisiblePass.png</file>
+        <file>resources/closeIcon.png</file>
+        <file>resources/configIcon.png</file>
+        <file>resources/layersIcon.png</file>
+        <file>resources/menuIcon.png</file>
+        <file>resources/homeIcon.png</file>
+        <file>resources/maximizeIcon.png</file>
+        <file>resources/minimizeIcon.png</file>
+        <file>resources/QuantumBankLogo.png</file>
+        <file>resources/logo.png</file>
+        <file>resources/sizeGrip.png</file>
+        <file>resources/chatIcon.png</file>
+        <file>resources/documentsIcon.png</file>
+        <file>resources/newDocument.png</file>
+        <file>resources/usersIcon.png</file>
+        <file>resources/historyIcon.png</file>
     </qresource>
 </RCC>
