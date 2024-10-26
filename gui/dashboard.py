@@ -140,19 +140,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_6 = QPushButton(self.topMenu)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setMinimumSize(QSize(0, 45))
-        self.pushButton_6.setStyleSheet(u"background-image: url(:/resources/homeIcon.png);")
+        self.btn_home = QPushButton(self.topMenu)
+        self.btn_home.setObjectName(u"btn_home")
+        self.btn_home.setMinimumSize(QSize(0, 45))
+        self.btn_home.setStyleSheet(u"background-image: url(:/resources/homeIcon.png);")
 
-        self.verticalLayout_10.addWidget(self.pushButton_6)
+        self.verticalLayout_10.addWidget(self.btn_home)
 
-        self.pushButton_7 = QPushButton(self.topMenu)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setMinimumSize(QSize(0, 45))
-        self.pushButton_7.setStyleSheet(u"background-image: url(:/resources/menuIcon.png);")
+        self.btn_users = QPushButton(self.topMenu)
+        self.btn_users.setObjectName(u"btn_users")
+        self.btn_users.setMinimumSize(QSize(0, 45))
+        self.btn_users.setStyleSheet(u"background-image: url(:/resources/menuIcon.png);")
 
-        self.verticalLayout_10.addWidget(self.pushButton_7)
+        self.verticalLayout_10.addWidget(self.btn_users)
 
         self.pushButton_8 = QPushButton(self.topMenu)
         self.pushButton_8.setObjectName(u"pushButton_8")
@@ -689,8 +689,8 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.btn_users.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
@@ -718,6 +718,6 @@ class Ui_MainWindow(object):
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u00a9 2024 SoftBank. All rights reserved.", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"1.0.0     ", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"v1.0.0     ", None))
     # retranslateUi
 

@@ -114,6 +114,10 @@ class UIFunctions():
         self.group.addAnimation(self.right_box)
         self.group.start()
 
+    def resetStyle(self, widget):
+        for w in self.ui.topMenu.findChildren(QPushButton):
+            if w.objectName() != widget:
+                w.setStyleSheet(UIFunctions.deselectMenu(w.styleSheet()))
 
     def resize_grips(self):
         if Settings.ENABLE_CUSTOM_TITLE_BAR:
@@ -121,6 +125,14 @@ class UIFunctions():
             self.right_grip.setGeometry(self.width() - 10, 10, 10, self.height())
             self.top_grip.setGeometry(0, 0, self.width(), 10)
             self.bottom_grip.setGeometry(0, self.height() - 10, self.width(), 10)
+
+    def deselectMenu(getStyle):
+        deselect = getStyle.replace(Settings.MENU_SELECTED_STYLESHEET, "")
+        return deselect
+
+    def selectMenu(getStyle):
+        select = getStyle + Settings.MENU_SELECTED_STYLESHEET
+        return select
 
     def uiDefinitions(self):
         def moveWindow(event):
