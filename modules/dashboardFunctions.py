@@ -157,30 +157,11 @@ class UsersFunctions():
 
     def deleteContact(self):
         id = self.ui.txt_idUsers.text()
-        
+
         controller = ContactController(self.ui)
         controller.delete_contact(id)
         self.clearCamps()
         self.showContacts()
-
-    def clearCamps(self):
-        id = self.ui.txt_idUsers.setText("")
-        name = self.ui.txt_nameUsers.setText("")
-        surname1 = self.ui.txt_lastNameFatherUsers.setText("")
-        surname2 = self.ui.txt_lastNameMotherUsers.setText("")
-        job_title = self.ui.txt_positionUsers.setText("")
-        company = self.ui.txt_companyUsers.setText("")
-        street = self.ui.txt_streetUsers.setText("")
-        ext_number = self.ui.txt_extNumberUsers.setText("")
-        int_number = self.ui.txt_intNumberUsers.setText("")
-        neighborhood = self.ui.txt_neighborhoodUsers.setText("")
-        city = self.ui.txt_municipalyUsers.setText("")
-        state = self.ui.txt_stateUsers.setText("")
-        postal_code = self.ui.txt_postalCodeUsers.setText("")
-        phone = self.ui.txt_phoneUsers.setText("")
-        email = self.ui.txt_emailUsers.setText("")
-        birth_date = self.ui.txt_birthDayUsers.setText("")
-        age = self.ui.txt_calculatedAgeUsers.setText("")
 
     def showContacts(self):
         controller = ContactController(self.ui)
@@ -216,6 +197,26 @@ class UsersFunctions():
             self.ui.tableWidget.setItem(row_position, 14, QTableWidgetItem(contact.email))
             self.ui.tableWidget.setItem(row_position, 15, QTableWidgetItem(contact.birth_date))
             self.ui.tableWidget.setItem(row_position, 16, QTableWidgetItem(str(contact.age)))
+        print("Data updated")
+
+    def clearCamps(self):
+        id = self.ui.txt_idUsers.setText("")
+        name = self.ui.txt_nameUsers.setText("")
+        surname1 = self.ui.txt_lastNameFatherUsers.setText("")
+        surname2 = self.ui.txt_lastNameMotherUsers.setText("")
+        job_title = self.ui.txt_positionUsers.setText("")
+        company = self.ui.txt_companyUsers.setText("")
+        street = self.ui.txt_streetUsers.setText("")
+        ext_number = self.ui.txt_extNumberUsers.setText("")
+        int_number = self.ui.txt_intNumberUsers.setText("")
+        neighborhood = self.ui.txt_neighborhoodUsers.setText("")
+        city = self.ui.txt_municipalyUsers.setText("")
+        state = self.ui.txt_stateUsers.setText("")
+        postal_code = self.ui.txt_postalCodeUsers.setText("")
+        phone = self.ui.txt_phoneUsers.setText("")
+        email = self.ui.txt_emailUsers.setText("")
+        birth_date = self.ui.txt_birthDayUsers.setText("")
+        age = self.ui.txt_calculatedAgeUsers.setText("")
 
     def showDataUser(self, item):
         controller = ContactController(self.ui)

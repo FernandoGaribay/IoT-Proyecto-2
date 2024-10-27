@@ -46,7 +46,6 @@ class ContactController:
     def add_contact(self, contact_data):
         contact = Contact(**contact_data)
         self.contact_dao.add_contact(contact)
-        print("Contact added")
 
     def view_contacts(self):
         contacts = self.contact_dao.get_all_contacts()
@@ -58,11 +57,9 @@ class ContactController:
 
     def update_contact(self, contact_id, column, new_value):
         self.contact_dao.update_contact(contact_id, column, new_value)
-        print("Contact updated")
 
     def delete_contact(self, contact_id):
         self.contact_dao.delete_contact(contact_id)
-        print("Contact deleted")
 
     def close_connection(self):
         self.contact_dao.close()
