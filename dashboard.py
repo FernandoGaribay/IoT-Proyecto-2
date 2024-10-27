@@ -3,7 +3,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QSizeGrip
 from PySide6.QtCore import QPropertyAnimation, QEasingCurve, Qt
 
-from modules.dashboardFunctions import UIFunctions
+from modules.dashboardFunctions import UIFunctions, UsersFunctions
 from gui.dashboard import Ui_MainWindow
 
 class DashboardWindow(QMainWindow):
@@ -28,6 +28,14 @@ class DashboardWindow(QMainWindow):
         widgets.btn_template.clicked.connect(self.buttonClick)
         widgets.btn_history.clicked.connect(self.buttonClick)
 
+        widgets.btn_updateUsers.clicked.connect(lambda: UsersFunctions.addContact(self))
+        widgets.btn_cancelUsers.clicked.connect(lambda: print(f"btn_cancelUsers"))
+        widgets.btn_deleteUsers.clicked.connect(lambda: print(f"btn_deleteUsers"))
+        widgets.btn_editUsers.clicked.connect(lambda: print(f"btn_editUsers"))
+        widgets.btn_randomUsers.clicked.connect(lambda: print(f"btn_randomUsers"))
+        widgets.btn_refreshUsers.clicked.connect(lambda: print(f"btn_refreshUsers"))
+        widgets.btn_addUsers.clicked.connect(lambda: print(f"btn_addUsers"))
+        widgets.btn_clearUsers.clicked.connect(lambda: print(f"btn_clearUsers"))
 
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)

@@ -638,25 +638,25 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10 = QHBoxLayout(self.pnl_topSearchBottonsUsers)
         self.horizontalLayout_10.setSpacing(10)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.pushButton_5 = QPushButton(self.pnl_topSearchBottonsUsers)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setMinimumSize(QSize(40, 40))
-        self.pushButton_5.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_deleteUsers = QPushButton(self.pnl_topSearchBottonsUsers)
+        self.btn_deleteUsers.setObjectName(u"btn_deleteUsers")
+        self.btn_deleteUsers.setMinimumSize(QSize(40, 40))
+        self.btn_deleteUsers.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon4 = QIcon()
-        icon4.addFile(u":/resources/eraserIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_5.setIcon(icon4)
+        icon4.addFile(u":/resources/trashIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_deleteUsers.setIcon(icon4)
 
-        self.horizontalLayout_10.addWidget(self.pushButton_5)
+        self.horizontalLayout_10.addWidget(self.btn_deleteUsers)
 
-        self.pushButton_6 = QPushButton(self.pnl_topSearchBottonsUsers)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setMinimumSize(QSize(40, 40))
-        self.pushButton_6.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_addUsers = QPushButton(self.pnl_topSearchBottonsUsers)
+        self.btn_addUsers.setObjectName(u"btn_addUsers")
+        self.btn_addUsers.setMinimumSize(QSize(40, 40))
+        self.btn_addUsers.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon5 = QIcon()
         icon5.addFile(u":/resources/addIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_6.setIcon(icon5)
+        self.btn_addUsers.setIcon(icon5)
 
-        self.horizontalLayout_10.addWidget(self.pushButton_6)
+        self.horizontalLayout_10.addWidget(self.btn_addUsers)
 
 
         self.horizontalLayout_9.addWidget(self.pnl_topSearchBottonsUsers)
@@ -840,16 +840,16 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_12.addWidget(self.btn_editUsers)
 
-        self.btn_deleteUsers = QPushButton(self.pnl_topButtonsUsers)
-        self.btn_deleteUsers.setObjectName(u"btn_deleteUsers")
-        self.btn_deleteUsers.setMinimumSize(QSize(0, 40))
-        self.btn_deleteUsers.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_deleteUsers.setStyleSheet(u"")
+        self.btn_clearUsers = QPushButton(self.pnl_topButtonsUsers)
+        self.btn_clearUsers.setObjectName(u"btn_clearUsers")
+        self.btn_clearUsers.setMinimumSize(QSize(0, 40))
+        self.btn_clearUsers.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_clearUsers.setStyleSheet(u"")
         icon9 = QIcon()
-        icon9.addFile(u":/resources/trashIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_deleteUsers.setIcon(icon9)
+        icon9.addFile(u":/resources/eraserIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_clearUsers.setIcon(icon9)
 
-        self.horizontalLayout_12.addWidget(self.btn_deleteUsers)
+        self.horizontalLayout_12.addWidget(self.btn_clearUsers)
 
 
         self.verticalLayout_19.addWidget(self.pnl_topButtonsUsers)
@@ -903,7 +903,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -364, 230, 952))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 230, 952))
         self.verticalLayout_21 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_21.setSpacing(9)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
@@ -916,18 +916,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
-        self.label_8 = QLabel(self.frame_10)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font2)
-        self.label_8.setScaledContents(True)
-        self.label_8.setWordWrap(False)
+        self.lbl_idUsers = QLabel(self.frame_10)
+        self.lbl_idUsers.setObjectName(u"lbl_idUsers")
+        self.lbl_idUsers.setFont(font2)
+        self.lbl_idUsers.setScaledContents(True)
+        self.lbl_idUsers.setWordWrap(False)
 
-        self.verticalLayout_23.addWidget(self.label_8)
+        self.verticalLayout_23.addWidget(self.lbl_idUsers)
 
-        self.lineEdit_4 = QLineEdit(self.frame_10)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.txt_idUsers = QLineEdit(self.frame_10)
+        self.txt_idUsers.setObjectName(u"txt_idUsers")
+        self.txt_idUsers.setEnabled(False)
 
-        self.verticalLayout_23.addWidget(self.lineEdit_4)
+        self.verticalLayout_23.addWidget(self.txt_idUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_10)
@@ -948,10 +949,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_33.addWidget(self.label_18)
 
-        self.lineEdit_14 = QLineEdit(self.frame_20)
-        self.lineEdit_14.setObjectName(u"lineEdit_14")
+        self.txt_nameUsers = QLineEdit(self.frame_20)
+        self.txt_nameUsers.setObjectName(u"txt_nameUsers")
 
-        self.verticalLayout_33.addWidget(self.lineEdit_14)
+        self.verticalLayout_33.addWidget(self.txt_nameUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_20)
@@ -972,10 +973,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_24.addWidget(self.label_9)
 
-        self.lineEdit_5 = QLineEdit(self.frame_11)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.txt_lastNameFatherUsers = QLineEdit(self.frame_11)
+        self.txt_lastNameFatherUsers.setObjectName(u"txt_lastNameFatherUsers")
 
-        self.verticalLayout_24.addWidget(self.lineEdit_5)
+        self.verticalLayout_24.addWidget(self.txt_lastNameFatherUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_11)
@@ -996,10 +997,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_26.addWidget(self.label_11)
 
-        self.lineEdit_7 = QLineEdit(self.frame_13)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
+        self.txt_lastNameMotherUsers = QLineEdit(self.frame_13)
+        self.txt_lastNameMotherUsers.setObjectName(u"txt_lastNameMotherUsers")
 
-        self.verticalLayout_26.addWidget(self.lineEdit_7)
+        self.verticalLayout_26.addWidget(self.txt_lastNameMotherUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_13)
@@ -1020,10 +1021,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_27.addWidget(self.label_12)
 
-        self.lineEdit_8 = QLineEdit(self.frame_14)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
+        self.txt_positionUsers = QLineEdit(self.frame_14)
+        self.txt_positionUsers.setObjectName(u"txt_positionUsers")
 
-        self.verticalLayout_27.addWidget(self.lineEdit_8)
+        self.verticalLayout_27.addWidget(self.txt_positionUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_14)
@@ -1044,10 +1045,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_25.addWidget(self.label_10)
 
-        self.lineEdit_6 = QLineEdit(self.frame_12)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.txt_companyUsers = QLineEdit(self.frame_12)
+        self.txt_companyUsers.setObjectName(u"txt_companyUsers")
 
-        self.verticalLayout_25.addWidget(self.lineEdit_6)
+        self.verticalLayout_25.addWidget(self.txt_companyUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_12)
@@ -1068,10 +1069,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.label_13)
 
-        self.lineEdit_9 = QLineEdit(self.frame_15)
-        self.lineEdit_9.setObjectName(u"lineEdit_9")
+        self.txt_streetUsers = QLineEdit(self.frame_15)
+        self.txt_streetUsers.setObjectName(u"txt_streetUsers")
 
-        self.verticalLayout_28.addWidget(self.lineEdit_9)
+        self.verticalLayout_28.addWidget(self.txt_streetUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_15)
@@ -1092,10 +1093,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_42.addWidget(self.label_27)
 
-        self.lineEdit_23 = QLineEdit(self.frame_29)
-        self.lineEdit_23.setObjectName(u"lineEdit_23")
+        self.txt_extNumberUsers = QLineEdit(self.frame_29)
+        self.txt_extNumberUsers.setObjectName(u"txt_extNumberUsers")
 
-        self.verticalLayout_42.addWidget(self.lineEdit_23)
+        self.verticalLayout_42.addWidget(self.txt_extNumberUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_29)
@@ -1116,10 +1117,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_41.addWidget(self.label_26)
 
-        self.lineEdit_22 = QLineEdit(self.frame_28)
-        self.lineEdit_22.setObjectName(u"lineEdit_22")
+        self.txt_intNumberUsers = QLineEdit(self.frame_28)
+        self.txt_intNumberUsers.setObjectName(u"txt_intNumberUsers")
 
-        self.verticalLayout_41.addWidget(self.lineEdit_22)
+        self.verticalLayout_41.addWidget(self.txt_intNumberUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_28)
@@ -1140,10 +1141,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_40.addWidget(self.label_25)
 
-        self.lineEdit_21 = QLineEdit(self.frame_27)
-        self.lineEdit_21.setObjectName(u"lineEdit_21")
+        self.txt_neighborhoodUsers = QLineEdit(self.frame_27)
+        self.txt_neighborhoodUsers.setObjectName(u"txt_neighborhoodUsers")
 
-        self.verticalLayout_40.addWidget(self.lineEdit_21)
+        self.verticalLayout_40.addWidget(self.txt_neighborhoodUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_27)
@@ -1164,10 +1165,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_39.addWidget(self.label_24)
 
-        self.lineEdit_20 = QLineEdit(self.frame_26)
-        self.lineEdit_20.setObjectName(u"lineEdit_20")
+        self.txt_municipalyUsers = QLineEdit(self.frame_26)
+        self.txt_municipalyUsers.setObjectName(u"txt_municipalyUsers")
 
-        self.verticalLayout_39.addWidget(self.lineEdit_20)
+        self.verticalLayout_39.addWidget(self.txt_municipalyUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_26)
@@ -1188,10 +1189,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_38.addWidget(self.label_23)
 
-        self.lineEdit_19 = QLineEdit(self.frame_25)
-        self.lineEdit_19.setObjectName(u"lineEdit_19")
+        self.txt_stateUsers = QLineEdit(self.frame_25)
+        self.txt_stateUsers.setObjectName(u"txt_stateUsers")
 
-        self.verticalLayout_38.addWidget(self.lineEdit_19)
+        self.verticalLayout_38.addWidget(self.txt_stateUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_25)
@@ -1212,10 +1213,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_37.addWidget(self.label_22)
 
-        self.lineEdit_18 = QLineEdit(self.frame_24)
-        self.lineEdit_18.setObjectName(u"lineEdit_18")
+        self.txt_postalCodeUsers = QLineEdit(self.frame_24)
+        self.txt_postalCodeUsers.setObjectName(u"txt_postalCodeUsers")
 
-        self.verticalLayout_37.addWidget(self.lineEdit_18)
+        self.verticalLayout_37.addWidget(self.txt_postalCodeUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_24)
@@ -1236,10 +1237,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_36.addWidget(self.label_21)
 
-        self.lineEdit_17 = QLineEdit(self.frame_23)
-        self.lineEdit_17.setObjectName(u"lineEdit_17")
+        self.txt_phoneUsers = QLineEdit(self.frame_23)
+        self.txt_phoneUsers.setObjectName(u"txt_phoneUsers")
 
-        self.verticalLayout_36.addWidget(self.lineEdit_17)
+        self.verticalLayout_36.addWidget(self.txt_phoneUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_23)
@@ -1260,10 +1261,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_35.addWidget(self.label_20)
 
-        self.lineEdit_16 = QLineEdit(self.frame_22)
-        self.lineEdit_16.setObjectName(u"lineEdit_16")
+        self.txt_emailUsers = QLineEdit(self.frame_22)
+        self.txt_emailUsers.setObjectName(u"txt_emailUsers")
 
-        self.verticalLayout_35.addWidget(self.lineEdit_16)
+        self.verticalLayout_35.addWidget(self.txt_emailUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_22)
@@ -1284,10 +1285,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_34.addWidget(self.label_19)
 
-        self.lineEdit_15 = QLineEdit(self.frame_21)
-        self.lineEdit_15.setObjectName(u"lineEdit_15")
+        self.txt_birthDayUsers = QLineEdit(self.frame_21)
+        self.txt_birthDayUsers.setObjectName(u"txt_birthDayUsers")
 
-        self.verticalLayout_34.addWidget(self.lineEdit_15)
+        self.verticalLayout_34.addWidget(self.txt_birthDayUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_21)
@@ -1308,10 +1309,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_29.addWidget(self.label_14)
 
-        self.lineEdit_10 = QLineEdit(self.frame_16)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
+        self.txt_calculatedAgeUsers = QLineEdit(self.frame_16)
+        self.txt_calculatedAgeUsers.setObjectName(u"txt_calculatedAgeUsers")
 
-        self.verticalLayout_29.addWidget(self.lineEdit_10)
+        self.verticalLayout_29.addWidget(self.txt_calculatedAgeUsers)
 
 
         self.verticalLayout_21.addWidget(self.frame_16)
@@ -1575,8 +1576,8 @@ class Ui_MainWindow(object):
         self.logoHome.setText("")
         self.label_4.setText("")
         self.txt_searchUsers.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search by id...", None))
-        self.pushButton_5.setText("")
-        self.pushButton_6.setText("")
+        self.btn_deleteUsers.setText("")
+        self.btn_addUsers.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"ID", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
@@ -1617,8 +1618,8 @@ class Ui_MainWindow(object):
         self.btn_refreshUsers.setText("")
         self.btn_randomUsers.setText("")
         self.btn_editUsers.setText("")
-        self.btn_deleteUsers.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"ID", None))
+        self.btn_clearUsers.setText("")
+        self.lbl_idUsers.setText(QCoreApplication.translate("MainWindow", u"ID", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Name", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Last Name Father", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Last Name Mother", None))
@@ -1633,7 +1634,7 @@ class Ui_MainWindow(object):
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Postal Code", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"Phone", None))
         self.label_20.setText(QCoreApplication.translate("MainWindow", u"Email", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Dirth Day", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Birthday", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Calculated Age", None))
         self.btn_cancelUsers.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.btn_updateUsers.setText(QCoreApplication.translate("MainWindow", u"Update", None))

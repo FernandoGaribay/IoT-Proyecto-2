@@ -3,6 +3,7 @@ from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
 from modules.app_settings import *
+from controllers.contact_controller import ContactController
 
 class UIFunctions():
 
@@ -142,3 +143,9 @@ class UIFunctions():
                 self.dragPos = event.globalPos()
                 event.accept()
         self.ui.titleRightInfo.mouseMoveEvent = moveWindow
+
+class UsersFunctions():
+
+    def addContact(self):
+        controller = ContactController(self.ui)
+        controller.add_contact(controller.get_fields())
