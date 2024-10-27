@@ -146,6 +146,64 @@ class UIFunctions():
 
 class UsersFunctions():
 
+    def __init__(self, ui):
+        self.ui = ui 
+
     def addContact(self):
         controller = ContactController(self.ui)
         controller.add_contact(controller.get_fields())
+        self.clearCamps()
+
+    def clearCamps(self):
+        id = self.ui.txt_idUsers.setText("")
+        name = self.ui.txt_nameUsers.setText("")
+        surname1 = self.ui.txt_lastNameFatherUsers.setText("")
+        surname2 = self.ui.txt_lastNameMotherUsers.setText("")
+        job_title = self.ui.txt_positionUsers.setText("")
+        company = self.ui.txt_companyUsers.setText("")
+        street = self.ui.txt_streetUsers.setText("")
+        ext_number = self.ui.txt_extNumberUsers.setText("")
+        int_number = self.ui.txt_intNumberUsers.setText("")
+        neighborhood = self.ui.txt_neighborhoodUsers.setText("")
+        city = self.ui.txt_municipalyUsers.setText("")
+        state = self.ui.txt_stateUsers.setText("")
+        postal_code = self.ui.txt_postalCodeUsers.setText("")
+        phone = self.ui.txt_phoneUsers.setText("")
+        email = self.ui.txt_emailUsers.setText("")
+        birth_date = self.ui.txt_birthDayUsers.setText("")
+        age = self.ui.txt_calculatedAgeUsers.setText("")
+
+    def showContacts(self):
+        controller = ContactController(self.ui)
+        contacts = controller.view_contacts()
+
+        self.ui.tableWidget.setRowCount(0)
+        self.ui.tableWidget.setColumnCount(17)
+        self.ui.tableWidget.setHorizontalHeaderLabels([
+            'ID', 'Name', 'Surname1', 'Surname2', 'Job Title', 'Company',
+            'Street', 'Ext Number', 'Int Number', 'Neighborhood', 
+            'City', 'State', 'Postal Code', 'Phone', 'Email', 
+            'Birth Date', 'Age'
+        ])
+
+        for contact in contacts:
+            row_position = self.ui.tableWidget.rowCount()
+            self.ui.tableWidget.insertRow(row_position)
+
+            self.ui.tableWidget.setItem(row_position, 0, QTableWidgetItem(str(contact.id)))
+            self.ui.tableWidget.setItem(row_position, 1, QTableWidgetItem(contact.name))
+            self.ui.tableWidget.setItem(row_position, 2, QTableWidgetItem(contact.surname1))
+            self.ui.tableWidget.setItem(row_position, 3, QTableWidgetItem(contact.surname2))
+            self.ui.tableWidget.setItem(row_position, 4, QTableWidgetItem(contact.job_title))
+            self.ui.tableWidget.setItem(row_position, 5, QTableWidgetItem(contact.company))
+            self.ui.tableWidget.setItem(row_position, 6, QTableWidgetItem(contact.street))
+            self.ui.tableWidget.setItem(row_position, 7, QTableWidgetItem(contact.ext_number))
+            self.ui.tableWidget.setItem(row_position, 8, QTableWidgetItem(contact.int_number))
+            self.ui.tableWidget.setItem(row_position, 9, QTableWidgetItem(contact.neighborhood))
+            self.ui.tableWidget.setItem(row_position, 10, QTableWidgetItem(contact.city))
+            self.ui.tableWidget.setItem(row_position, 11, QTableWidgetItem(contact.state))
+            self.ui.tableWidget.setItem(row_position, 12, QTableWidgetItem(contact.postal_code))
+            self.ui.tableWidget.setItem(row_position, 13, QTableWidgetItem(contact.phone))
+            self.ui.tableWidget.setItem(row_position, 14, QTableWidgetItem(contact.email))
+            self.ui.tableWidget.setItem(row_position, 15, QTableWidgetItem(contact.birth_date))
+            self.ui.tableWidget.setItem(row_position, 16, QTableWidgetItem(str(contact.age)))

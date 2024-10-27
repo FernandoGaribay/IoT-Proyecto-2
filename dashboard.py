@@ -28,14 +28,16 @@ class DashboardWindow(QMainWindow):
         widgets.btn_template.clicked.connect(self.buttonClick)
         widgets.btn_history.clicked.connect(self.buttonClick)
 
-        widgets.btn_updateUsers.clicked.connect(lambda: UsersFunctions.addContact(self))
+        users_functions = UsersFunctions(self.ui)
+        users_functions.showContacts()
+        widgets.btn_updateUsers.clicked.connect(lambda: users_functions.addContact())
         widgets.btn_cancelUsers.clicked.connect(lambda: print(f"btn_cancelUsers"))
         widgets.btn_deleteUsers.clicked.connect(lambda: print(f"btn_deleteUsers"))
         widgets.btn_editUsers.clicked.connect(lambda: print(f"btn_editUsers"))
         widgets.btn_randomUsers.clicked.connect(lambda: print(f"btn_randomUsers"))
         widgets.btn_refreshUsers.clicked.connect(lambda: print(f"btn_refreshUsers"))
         widgets.btn_addUsers.clicked.connect(lambda: print(f"btn_addUsers"))
-        widgets.btn_clearUsers.clicked.connect(lambda: print(f"btn_clearUsers"))
+        widgets.btn_clearUsers.clicked.connect(lambda: users_functions.clearCamps())
 
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
