@@ -39,6 +39,8 @@ class DashboardWindow(QMainWindow):
         widgets.btn_addUsers.clicked.connect(lambda: print(f"btn_addUsers"))
         widgets.btn_clearUsers.clicked.connect(lambda: users_functions.clearCamps())
 
+        widgets.tableWidget.itemClicked.connect(users_functions.showDataUser)
+
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
         widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
@@ -88,7 +90,7 @@ class DashboardWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        print(f'Button "{btnName}" pressed!')
+        print(f'Boton "{btnName}"')
 
     def show(self):
         super().show()

@@ -52,6 +52,10 @@ class ContactController:
         contacts = self.contact_dao.get_all_contacts()
         return contacts
 
+    def get_contact_by_id(self, id):
+        contacts = self.contact_dao.get_contact_by_id(id)
+        return contacts
+
     def update_contact(self, contact_id, column, new_value):
         self.contact_dao.update_contact(contact_id, column, new_value)
         print("Contact updated successfully!")

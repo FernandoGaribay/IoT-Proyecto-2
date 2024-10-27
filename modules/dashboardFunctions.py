@@ -153,6 +153,7 @@ class UsersFunctions():
         controller = ContactController(self.ui)
         controller.add_contact(controller.get_fields())
         self.clearCamps()
+        self.showContacts()
 
     def clearCamps(self):
         id = self.ui.txt_idUsers.setText("")
@@ -207,3 +208,35 @@ class UsersFunctions():
             self.ui.tableWidget.setItem(row_position, 14, QTableWidgetItem(contact.email))
             self.ui.tableWidget.setItem(row_position, 15, QTableWidgetItem(contact.birth_date))
             self.ui.tableWidget.setItem(row_position, 16, QTableWidgetItem(str(contact.age)))
+
+    def showDataUser(self, item):
+        controller = ContactController(self.ui)
+
+        contact = controller.get_contact_by_id(self._get_fist_column(item))
+        self.fill_contact_fields(contact)
+        
+    def fill_contact_fields(self, contact):
+        if contact:
+            self.ui.txt_idUsers.setText(str(contact.id))
+            self.ui.txt_nameUsers.setText(contact.name)
+            self.ui.txt_lastNameFatherUsers.setText(contact.surname1)
+            self.ui.txt_lastNameMotherUsers.setText(contact.surname2)
+            self.ui.txt_positionUsers.setText(contact.job_title)
+            self.ui.txt_companyUsers.setText(contact.company)
+            self.ui.txt_streetUsers.setText(contact.street)
+            self.ui.txt_extNumberUsers.setText(contact.ext_number)
+            self.ui.txt_intNumberUsers.setText(contact.int_number)
+            self.ui.txt_neighborhoodUsers.setText(contact.neighborhood)
+            self.ui.txt_municipalyUsers.setText(contact.city)
+            self.ui.txt_stateUsers.setText(contact.state)
+            self.ui.txt_postalCodeUsers.setText(contact.postal_code)
+            self.ui.txt_phoneUsers.setText(contact.phone)
+            self.ui.txt_emailUsers.setText(contact.email)
+            self.ui.txt_birthDayUsers.setText(contact.birth_date)
+            self.ui.txt_calculatedAgeUsers.setText(str(contact.age))
+
+    def _get_fist_column(self, item):
+        row = item.row()
+        first_column_value = self.ui.tableWidget.item(row, 0).text()
+        return first_column_value
+        

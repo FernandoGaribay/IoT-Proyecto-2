@@ -740,6 +740,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tableWidget.setDragDropOverwriteMode(False)
         self.tableWidget.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tableWidget.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.tableWidget.setHorizontalScrollMode(QAbstractItemView.ScrollPerPixel)
         self.tableWidget.setShowGrid(True)
         self.tableWidget.setGridStyle(Qt.SolidLine)
