@@ -155,6 +155,14 @@ class UsersFunctions():
         self.clearCamps()
         self.showContacts()
 
+    def deleteContact(self):
+        id = self.ui.txt_idUsers.text()
+        
+        controller = ContactController(self.ui)
+        controller.delete_contact(id)
+        self.clearCamps()
+        self.showContacts()
+
     def clearCamps(self):
         id = self.ui.txt_idUsers.setText("")
         name = self.ui.txt_nameUsers.setText("")

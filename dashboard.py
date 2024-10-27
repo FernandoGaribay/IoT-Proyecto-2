@@ -32,7 +32,7 @@ class DashboardWindow(QMainWindow):
         users_functions.showContacts()
         widgets.btn_updateUsers.clicked.connect(lambda: users_functions.addContact())
         widgets.btn_cancelUsers.clicked.connect(lambda: print(f"btn_cancelUsers"))
-        widgets.btn_deleteUsers.clicked.connect(lambda: print(f"btn_deleteUsers"))
+        widgets.btn_deleteUsers.clicked.connect(lambda: users_functions.deleteContact())
         widgets.btn_editUsers.clicked.connect(lambda: print(f"btn_editUsers"))
         widgets.btn_randomUsers.clicked.connect(lambda: print(f"btn_randomUsers"))
         widgets.btn_refreshUsers.clicked.connect(lambda: print(f"btn_refreshUsers"))
