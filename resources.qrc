@@ -19,5 +19,13 @@
         <file>resources/newDocument.png</file>
         <file>resources/usersIcon.png</file>
         <file>resources/historyIcon.png</file>
+        <file>resources/pencilIcon.png</file>
+        <file>resources/randomIcon.png</file>
+        <file>resources/refreshIcon.png</file>
+        <file>resources/trashIcon.png</file>
+        <file>resources/searchIcon.png</file>
+        <file>resources/addIcon.png</file>
+        <file>resources/checkIcon.png</file>
+        <file>resources/eraserIcon.png</file>
     </qresource>
 </RCC>
