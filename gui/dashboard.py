@@ -1695,6 +1695,38 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19.setContentsMargins(0, 10, 0, 0)
         self.tableWidget_2 = QTableWidget(self.frame_35)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
+        self.tableWidget_2.setStyleSheet(u"QScrollBar:horizontal {\n"
+"    height: 10px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QTabBar::tab {\n"
+"	background-color: #F0F0F0;\n"
+"	border: 1px solid red;\n"
+"	padding: 8px;\n"
+"	margin: 2px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"        background-color: #D0D0D0;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal {\n"
+"    background-color: rgb(79, 145, 201);\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {\n"
+"    background: none;\n"
+"    width: 0;\n"
+"}")
+        self.tableWidget_2.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tableWidget_2.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tableWidget_2.horizontalHeader().setCascadingSectionResizes(True)
+        self.tableWidget_2.horizontalHeader().setMinimumSectionSize(40)
+        self.tableWidget_2.horizontalHeader().setDefaultSectionSize(120)
+        self.tableWidget_2.verticalHeader().setVisible(False)
+        self.tableWidget_2.verticalHeader().setMinimumSectionSize(30)
 
         self.horizontalLayout_19.addWidget(self.tableWidget_2)
 

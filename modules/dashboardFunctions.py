@@ -208,7 +208,7 @@ class UsersFunctions():
         self.ui.tableWidget.setRowCount(0)
         self.ui.tableWidget.setColumnCount(17)
         self.ui.tableWidget.setHorizontalHeaderLabels([
-            'ID', 'Name', 'Surname1', 'Surname2', 'Job Title', 'Company',
+            'ID', 'Name', 'Last Name Father', 'Last Name Mother', 'Job Title', 'Company',
             'Street', 'Ext Number', 'Int Number', 'Neighborhood', 
             'City', 'State', 'Postal Code', 'Phone', 'Email', 
             'Birth Date', 'Age'
@@ -304,3 +304,43 @@ class TemplatesFunctions():
         except Exception as e:
             print(f"Ocurrió un error: {e}")
         
+class SendCorrespondency():
+
+    def __init__(self, ui):
+        self.ui = ui 
+
+    def showContacts(self):
+        controller = ContactController(self.ui)
+        contacts = controller.view_contacts()
+
+        self.ui.tableWidget_2.setRowCount(0)
+        self.ui.tableWidget_2.setColumnCount(17)
+        self.ui.tableWidget_2.setHorizontalHeaderLabels([
+            'ID', 'Name', 'Last Name Father', 'Last Name Mother', 'Job Title', 'Company',
+            'Street', 'Ext Number', 'Int Number', 'Neighborhood', 
+            'City', 'State', 'Postal Code', 'Phone', 'Email', 
+            'Birth Date', 'Age'
+        ])
+
+        for contact in contacts:
+            row_position = self.ui.tableWidget_2.rowCount()
+            self.ui.tableWidget_2.insertRow(row_position)
+
+            self.ui.tableWidget_2.setItem(row_position, 0, QTableWidgetItem(str(contact.id)))
+            self.ui.tableWidget_2.setItem(row_position, 1, QTableWidgetItem(contact.name))
+            self.ui.tableWidget_2.setItem(row_position, 2, QTableWidgetItem(contact.surname1))
+            self.ui.tableWidget_2.setItem(row_position, 3, QTableWidgetItem(contact.surname2))
+            self.ui.tableWidget_2.setItem(row_position, 4, QTableWidgetItem(contact.job_title))
+            self.ui.tableWidget_2.setItem(row_position, 5, QTableWidgetItem(contact.company))
+            self.ui.tableWidget_2.setItem(row_position, 6, QTableWidgetItem(contact.street))
+            self.ui.tableWidget_2.setItem(row_position, 7, QTableWidgetItem(contact.ext_number))
+            self.ui.tableWidget_2.setItem(row_position, 8, QTableWidgetItem(contact.int_number))
+            self.ui.tableWidget_2.setItem(row_position, 9, QTableWidgetItem(contact.neighborhood))
+            self.ui.tableWidget_2.setItem(row_position, 10, QTableWidgetItem(contact.city))
+            self.ui.tableWidget_2.setItem(row_position, 11, QTableWidgetItem(contact.state))
+            self.ui.tableWidget_2.setItem(row_position, 12, QTableWidgetItem(contact.postal_code))
+            self.ui.tableWidget_2.setItem(row_position, 13, QTableWidgetItem(contact.phone))
+            self.ui.tableWidget_2.setItem(row_position, 14, QTableWidgetItem(contact.email))
+            self.ui.tableWidget_2.setItem(row_position, 15, QTableWidgetItem(contact.birth_date))
+            self.ui.tableWidget_2.setItem(row_position, 16, QTableWidgetItem(str(contact.age)))
+        print("Data updated")
