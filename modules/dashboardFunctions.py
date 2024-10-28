@@ -4,6 +4,7 @@ from PySide6.QtWidgets import *
 
 from modules.app_settings import *
 from controllers.contact_controller import ContactController
+from helpers.random_contact_generator import RandomContactGenerator
 
 class UIFunctions():
 
@@ -162,6 +163,12 @@ class UsersFunctions():
         controller.delete_contact(id)
         self.clearCamps()
         self.showContacts()
+
+    def randomContact(self):
+        random_contact = RandomContactGenerator()
+        contact = random_contact.generate_contact()
+        self.clearCamps()
+        self.fill_contact_fields(contact)
 
     def showContacts(self):
         controller = ContactController(self.ui)
