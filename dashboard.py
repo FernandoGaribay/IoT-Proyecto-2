@@ -44,8 +44,9 @@ class DashboardWindow(QMainWindow):
 
         # Widgets Templates
         templates_functions = TemplatesFunctions()
-        widgets.btn_accoutSumaryTemplates.clicked.connect(lambda: templates_functions.openTemplate("tests/payment_reminder_template.docx"))
-
+        widgets.btn_accoutSumaryTemplates.clicked.connect(lambda: templates_functions.openTemplate("templates/account_summary_template.docx"))
+        widgets.btn_paymenyReminderTemplates.clicked.connect(lambda: templates_functions.openTemplate("templates/payment_reminder_template.docx"))
+        widgets.btn_accountStatementTemplates.clicked.connect(lambda: templates_functions.openTemplate("templates/account_statement.docx"))
 
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
