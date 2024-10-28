@@ -3,7 +3,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QSizeGrip
 from PySide6.QtCore import QPropertyAnimation, QEasingCurve, Qt
 
-from modules.dashboardFunctions import UIFunctions, UsersFunctions
+from modules.dashboardFunctions import UIFunctions, UsersFunctions, TemplatesFunctions
 from gui.dashboard import Ui_MainWindow
 
 class DashboardWindow(QMainWindow):
@@ -40,6 +40,12 @@ class DashboardWindow(QMainWindow):
         widgets.btn_clearUsers.clicked.connect(lambda: users_functions.clearCamps())
 
         widgets.tableWidget.itemClicked.connect(users_functions.showDataUser)
+
+
+        # Widgets Templates
+        templates_functions = TemplatesFunctions()
+        widgets.btn_accoutSumaryTemplates.clicked.connect(lambda: templates_functions.openTemplate("tests/payment_reminder_template.docx"))
+
 
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)

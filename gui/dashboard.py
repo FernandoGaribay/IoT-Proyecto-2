@@ -536,7 +536,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_16 = QVBoxLayout(self.pagesContainer)
         self.verticalLayout_16.setSpacing(0)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_16.setContentsMargins(0, 50, 0, 50)
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.homePage = QWidget()
@@ -1406,6 +1406,204 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.historyPage)
         self.templatePage = QWidget()
         self.templatePage.setObjectName(u"templatePage")
+        self.verticalLayout_22 = QVBoxLayout(self.templatePage)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.frame_5 = QFrame(self.templatePage)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setMaximumSize(QSize(16777215, 200))
+        self.frame_5.setFrameShape(QFrame.NoFrame)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_43 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_43.setSpacing(0)
+        self.verticalLayout_43.setObjectName(u"verticalLayout_43")
+        self.verticalLayout_43.setContentsMargins(0, 0, 0, 0)
+        self.label_6 = QLabel(self.frame_5)
+        self.label_6.setObjectName(u"label_6")
+        font4 = QFont()
+        font4.setPointSize(40)
+        self.label_6.setFont(font4)
+        self.label_6.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
+
+        self.verticalLayout_43.addWidget(self.label_6)
+
+        self.label_29 = QLabel(self.frame_5)
+        self.label_29.setObjectName(u"label_29")
+        font5 = QFont()
+        font5.setPointSize(20)
+        self.label_29.setFont(font5)
+        self.label_29.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+
+        self.verticalLayout_43.addWidget(self.label_29)
+
+
+        self.verticalLayout_22.addWidget(self.frame_5)
+
+        self.pnl_containerTemplates = QFrame(self.templatePage)
+        self.pnl_containerTemplates.setObjectName(u"pnl_containerTemplates")
+        self.pnl_containerTemplates.setStyleSheet(u"#pnl_containerTemplates .QPushButton {	\n"
+"	background-position: left center;\n"
+"    background-repeat: no-repeat;\n"
+"	border: none;\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	border-radius: 30px;\n"
+"	text-align: center;\n"
+"}\n"
+"#pnl_containerTemplates .QPushButton:hover {\n"
+"	background-color: rgb(173, 216, 230);\n"
+"}\n"
+"#pnl_containerTemplates .QPushButton:pressed {	\n"
+"	background-color: rgb(135, 206, 235);\n"
+"}")
+        self.pnl_containerTemplates.setFrameShape(QFrame.NoFrame)
+        self.pnl_containerTemplates.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.pnl_containerTemplates)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.frame_7 = QFrame(self.pnl_containerTemplates)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.NoFrame)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_30 = QVBoxLayout(self.frame_7)
+        self.verticalLayout_30.setObjectName(u"verticalLayout_30")
+        self.frame_6 = QFrame(self.frame_7)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setMaximumSize(QSize(16777215, 70))
+        self.frame_6.setFrameShape(QFrame.NoFrame)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_44 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_44.setObjectName(u"verticalLayout_44")
+        self.label_7 = QLabel(self.frame_6)
+        self.label_7.setObjectName(u"label_7")
+        font6 = QFont()
+        font6.setPointSize(14)
+        font6.setBold(True)
+        self.label_7.setFont(font6)
+        self.label_7.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_44.addWidget(self.label_7)
+
+
+        self.verticalLayout_30.addWidget(self.frame_6)
+
+        self.frame_17 = QFrame(self.frame_7)
+        self.frame_17.setObjectName(u"frame_17")
+        self.frame_17.setFrameShape(QFrame.NoFrame)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_17)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.btn_accoutSumaryTemplates = QPushButton(self.frame_17)
+        self.btn_accoutSumaryTemplates.setObjectName(u"btn_accoutSumaryTemplates")
+        self.btn_accoutSumaryTemplates.setMinimumSize(QSize(0, 200))
+        self.btn_accoutSumaryTemplates.setMaximumSize(QSize(200, 16777215))
+        self.btn_accoutSumaryTemplates.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_accoutSumaryTemplates.setStyleSheet(u"")
+        icon11 = QIcon()
+        icon11.addFile(u":/resources/wordIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_accoutSumaryTemplates.setIcon(icon11)
+        self.btn_accoutSumaryTemplates.setIconSize(QSize(150, 150))
+
+        self.horizontalLayout_15.addWidget(self.btn_accoutSumaryTemplates)
+
+
+        self.verticalLayout_30.addWidget(self.frame_17)
+
+
+        self.horizontalLayout_14.addWidget(self.frame_7)
+
+        self.frame_8 = QFrame(self.pnl_containerTemplates)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.NoFrame)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_31 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_31.setObjectName(u"verticalLayout_31")
+        self.frame_9 = QFrame(self.frame_8)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setMaximumSize(QSize(16777215, 70))
+        self.frame_9.setFrameShape(QFrame.NoFrame)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_45 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_45.setObjectName(u"verticalLayout_45")
+        self.label_8 = QLabel(self.frame_9)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setFont(font6)
+        self.label_8.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_45.addWidget(self.label_8)
+
+
+        self.verticalLayout_31.addWidget(self.frame_9)
+
+        self.frame_18 = QFrame(self.frame_8)
+        self.frame_18.setObjectName(u"frame_18")
+        self.frame_18.setFrameShape(QFrame.NoFrame)
+        self.frame_18.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_16 = QHBoxLayout(self.frame_18)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.btn_accoutSumaryTemplates_2 = QPushButton(self.frame_18)
+        self.btn_accoutSumaryTemplates_2.setObjectName(u"btn_accoutSumaryTemplates_2")
+        self.btn_accoutSumaryTemplates_2.setMinimumSize(QSize(0, 200))
+        self.btn_accoutSumaryTemplates_2.setMaximumSize(QSize(200, 16777215))
+        self.btn_accoutSumaryTemplates_2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_accoutSumaryTemplates_2.setStyleSheet(u"")
+        self.btn_accoutSumaryTemplates_2.setIcon(icon11)
+        self.btn_accoutSumaryTemplates_2.setIconSize(QSize(150, 150))
+
+        self.horizontalLayout_16.addWidget(self.btn_accoutSumaryTemplates_2)
+
+
+        self.verticalLayout_31.addWidget(self.frame_18)
+
+
+        self.horizontalLayout_14.addWidget(self.frame_8)
+
+        self.frame_19 = QFrame(self.pnl_containerTemplates)
+        self.frame_19.setObjectName(u"frame_19")
+        self.frame_19.setFrameShape(QFrame.NoFrame)
+        self.frame_19.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_32 = QVBoxLayout(self.frame_19)
+        self.verticalLayout_32.setObjectName(u"verticalLayout_32")
+        self.frame_30 = QFrame(self.frame_19)
+        self.frame_30.setObjectName(u"frame_30")
+        self.frame_30.setMaximumSize(QSize(16777215, 70))
+        self.frame_30.setFrameShape(QFrame.NoFrame)
+        self.frame_30.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_46 = QVBoxLayout(self.frame_30)
+        self.verticalLayout_46.setObjectName(u"verticalLayout_46")
+        self.label_15 = QLabel(self.frame_30)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setFont(font6)
+        self.label_15.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_46.addWidget(self.label_15)
+
+
+        self.verticalLayout_32.addWidget(self.frame_30)
+
+        self.frame_31 = QFrame(self.frame_19)
+        self.frame_31.setObjectName(u"frame_31")
+        self.frame_31.setFrameShape(QFrame.NoFrame)
+        self.frame_31.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.frame_31)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.btn_accoutSumaryTemplates_3 = QPushButton(self.frame_31)
+        self.btn_accoutSumaryTemplates_3.setObjectName(u"btn_accoutSumaryTemplates_3")
+        self.btn_accoutSumaryTemplates_3.setMinimumSize(QSize(0, 200))
+        self.btn_accoutSumaryTemplates_3.setMaximumSize(QSize(200, 16777215))
+        self.btn_accoutSumaryTemplates_3.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_accoutSumaryTemplates_3.setStyleSheet(u"")
+        self.btn_accoutSumaryTemplates_3.setIcon(icon11)
+        self.btn_accoutSumaryTemplates_3.setIconSize(QSize(150, 150))
+
+        self.horizontalLayout_17.addWidget(self.btn_accoutSumaryTemplates_3)
+
+
+        self.verticalLayout_32.addWidget(self.frame_31)
+
+
+        self.horizontalLayout_14.addWidget(self.frame_19)
+
+
+        self.verticalLayout_22.addWidget(self.pnl_containerTemplates)
+
         self.stackedWidget.addWidget(self.templatePage)
         self.sendPage = QWidget()
         self.sendPage.setObjectName(u"sendPage")
@@ -1643,6 +1841,14 @@ class Ui_MainWindow(object):
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Calculated Age", None))
         self.btn_cancelUsers.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.btn_updateUsers.setText(QCoreApplication.translate("MainWindow", u"Update", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">QuantumBank</span> Templates</p></body></html>", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"Access and modify the available templates.", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"account_summary_template.docx", None))
+        self.btn_accoutSumaryTemplates.setText("")
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"account_summary_template.docx", None))
+        self.btn_accoutSumaryTemplates_2.setText("")
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"account_summary_template.docx", None))
+        self.btn_accoutSumaryTemplates_3.setText("")
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))

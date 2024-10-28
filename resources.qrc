@@ -27,5 +27,6 @@
         <file>resources/addIcon.png</file>
         <file>resources/checkIcon.png</file>
         <file>resources/eraserIcon.png</file>
+        <file>resources/wordIcon.png</file>
     </qresource>
 </RCC>

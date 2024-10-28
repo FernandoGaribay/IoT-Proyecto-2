@@ -1,6 +1,8 @@
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
+import subprocess
+import threading
 
 from modules.app_settings import *
 from controllers.contact_controller import ContactController
@@ -284,4 +286,21 @@ class UsersFunctions():
         row = item.row()
         first_column_value = self.ui.tableWidget.item(row, 0).text()
         return first_column_value
+
+
+class TemplatesFunctions():
+
+    def openTemplate(self, path):
+        thread = threading.Thread(target=self._open_template, args=(path,))
+        thread.start()
+
+    def _open_template(self, path):
+        comando = ["libreoffice", "--writer", path]
+
+        try:
+            subprocess.run(comando)
+        except FileNotFoundError:
+            print("LibreOffice no está instalado o no se encuentra en la ruta.")
+        except Exception as e:
+            print(f"Ocurrió un error: {e}")
         
