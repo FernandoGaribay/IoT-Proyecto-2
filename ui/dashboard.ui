@@ -3522,7 +3522,7 @@ QLineEdit:focus{
                               <number>0</number>
                              </property>
                              <item>
-                              <widget class="QTableWidget" name="tableWidget_2">
+                              <widget class="QTableWidget" name="tableWidgetSend">
                                <property name="styleSheet">
                                 <string notr="true">QScrollBar:horizontal {
     height: 10px;
@@ -3571,6 +3571,41 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                                <attribute name="verticalHeaderMinimumSectionSize">
                                 <number>30</number>
                                </attribute>
+                               <column>
+                                <property name="text">
+                                 <string>New Column</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>New Column</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>sdfs</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>fsd</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>fs</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>fsd</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>fs</string>
+                                </property>
+                               </column>
                               </widget>
                              </item>
                             </layout>
@@ -3735,9 +3770,18 @@ QCheckBox::unchecked {
                               <number>10</number>
                              </property>
                              <item>
-                              <widget class="QListWidget" name="listWidget">
+                              <widget class="QListWidget" name="listContacts">
+                               <property name="font">
+                                <font>
+                                 <pointsize>12</pointsize>
+                                 <bold>false</bold>
+                                </font>
+                               </property>
                                <property name="frameShape">
                                 <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="spacing">
+                                <number>10</number>
                                </property>
                               </widget>
                              </item>
@@ -3828,15 +3872,25 @@ QCheckBox::unchecked {
                                 </property>
                                 <item>
                                  <widget class="QCheckBox" name="check_generatePdfSend">
+                                  <property name="font">
+                                   <font>
+                                    <pointsize>12</pointsize>
+                                   </font>
+                                  </property>
                                   <property name="text">
-                                   <string>CheckBox</string>
+                                   <string>Convert to PDF</string>
                                   </property>
                                  </widget>
                                 </item>
                                 <item>
                                  <widget class="QCheckBox" name="check_sendEmailSend">
+                                  <property name="font">
+                                   <font>
+                                    <pointsize>12</pointsize>
+                                   </font>
+                                  </property>
                                   <property name="text">
-                                   <string>CheckBox</string>
+                                   <string>Send to registered email</string>
                                   </property>
                                  </widget>
                                 </item>

@@ -28,18 +28,19 @@ class DashboardWindow(QMainWindow):
         widgets.btn_template.clicked.connect(self.buttonClick)
         widgets.btn_history.clicked.connect(self.buttonClick)
 
-        users_functions = UsersFunctions(self.ui)
-        users_functions.showContacts()
-        widgets.btn_updateUsers.clicked.connect(lambda: users_functions.addContact())
-        widgets.btn_cancelUsers.clicked.connect(lambda: UIFunctions.toggleRightBoxUsers(self, True))
-        widgets.btn_deleteUsers.clicked.connect(lambda: users_functions.deleteContact())
-        widgets.btn_editUsers.clicked.connect(lambda: users_functions.updateContact())
-        widgets.btn_randomUsers.clicked.connect(lambda: users_functions.randomContact())
-        widgets.btn_refreshUsers.clicked.connect(lambda: users_functions.showContacts())
-        widgets.btn_addUsers.clicked.connect(lambda: UIFunctions.toggleRightBoxUsers(self, True))
-        widgets.btn_clearUsers.clicked.connect(lambda: users_functions.clearCamps())
+        self.users_functions = UsersFunctions(self.ui)
+        self.users_functions.showContacts()
 
-        widgets.tableWidget.itemClicked.connect(users_functions.showDataUser)
+        widgets.btn_updateUsers.clicked.connect(lambda: self.users_functions.addContact())
+        widgets.btn_cancelUsers.clicked.connect(lambda: UIFunctions.toggleRightBoxUsers(self, True))
+        widgets.btn_deleteUsers.clicked.connect(lambda: self.users_functions.deleteContact())
+        widgets.btn_editUsers.clicked.connect(lambda: self.users_functions.updateContact())
+        widgets.btn_randomUsers.clicked.connect(lambda: self.users_functions.randomContact())
+        widgets.btn_refreshUsers.clicked.connect(lambda: self.users_functions.showContacts())
+        widgets.btn_addUsers.clicked.connect(lambda: UIFunctions.toggleRightBoxUsers(self, True))
+        widgets.btn_clearUsers.clicked.connect(lambda: self.users_functions.clearCamps())
+
+        widgets.tableWidget.itemClicked.connect(self.users_functions.showDataUser)
 
 
         # Widgets Templates
@@ -50,8 +51,12 @@ class DashboardWindow(QMainWindow):
 
 
         # Widgets Send Correspondency
-        send_correspondency = SendCorrespondency(self.ui)
-        send_correspondency.showContacts()
+        self.send_correspondency = SendCorrespondency(self.ui)
+        self.send_correspondency.showContacts()
+
+        widgets.tableWidgetSend.itemClicked.connect(self.send_correspondency.showDataUser)
+        widgets.listContacts.itemClicked.connect(self.send_correspondency.removeContactFromSending)
+
 
 
         def openCloseLeftBox():

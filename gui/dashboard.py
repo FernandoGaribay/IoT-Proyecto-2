@@ -1337,10 +1337,9 @@ class Ui_MainWindow(object):
         self.pnl_bottomButtonsUsers.setStyleSheet(u"#pnl_bottomButtonsUsers .QPushButton { \n"
 "	background-color: rgba(255, 255, 255, 0); \n"
 "	border: none;  \n"
-"	border-radius: 5px;\n"
 "	text-align: center;\n"
 "	border-style: solid; \n"
-"	border-radius: 4px;\n"
+"	border-radius: 5px;\n"
 "}")
         self.pnl_bottomButtonsUsers.setFrameShape(QFrame.NoFrame)
         self.pnl_bottomButtonsUsers.setFrameShadow(QFrame.Raised)
@@ -1693,9 +1692,25 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19.setSpacing(0)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.horizontalLayout_19.setContentsMargins(0, 10, 0, 0)
-        self.tableWidget_2 = QTableWidget(self.frame_35)
-        self.tableWidget_2.setObjectName(u"tableWidget_2")
-        self.tableWidget_2.setStyleSheet(u"QScrollBar:horizontal {\n"
+        self.tableWidgetSend = QTableWidget(self.frame_35)
+        if (self.tableWidgetSend.columnCount() < 7):
+            self.tableWidgetSend.setColumnCount(7)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.tableWidgetSend.setHorizontalHeaderItem(0, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.tableWidgetSend.setHorizontalHeaderItem(1, __qtablewidgetitem18)
+        __qtablewidgetitem19 = QTableWidgetItem()
+        self.tableWidgetSend.setHorizontalHeaderItem(2, __qtablewidgetitem19)
+        __qtablewidgetitem20 = QTableWidgetItem()
+        self.tableWidgetSend.setHorizontalHeaderItem(3, __qtablewidgetitem20)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.tableWidgetSend.setHorizontalHeaderItem(4, __qtablewidgetitem21)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.tableWidgetSend.setHorizontalHeaderItem(5, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.tableWidgetSend.setHorizontalHeaderItem(6, __qtablewidgetitem23)
+        self.tableWidgetSend.setObjectName(u"tableWidgetSend")
+        self.tableWidgetSend.setStyleSheet(u"QScrollBar:horizontal {\n"
 "    height: 10px;\n"
 "    border-radius: 5px;\n"
 "}\n"
@@ -1720,15 +1735,15 @@ class Ui_MainWindow(object):
 "    background: none;\n"
 "    width: 0;\n"
 "}")
-        self.tableWidget_2.setSelectionMode(QAbstractItemView.SingleSelection)
-        self.tableWidget_2.setSelectionBehavior(QAbstractItemView.SelectRows)
-        self.tableWidget_2.horizontalHeader().setCascadingSectionResizes(True)
-        self.tableWidget_2.horizontalHeader().setMinimumSectionSize(40)
-        self.tableWidget_2.horizontalHeader().setDefaultSectionSize(120)
-        self.tableWidget_2.verticalHeader().setVisible(False)
-        self.tableWidget_2.verticalHeader().setMinimumSectionSize(30)
+        self.tableWidgetSend.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tableWidgetSend.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tableWidgetSend.horizontalHeader().setCascadingSectionResizes(True)
+        self.tableWidgetSend.horizontalHeader().setMinimumSectionSize(40)
+        self.tableWidgetSend.horizontalHeader().setDefaultSectionSize(120)
+        self.tableWidgetSend.verticalHeader().setVisible(False)
+        self.tableWidgetSend.verticalHeader().setMinimumSectionSize(30)
 
-        self.horizontalLayout_19.addWidget(self.tableWidget_2)
+        self.horizontalLayout_19.addWidget(self.tableWidgetSend)
 
 
         self.verticalLayout_47.addWidget(self.frame_35)
@@ -1814,11 +1829,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_20.setSpacing(0)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.horizontalLayout_20.setContentsMargins(0, 10, 0, 10)
-        self.listWidget = QListWidget(self.frame_37)
-        self.listWidget.setObjectName(u"listWidget")
-        self.listWidget.setFrameShape(QFrame.StyledPanel)
+        self.listContacts = QListWidget(self.frame_37)
+        self.listContacts.setObjectName(u"listContacts")
+        font8 = QFont()
+        font8.setPointSize(12)
+        font8.setBold(False)
+        self.listContacts.setFont(font8)
+        self.listContacts.setFrameShape(QFrame.StyledPanel)
+        self.listContacts.setSpacing(10)
 
-        self.horizontalLayout_20.addWidget(self.listWidget)
+        self.horizontalLayout_20.addWidget(self.listContacts)
 
 
         self.verticalLayout_48.addWidget(self.frame_37)
@@ -1868,11 +1888,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
         self.check_generatePdfSend = QCheckBox(self.pnl_checksExtrasSend)
         self.check_generatePdfSend.setObjectName(u"check_generatePdfSend")
+        self.check_generatePdfSend.setFont(font)
 
         self.horizontalLayout_23.addWidget(self.check_generatePdfSend)
 
         self.check_sendEmailSend = QCheckBox(self.pnl_checksExtrasSend)
         self.check_sendEmailSend.setObjectName(u"check_sendEmailSend")
+        self.check_sendEmailSend.setFont(font)
 
         self.horizontalLayout_23.addWidget(self.check_sendEmailSend)
 
@@ -1881,16 +1903,57 @@ class Ui_MainWindow(object):
 
         self.frame_40 = QFrame(self.frame_38)
         self.frame_40.setObjectName(u"frame_40")
+        self.frame_40.setStyleSheet(u"#frame_40 .QPushButton { \n"
+"	background-color: rgba(255, 255, 255, 0); \n"
+"	border: none;  \n"
+"	text-align: center;\n"
+"	border-style: solid; \n"
+"	border-radius: 5px;\n"
+"}")
         self.frame_40.setFrameShape(QFrame.NoFrame)
         self.frame_40.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_21 = QHBoxLayout(self.frame_40)
-        self.horizontalLayout_21.setSpacing(0)
+        self.horizontalLayout_21.setSpacing(45)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.horizontalLayout_21.setContentsMargins(0, 10, 0, 0)
-        self.pushButton_5 = QPushButton(self.frame_40)
-        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.horizontalLayout_21.setContentsMargins(20, -1, 20, 0)
+        self.btn_cancelSend = QPushButton(self.frame_40)
+        self.btn_cancelSend.setObjectName(u"btn_cancelSend")
+        self.btn_cancelSend.setMinimumSize(QSize(0, 40))
+        self.btn_cancelSend.setFont(font7)
+        self.btn_cancelSend.setStyleSheet(u"#btn_cancelSend {\n"
+"    color: rgb(79, 145, 201);\n"
+"    background-color: rgb(235, 235, 235);\n"
+"}\n"
+"\n"
+"#btn_cancelSend:hover { \n"
+"    background-color: rgb(240, 248, 255);\n"
+"}\n"
+"\n"
+"#btn_cancelSend:pressed { \n"
+"    background-color: rgb(173, 216, 230);\n"
+"}")
 
-        self.horizontalLayout_21.addWidget(self.pushButton_5)
+        self.horizontalLayout_21.addWidget(self.btn_cancelSend)
+
+        self.btn_confirmSend = QPushButton(self.frame_40)
+        self.btn_confirmSend.setObjectName(u"btn_confirmSend")
+        self.btn_confirmSend.setMinimumSize(QSize(0, 40))
+        self.btn_confirmSend.setFont(font7)
+        self.btn_confirmSend.setStyleSheet(u"#btn_confirmSend{\n"
+"	background-color: rgb(79, 145, 201);\n"
+"	color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"#btn_confirmSend:hover { \n"
+"	background-color: rgb(135, 206, 235);\n"
+"}\n"
+"\n"
+"#btn_confirmSend:pressed { \n"
+"    background-color: rgb(66, 123, 170);\n"
+"}")
+        self.btn_confirmSend.setIcon(icon10)
+
+        self.horizontalLayout_21.addWidget(self.btn_confirmSend)
 
 
         self.verticalLayout_51.addWidget(self.frame_40)
@@ -2146,12 +2209,27 @@ class Ui_MainWindow(object):
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.label_17.setText("")
         self.txt_searchSend.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search by id...", None))
+        ___qtablewidgetitem17 = self.tableWidgetSend.horizontalHeaderItem(0)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem18 = self.tableWidgetSend.horizontalHeaderItem(1)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem19 = self.tableWidgetSend.horizontalHeaderItem(2)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"sdfs", None));
+        ___qtablewidgetitem20 = self.tableWidgetSend.horizontalHeaderItem(3)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"fsd", None));
+        ___qtablewidgetitem21 = self.tableWidgetSend.horizontalHeaderItem(4)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"fs", None));
+        ___qtablewidgetitem22 = self.tableWidgetSend.horizontalHeaderItem(5)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"fsd", None));
+        ___qtablewidgetitem23 = self.tableWidgetSend.horizontalHeaderItem(6)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"fs", None));
         self.check_accountSummarySend.setText(QCoreApplication.translate("MainWindow", u"Account Summary", None))
         self.check_paymentReminderSend.setText(QCoreApplication.translate("MainWindow", u"Payment Reminder", None))
         self.check_accountStatementSend.setText(QCoreApplication.translate("MainWindow", u"Account Statement", None))
-        self.check_generatePdfSend.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.check_sendEmailSend.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.check_generatePdfSend.setText(QCoreApplication.translate("MainWindow", u"Convert to PDF", None))
+        self.check_sendEmailSend.setText(QCoreApplication.translate("MainWindow", u"Send to registered email", None))
+        self.btn_cancelSend.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.btn_confirmSend.setText(QCoreApplication.translate("MainWindow", u"Confirm", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))

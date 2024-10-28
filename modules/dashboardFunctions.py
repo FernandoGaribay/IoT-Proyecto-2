@@ -308,14 +308,15 @@ class SendCorrespondency():
 
     def __init__(self, ui):
         self.ui = ui 
+        self.contacts_list = []
 
     def showContacts(self):
         controller = ContactController(self.ui)
         contacts = controller.view_contacts()
 
-        self.ui.tableWidget_2.setRowCount(0)
-        self.ui.tableWidget_2.setColumnCount(17)
-        self.ui.tableWidget_2.setHorizontalHeaderLabels([
+        self.ui.tableWidgetSend.setRowCount(0)
+        self.ui.tableWidgetSend.setColumnCount(17)
+        self.ui.tableWidgetSend.setHorizontalHeaderLabels([
             'ID', 'Name', 'Last Name Father', 'Last Name Mother', 'Job Title', 'Company',
             'Street', 'Ext Number', 'Int Number', 'Neighborhood', 
             'City', 'State', 'Postal Code', 'Phone', 'Email', 
@@ -323,24 +324,81 @@ class SendCorrespondency():
         ])
 
         for contact in contacts:
-            row_position = self.ui.tableWidget_2.rowCount()
-            self.ui.tableWidget_2.insertRow(row_position)
+            row_position = self.ui.tableWidgetSend.rowCount()
+            self.ui.tableWidgetSend.insertRow(row_position)
 
-            self.ui.tableWidget_2.setItem(row_position, 0, QTableWidgetItem(str(contact.id)))
-            self.ui.tableWidget_2.setItem(row_position, 1, QTableWidgetItem(contact.name))
-            self.ui.tableWidget_2.setItem(row_position, 2, QTableWidgetItem(contact.surname1))
-            self.ui.tableWidget_2.setItem(row_position, 3, QTableWidgetItem(contact.surname2))
-            self.ui.tableWidget_2.setItem(row_position, 4, QTableWidgetItem(contact.job_title))
-            self.ui.tableWidget_2.setItem(row_position, 5, QTableWidgetItem(contact.company))
-            self.ui.tableWidget_2.setItem(row_position, 6, QTableWidgetItem(contact.street))
-            self.ui.tableWidget_2.setItem(row_position, 7, QTableWidgetItem(contact.ext_number))
-            self.ui.tableWidget_2.setItem(row_position, 8, QTableWidgetItem(contact.int_number))
-            self.ui.tableWidget_2.setItem(row_position, 9, QTableWidgetItem(contact.neighborhood))
-            self.ui.tableWidget_2.setItem(row_position, 10, QTableWidgetItem(contact.city))
-            self.ui.tableWidget_2.setItem(row_position, 11, QTableWidgetItem(contact.state))
-            self.ui.tableWidget_2.setItem(row_position, 12, QTableWidgetItem(contact.postal_code))
-            self.ui.tableWidget_2.setItem(row_position, 13, QTableWidgetItem(contact.phone))
-            self.ui.tableWidget_2.setItem(row_position, 14, QTableWidgetItem(contact.email))
-            self.ui.tableWidget_2.setItem(row_position, 15, QTableWidgetItem(contact.birth_date))
-            self.ui.tableWidget_2.setItem(row_position, 16, QTableWidgetItem(str(contact.age)))
+            self.ui.tableWidgetSend.setItem(row_position, 0, QTableWidgetItem(str(contact.id)))
+            self.ui.tableWidgetSend.setItem(row_position, 1, QTableWidgetItem(contact.name))
+            self.ui.tableWidgetSend.setItem(row_position, 2, QTableWidgetItem(contact.surname1))
+            self.ui.tableWidgetSend.setItem(row_position, 3, QTableWidgetItem(contact.surname2))
+            self.ui.tableWidgetSend.setItem(row_position, 4, QTableWidgetItem(contact.job_title))
+            self.ui.tableWidgetSend.setItem(row_position, 5, QTableWidgetItem(contact.company))
+            self.ui.tableWidgetSend.setItem(row_position, 6, QTableWidgetItem(contact.street))
+            self.ui.tableWidgetSend.setItem(row_position, 7, QTableWidgetItem(contact.ext_number))
+            self.ui.tableWidgetSend.setItem(row_position, 8, QTableWidgetItem(contact.int_number))
+            self.ui.tableWidgetSend.setItem(row_position, 9, QTableWidgetItem(contact.neighborhood))
+            self.ui.tableWidgetSend.setItem(row_position, 10, QTableWidgetItem(contact.city))
+            self.ui.tableWidgetSend.setItem(row_position, 11, QTableWidgetItem(contact.state))
+            self.ui.tableWidgetSend.setItem(row_position, 12, QTableWidgetItem(contact.postal_code))
+            self.ui.tableWidgetSend.setItem(row_position, 13, QTableWidgetItem(contact.phone))
+            self.ui.tableWidgetSend.setItem(row_position, 14, QTableWidgetItem(contact.email))
+            self.ui.tableWidgetSend.setItem(row_position, 15, QTableWidgetItem(contact.birth_date))
+            self.ui.tableWidgetSend.setItem(row_position, 16, QTableWidgetItem(str(contact.age)))
         print("Data updated")
+
+    def showDataUser(self, item):
+        controller = ContactController(self.ui)
+
+        contact = controller.get_contact_by_id(self._get_fist_column(item))
+        self.ui.listContacts.addItem(
+            f"ID: {contact.id}  -  "
+            f"{contact.name} {contact.surname1} {contact.surname2}, "
+            f"{contact.job_title} en {contact.company}. "
+            f"Teléfono: {contact.phone}, Email: {contact.email}."
+        )
+        self.contacts_list.append(contact)
+        self._print_all_contacts()
+
+    def removeContactFromSending(self, item):
+        index = self.ui.listContacts.row(item)
+        
+        if index != -1: 
+            self.ui.listContacts.takeItem(index)
+            text = item.text()
+
+        try:
+            contact_id = int(text.split("ID: ")[1].split(" ")[0])
+
+            initial_length = len(self.contacts_list)
+            self.contacts_list = [contact for contact in self.contacts_list if contact.id != contact_id]
+
+            if len(self.contacts_list) < initial_length:
+                print(f"Contacto con ID {contact_id} eliminado.")
+            else:
+                print(f"No se encontró ningún contacto con ID {contact_id}.")
+                return None
+        except (IndexError, ValueError):
+            print("Formato de cadena no válido o ID no encontrado")
+            return None
+        self._print_all_contacts()
+
+    def _get_fist_column(self, item):
+        row = item.row()
+        first_column_value = self.ui.tableWidgetSend.item(row, 0).text()
+        return first_column_value
+
+    def _print_all_contacts(self):
+        if not self.contacts_list:
+            print("No hay contactos en la lista.")
+            return
+
+        print("Lista de contactos:")
+        for contact in self.contacts_list:
+            contact_info = (
+                f"ID: {contact.id} - "
+                f"{contact.name} {contact.surname1} {contact.surname2}, "
+                f"{contact.job_title} en {contact.company}. "
+                f"Teléfono: {contact.phone}, Email: {contact.email}."
+            )
+            print(contact_info)
+        print("\n\n")
