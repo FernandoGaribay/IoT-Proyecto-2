@@ -15,11 +15,12 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QFrame,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QScrollArea,
-    QSizePolicy, QStackedWidget, QTableWidget, QTableWidgetItem,
-    QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QCheckBox,
+    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QListWidget, QListWidgetItem,
+    QMainWindow, QPushButton, QScrollArea, QSizePolicy,
+    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+    QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -1611,6 +1612,263 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.templatePage)
         self.sendPage = QWidget()
         self.sendPage.setObjectName(u"sendPage")
+        self.horizontalLayout_18 = QHBoxLayout(self.sendPage)
+        self.horizontalLayout_18.setSpacing(0)
+        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.frame_32 = QFrame(self.sendPage)
+        self.frame_32.setObjectName(u"frame_32")
+        self.frame_32.setFrameShape(QFrame.NoFrame)
+        self.frame_32.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_47 = QVBoxLayout(self.frame_32)
+        self.verticalLayout_47.setSpacing(0)
+        self.verticalLayout_47.setObjectName(u"verticalLayout_47")
+        self.verticalLayout_47.setContentsMargins(0, 10, 9, 10)
+        self.frame_34 = QFrame(self.frame_32)
+        self.frame_34.setObjectName(u"frame_34")
+        self.frame_34.setMinimumSize(QSize(0, 50))
+        self.frame_34.setMaximumSize(QSize(16777215, 50))
+        self.frame_34.setFrameShape(QFrame.NoFrame)
+        self.frame_34.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_49 = QVBoxLayout(self.frame_34)
+        self.verticalLayout_49.setSpacing(0)
+        self.verticalLayout_49.setObjectName(u"verticalLayout_49")
+        self.verticalLayout_49.setContentsMargins(0, 0, 0, 0)
+        self.label_16 = QLabel(self.frame_34)
+        self.label_16.setObjectName(u"label_16")
+        font7 = QFont()
+        font7.setPointSize(12)
+        font7.setBold(True)
+        self.label_16.setFont(font7)
+        self.label_16.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_49.addWidget(self.label_16)
+
+        self.frame_36 = QFrame(self.frame_34)
+        self.frame_36.setObjectName(u"frame_36")
+        self.frame_36.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 15px;")
+        self.frame_36.setFrameShape(QFrame.NoFrame)
+        self.frame_36.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_24 = QHBoxLayout(self.frame_36)
+        self.horizontalLayout_24.setSpacing(0)
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.horizontalLayout_24.setContentsMargins(10, 0, 10, 0)
+        self.label_17 = QLabel(self.frame_36)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setStyleSheet(u"background-color: transparent;")
+        self.label_17.setPixmap(QPixmap(u":/resources/searchIcon.png"))
+
+        self.horizontalLayout_24.addWidget(self.label_17)
+
+        self.txt_searchSend = QLineEdit(self.frame_36)
+        self.txt_searchSend.setObjectName(u"txt_searchSend")
+        self.txt_searchSend.setStyleSheet(u"QLineEdit {\n"
+"	padding: 6px 10px;\n"
+"	border: none;\n"
+"	border-radius: 7px;\n"
+"	color: #3c4043;\n"
+"	font-size: 14px;\n"
+"	font-weight: bold;\n"
+"	background-color: transparent;\n"
+"}\n"
+"\n"
+"QLineEdit:focus{\n"
+"	outline: none;\n"
+"}")
+
+        self.horizontalLayout_24.addWidget(self.txt_searchSend)
+
+
+        self.verticalLayout_49.addWidget(self.frame_36)
+
+
+        self.verticalLayout_47.addWidget(self.frame_34)
+
+        self.frame_35 = QFrame(self.frame_32)
+        self.frame_35.setObjectName(u"frame_35")
+        self.frame_35.setFrameShape(QFrame.NoFrame)
+        self.frame_35.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_19 = QHBoxLayout(self.frame_35)
+        self.horizontalLayout_19.setSpacing(0)
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.horizontalLayout_19.setContentsMargins(0, 10, 0, 0)
+        self.tableWidget_2 = QTableWidget(self.frame_35)
+        self.tableWidget_2.setObjectName(u"tableWidget_2")
+
+        self.horizontalLayout_19.addWidget(self.tableWidget_2)
+
+
+        self.verticalLayout_47.addWidget(self.frame_35)
+
+
+        self.horizontalLayout_18.addWidget(self.frame_32)
+
+        self.frame_33 = QFrame(self.sendPage)
+        self.frame_33.setObjectName(u"frame_33")
+        self.frame_33.setFrameShape(QFrame.NoFrame)
+        self.frame_33.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_48 = QVBoxLayout(self.frame_33)
+        self.verticalLayout_48.setSpacing(0)
+        self.verticalLayout_48.setObjectName(u"verticalLayout_48")
+        self.verticalLayout_48.setContentsMargins(9, 10, 9, 10)
+        self.pnl_checksTemplatesSend = QFrame(self.frame_33)
+        self.pnl_checksTemplatesSend.setObjectName(u"pnl_checksTemplatesSend")
+        self.pnl_checksTemplatesSend.setMaximumSize(QSize(16777215, 50))
+        self.pnl_checksTemplatesSend.setStyleSheet(u"#pnl_checksTemplatesSend .QCheckBox {\n"
+"	background-color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 40px;\n"
+"    height: 40px;\n"
+"	image: url(:/resources/wordIcon.png);\n"
+"    margin-left:5px;\n"
+"    margin-right: 5px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    width: 40px;\n"
+"    height: 40px;\n"
+"}\n"
+"\n"
+"#pnl_checksTemplatesSend .QCheckBox::checked {\n"
+"    background-color: rgba(100, 150, 255, 0.1);\n"
+"    border-left: 4px solid rgb(79, 145, 201);\n"
+"    border-right: 4px solid rgb(79, 145, 201);\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QCheckBox::unchecked {\n"
+"    background-color: transparent;\n"
+"    border-left: 4px solid rgb(173, 216, 230);\n"
+"    border-right: 4px solid rgb(173, 216, 230);\n"
+"    padding: 5px;\n"
+"}")
+        self.pnl_checksTemplatesSend.setFrameShape(QFrame.NoFrame)
+        self.pnl_checksTemplatesSend.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_22 = QHBoxLayout(self.pnl_checksTemplatesSend)
+        self.horizontalLayout_22.setSpacing(8)
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.check_accountSummarySend = QCheckBox(self.pnl_checksTemplatesSend)
+        self.check_accountSummarySend.setObjectName(u"check_accountSummarySend")
+        self.check_accountSummarySend.setFont(font2)
+
+        self.horizontalLayout_22.addWidget(self.check_accountSummarySend)
+
+        self.check_paymentReminderSend = QCheckBox(self.pnl_checksTemplatesSend)
+        self.check_paymentReminderSend.setObjectName(u"check_paymentReminderSend")
+        self.check_paymentReminderSend.setFont(font2)
+        self.check_paymentReminderSend.setStyleSheet(u"")
+
+        self.horizontalLayout_22.addWidget(self.check_paymentReminderSend)
+
+        self.check_accountStatementSend = QCheckBox(self.pnl_checksTemplatesSend)
+        self.check_accountStatementSend.setObjectName(u"check_accountStatementSend")
+        self.check_accountStatementSend.setFont(font2)
+        self.check_accountStatementSend.setStyleSheet(u"")
+
+        self.horizontalLayout_22.addWidget(self.check_accountStatementSend)
+
+
+        self.verticalLayout_48.addWidget(self.pnl_checksTemplatesSend)
+
+        self.frame_37 = QFrame(self.frame_33)
+        self.frame_37.setObjectName(u"frame_37")
+        self.frame_37.setFrameShape(QFrame.NoFrame)
+        self.frame_37.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_20 = QHBoxLayout(self.frame_37)
+        self.horizontalLayout_20.setSpacing(0)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.horizontalLayout_20.setContentsMargins(0, 10, 0, 10)
+        self.listWidget = QListWidget(self.frame_37)
+        self.listWidget.setObjectName(u"listWidget")
+        self.listWidget.setFrameShape(QFrame.StyledPanel)
+
+        self.horizontalLayout_20.addWidget(self.listWidget)
+
+
+        self.verticalLayout_48.addWidget(self.frame_37)
+
+        self.frame_38 = QFrame(self.frame_33)
+        self.frame_38.setObjectName(u"frame_38")
+        self.frame_38.setMinimumSize(QSize(0, 0))
+        self.frame_38.setFrameShape(QFrame.NoFrame)
+        self.frame_38.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_51 = QVBoxLayout(self.frame_38)
+        self.verticalLayout_51.setSpacing(0)
+        self.verticalLayout_51.setObjectName(u"verticalLayout_51")
+        self.verticalLayout_51.setContentsMargins(0, 0, 0, 0)
+        self.pnl_checksExtrasSend = QFrame(self.frame_38)
+        self.pnl_checksExtrasSend.setObjectName(u"pnl_checksExtrasSend")
+        self.pnl_checksExtrasSend.setStyleSheet(u"#pnl_checksExtrasSend .QCheckBox {\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	border-radius: 8px;\n"
+"	padding: 10px;\n"
+"	spacing: 10px;\n"
+"}\n"
+"\n"
+"#pnl_checksExtrasSend .QCheckBox::indicator {\n"
+"    width: 20px;\n"
+"    height: 20px;\n"
+"    border-radius: 4px;\n"
+"	background-color: rgb(235, 235, 235);\n"
+"}\n"
+"\n"
+"#pnl_checksExtrasSend .QCheckBox::indicator:checked {\n"
+"    background-color: rgb(79, 145, 201);\n"
+"    background-image: url(:/resources/checkIcon.png);\n"
+"}\n"
+"\n"
+"#pnl_checksExtrasSend .QCheckBox::checked {\n"
+"    border: 2px solid rgb(79, 145, 201);\n"
+"}\n"
+"\n"
+"#pnl_checksExtrasSend .QCheckBox::unchecked {\n"
+"    border: 2px solid rgb(173, 216, 230);\n"
+"}")
+        self.pnl_checksExtrasSend.setFrameShape(QFrame.NoFrame)
+        self.pnl_checksExtrasSend.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_23 = QHBoxLayout(self.pnl_checksExtrasSend)
+        self.horizontalLayout_23.setSpacing(8)
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
+        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.check_generatePdfSend = QCheckBox(self.pnl_checksExtrasSend)
+        self.check_generatePdfSend.setObjectName(u"check_generatePdfSend")
+
+        self.horizontalLayout_23.addWidget(self.check_generatePdfSend)
+
+        self.check_sendEmailSend = QCheckBox(self.pnl_checksExtrasSend)
+        self.check_sendEmailSend.setObjectName(u"check_sendEmailSend")
+
+        self.horizontalLayout_23.addWidget(self.check_sendEmailSend)
+
+
+        self.verticalLayout_51.addWidget(self.pnl_checksExtrasSend)
+
+        self.frame_40 = QFrame(self.frame_38)
+        self.frame_40.setObjectName(u"frame_40")
+        self.frame_40.setFrameShape(QFrame.NoFrame)
+        self.frame_40.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_21 = QHBoxLayout(self.frame_40)
+        self.horizontalLayout_21.setSpacing(0)
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.horizontalLayout_21.setContentsMargins(0, 10, 0, 0)
+        self.pushButton_5 = QPushButton(self.frame_40)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+
+        self.horizontalLayout_21.addWidget(self.pushButton_5)
+
+
+        self.verticalLayout_51.addWidget(self.frame_40)
+
+
+        self.verticalLayout_48.addWidget(self.frame_38)
+
+
+        self.horizontalLayout_18.addWidget(self.frame_33)
+
         self.stackedWidget.addWidget(self.sendPage)
 
         self.verticalLayout_16.addWidget(self.stackedWidget)
@@ -1853,6 +2111,15 @@ class Ui_MainWindow(object):
         self.btn_paymenyReminderTemplates.setText("")
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"account_statement.docx", None))
         self.btn_accountStatementTemplates.setText("")
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"Search", None))
+        self.label_17.setText("")
+        self.txt_searchSend.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search by id...", None))
+        self.check_accountSummarySend.setText(QCoreApplication.translate("MainWindow", u"Account Summary", None))
+        self.check_paymentReminderSend.setText(QCoreApplication.translate("MainWindow", u"Payment Reminder", None))
+        self.check_accountStatementSend.setText(QCoreApplication.translate("MainWindow", u"Account Statement", None))
+        self.check_generatePdfSend.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
+        self.check_sendEmailSend.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
