@@ -382,6 +382,28 @@ class SendCorrespondency():
             return None
         self._print_all_contacts()
 
+    def confirmSending(self):
+        for contact in self.contacts_list:
+            print(f"{contact.name} ---------")
+            if not (self.ui.check_accountSummarySend.isChecked() or
+                    self.ui.check_paymentReminderSend.isChecked() or
+                    self.ui.check_accountStatementSend.isChecked()):
+                print("Ninguno de los checkboxes está seleccionado.")
+                return None
+            else:
+                if self.ui.check_accountSummarySend.isChecked():
+                    print("check_accountSummarySend")
+                if self.ui.check_paymentReminderSend.isChecked():
+                    print("check_paymentReminderSend")
+                if self.ui.check_accountStatementSend.isChecked():
+                    print("check_accountStatementSend")
+            
+            if self.ui.check_generatePdfSend.isChecked():
+                print("Transform to PDF")
+            if self.ui.check_sendEmailSend.isChecked():
+                print("Mandando a email")
+            print("\n")
+            
     def _get_fist_column(self, item):
         row = item.row()
         first_column_value = self.ui.tableWidgetSend.item(row, 0).text()

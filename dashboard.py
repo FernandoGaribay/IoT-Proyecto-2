@@ -56,7 +56,7 @@ class DashboardWindow(QMainWindow):
 
         widgets.tableWidgetSend.itemClicked.connect(self.send_correspondency.showDataUser)
         widgets.listContacts.itemClicked.connect(self.send_correspondency.removeContactFromSending)
-
+        widgets.btn_confirmSend.clicked.connect(self.send_correspondency.confirmSending)
 
 
         def openCloseLeftBox():
