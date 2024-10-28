@@ -80,6 +80,26 @@ class UIFunctions():
 
             UIFunctions.start_box_animation(self, widthLeftBox, width, "right")
 
+    def toggleRightBoxUsers(self, enable):
+        if enable:
+            # GET WIDTH
+            width = self.ui.menuUsers.width()
+            widthLeftBox = self.ui.extraLeftBox.width()
+            maxExtend = Settings.RIGHT_BOX_USERS_WIDTH
+            standard = 0
+
+            # SET MAX WIDTH
+            if width == 0:
+                widthExtended = maxExtend
+            else:
+                widthExtended = standard
+
+            self.animation = QPropertyAnimation(self.ui.menuUsers, b"minimumWidth")
+            self.animation.setDuration(Settings.TIME_ANIMATION)
+            self.animation.setStartValue(width)
+            self.animation.setEndValue(widthExtended)
+            self.animation.setEasingCurve(QEasingCurve.InOutQuart)
+            self.animation.start()
 
     def start_box_animation(self, left_box_width, right_box_width, direction):
         right_width = 0

@@ -670,6 +670,7 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_18 = QVBoxLayout(self.frame)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.verticalLayout_18.setContentsMargins(-1, 0, -1, -1)
         self.tableWidget = QTableWidget(self.frame)
         if (self.tableWidget.columnCount() < 17):
             self.tableWidget.setColumnCount(17)
@@ -773,8 +774,8 @@ class Ui_MainWindow(object):
 
         self.menuUsers = QFrame(self.usersPage)
         self.menuUsers.setObjectName(u"menuUsers")
-        self.menuUsers.setMinimumSize(QSize(240, 0))
-        self.menuUsers.setMaximumSize(QSize(240, 16777215))
+        self.menuUsers.setMinimumSize(QSize(0, 0))
+        self.menuUsers.setMaximumSize(QSize(0, 16777215))
         self.menuUsers.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "")
         self.menuUsers.setFrameShape(QFrame.NoFrame)
@@ -904,11 +905,11 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 230, 1198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 124, 1189))
         self.verticalLayout_21 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_21.setSpacing(9)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.verticalLayout_21.setContentsMargins(9, 9, 9, 0)
+        self.verticalLayout_21.setContentsMargins(9, 0, 9, 0)
         self.frame_10 = QFrame(self.scrollAreaWidgetContents)
         self.frame_10.setObjectName(u"frame_10")
         self.frame_10.setFrameShape(QFrame.NoFrame)
