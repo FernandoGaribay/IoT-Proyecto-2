@@ -164,6 +164,15 @@ class UsersFunctions():
         self.clearCamps()
         self.showContacts()
 
+    def updateContact(self):
+        controller = ContactController(self.ui)
+
+        id = self.ui.txt_idUsers.text()
+        contact = controller.get_fields()
+        controller.update_contact(id, contact)
+        self.clearCamps()
+        self.showContacts()
+
     def randomContact(self):
         random_contact = RandomContactGenerator()
         contact = random_contact.generate_contact()

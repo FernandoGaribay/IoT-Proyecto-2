@@ -48,14 +48,22 @@ class ContactDAO:
             contacts.append(Contact(*row))
         return contacts
 
-    def update_contact(self, contact_id, column, new_value):
-        if column == "birth_date":
-            contact = self.get_contact_by_id(contact_id)
-            contact.birth_date = new_value
-            new_age = contact.calculate_age()
-            self.cursor.execute("UPDATE contacts SET birth_date = ?, age = ? WHERE id = ?", (new_value, new_age, contact_id))
-        else:
-            self.cursor.execute(f"UPDATE contacts SET {column} = ? WHERE id = ?", (new_value, contact_id))
+    def update_contact(self, contact_id, updated_contact_data):
+        contact = updated_contact_data
+        print(f"{type(contact)}")
+        if updated_contact_data.birth_date:
+            contact.age = contact.calculate_age()
+
+        self.cursor.execute('''UPDATE contacts
+                                SET name = ?, surname1 = ?, surname2 = ?, job_title = ?, company = ?, street = ?, 
+                                ext_number = ?, int_number = ?, neighborhood = ?, city = ?, state = ?, postal_code = ?,
+                                phone = ?, email = ?, birth_date = ?, age = ?
+                            WHERE id = ?''', 
+                            (contact.name, contact.surname1, contact.surname2, contact.job_title, 
+                                contact.company, contact.street, contact.ext_number, contact.int_number,
+                                contact.neighborhood, contact.city, contact.state, contact.postal_code,
+                                contact.phone, contact.email, contact.birth_date, contact.age, contact_id))
+
         self.conn.commit()
 
     def delete_contact(self, contact_id):

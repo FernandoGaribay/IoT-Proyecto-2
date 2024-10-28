@@ -55,8 +55,9 @@ class ContactController:
         contacts = self.contact_dao.get_contact_by_id(id)
         return contacts
 
-    def update_contact(self, contact_id, column, new_value):
-        self.contact_dao.update_contact(contact_id, column, new_value)
+    def update_contact(self, contact_id, updated_contact_data):
+        contact = Contact(**updated_contact_data)
+        self.contact_dao.update_contact(contact_id, contact)
 
     def delete_contact(self, contact_id):
         self.contact_dao.delete_contact(contact_id)
