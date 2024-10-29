@@ -2,6 +2,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 from datetime import datetime
+import os
 import subprocess
 import threading
 
@@ -397,21 +398,22 @@ class SendCorrespondency():
             else:
                 word_writter = WordWritter()
                 today_date = datetime.now().strftime("%Y-%m-%d")
-                documentName = f"{contact.id}_{contact.name}_{contact.surname1}_{contact.surname2}_{today_date}"
+                output = f"{const.OUTPUT_FILES}{self._create_correspondence_folder(contact)}"
+                documentName = f"{contact.surname2}_{contact.surname1}_{contact.name}_{today_date}"
                 
                 if self.ui.check_accountSummarySend.isChecked():
                     print("check_accountSummarySend")
-                    output_path = f"correspondence/{documentName}_AccountSummary.docx"
+                    output_path = f"{output}{documentName}_AccountSummary.docx"
                     word_writter.replace_variables_in_template(const.SUMMARY_TEMPLATE_PATH, contact, output_path)
                 
                 if self.ui.check_paymentReminderSend.isChecked():
                     print("check_paymentReminderSend")
-                    output_path = f"correspondence/{documentName}_PaymentReminder.docx"
+                    output_path = f"{output}{documentName}_PaymentReminder.docx"
                     word_writter.replace_variables_in_template(const.REMINDER_TEMPLATE_PATH, contact, output_path)
                 
                 if self.ui.check_accountStatementSend.isChecked():
                     print("check_accountStatementSend")
-                    output_path = f"correspondence/{documentName}_AccountStatement.docx"
+                    output_path = f"{output}{documentName}_AccountStatement.docx"
                     word_writter.replace_variables_in_template(const.STATEMENT_TEMPLATE_PATH, contact, output_path)
             
             if self.ui.check_generatePdfSend.isChecked():
@@ -420,6 +422,17 @@ class SendCorrespondency():
                 print("Mandando a email")
             print("\n")
             
+    def _create_correspondence_folder(self, contact):
+        now = datetime.now()
+        date_string = now.strftime("%Y-%m-%d")
+        time_string = now.strftime("%H-%M-%S")
+
+        folder_name = f"{contact.id}_{contact.surname1}{contact.surname2}{contact.name}_{date_string}_{time_string}"
+        folder_path = os.path.join("correspondence", folder_name)
+        os.makedirs(folder_path, exist_ok=True)
+
+        return f"{folder_name}/"
+
     def _get_fist_column(self, item):
         row = item.row()
         first_column_value = self.ui.tableWidgetSend.item(row, 0).text()
