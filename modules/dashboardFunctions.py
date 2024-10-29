@@ -1,9 +1,13 @@
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
+from datetime import datetime
 import subprocess
 import threading
 
+import modules.output_constants as const
+from helpers.word_writter import WordWritter
+from helpers.message_box import show_alert
 from modules.app_settings import *
 from controllers.contact_controller import ContactController
 from helpers.random_contact_generator import RandomContactGenerator
@@ -391,12 +395,24 @@ class SendCorrespondency():
                 print("Ninguno de los checkboxes está seleccionado.")
                 return None
             else:
+                word_writter = WordWritter()
+                today_date = datetime.now().strftime("%Y-%m-%d")
+                documentName = f"{contact.id}_{contact.name}_{contact.surname1}_{contact.surname2}_{today_date}"
+                
                 if self.ui.check_accountSummarySend.isChecked():
                     print("check_accountSummarySend")
+                    output_path = f"correspondence/{documentName}_AccountSummary.docx"
+                    word_writter.replace_variables_in_template(const.SUMMARY_TEMPLATE_PATH, contact, output_path)
+                
                 if self.ui.check_paymentReminderSend.isChecked():
                     print("check_paymentReminderSend")
+                    output_path = f"correspondence/{documentName}_PaymentReminder.docx"
+                    word_writter.replace_variables_in_template(const.REMINDER_TEMPLATE_PATH, contact, output_path)
+                
                 if self.ui.check_accountStatementSend.isChecked():
                     print("check_accountStatementSend")
+                    output_path = f"correspondence/{documentName}_AccountStatement.docx"
+                    word_writter.replace_variables_in_template(const.STATEMENT_TEMPLATE_PATH, contact, output_path)
             
             if self.ui.check_generatePdfSend.isChecked():
                 print("Transform to PDF")
