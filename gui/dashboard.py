@@ -589,7 +589,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11 = QHBoxLayout(self.frame_4)
         self.horizontalLayout_11.setSpacing(15)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(15, -1, -1, -1)
+        self.horizontalLayout_11.setContentsMargins(9, -1, -1, -1)
         self.label_4 = QLabel(self.frame_4)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setPixmap(QPixmap(u":/resources/searchIcon.png"))
@@ -671,7 +671,7 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_18 = QVBoxLayout(self.frame)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.verticalLayout_18.setContentsMargins(-1, 0, -1, -1)
+        self.verticalLayout_18.setContentsMargins(0, 0, -1, -1)
         self.tableWidget = QTableWidget(self.frame)
         if (self.tableWidget.columnCount() < 17):
             self.tableWidget.setColumnCount(17)
@@ -710,7 +710,12 @@ class Ui_MainWindow(object):
         __qtablewidgetitem16 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(16, __qtablewidgetitem16)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setStyleSheet(u"QScrollBar:horizontal {\n"
+        self.tableWidget.setStyleSheet(u"QTableWidget {\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	padding: 9px;\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
 "    height: 10px;\n"
 "    border-radius: 5px;\n"
 "}\n"
@@ -1632,17 +1637,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_49 = QVBoxLayout(self.frame_34)
         self.verticalLayout_49.setSpacing(0)
         self.verticalLayout_49.setObjectName(u"verticalLayout_49")
-        self.verticalLayout_49.setContentsMargins(0, 0, 0, 0)
-        self.label_16 = QLabel(self.frame_34)
-        self.label_16.setObjectName(u"label_16")
-        font7 = QFont()
-        font7.setPointSize(12)
-        font7.setBold(True)
-        self.label_16.setFont(font7)
-        self.label_16.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-
-        self.verticalLayout_49.addWidget(self.label_16)
-
+        self.verticalLayout_49.setContentsMargins(0, 7, 0, 7)
         self.frame_36 = QFrame(self.frame_34)
         self.frame_36.setObjectName(u"frame_36")
         self.frame_36.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
@@ -1710,7 +1705,12 @@ class Ui_MainWindow(object):
         __qtablewidgetitem23 = QTableWidgetItem()
         self.tableWidgetSend.setHorizontalHeaderItem(6, __qtablewidgetitem23)
         self.tableWidgetSend.setObjectName(u"tableWidgetSend")
-        self.tableWidgetSend.setStyleSheet(u"QScrollBar:horizontal {\n"
+        self.tableWidgetSend.setStyleSheet(u"QTableWidget {\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	padding: 9px;\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
 "    height: 10px;\n"
 "    border-radius: 5px;\n"
 "}\n"
@@ -1831,12 +1831,50 @@ class Ui_MainWindow(object):
         self.horizontalLayout_20.setContentsMargins(0, 10, 0, 10)
         self.listContacts = QListWidget(self.frame_37)
         self.listContacts.setObjectName(u"listContacts")
-        font8 = QFont()
-        font8.setPointSize(12)
-        font8.setBold(False)
-        self.listContacts.setFont(font8)
+        font7 = QFont()
+        font7.setPointSize(12)
+        font7.setBold(False)
+        self.listContacts.setFont(font7)
+        self.listContacts.setStyleSheet(u"QListWidget {\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    padding: 8px;\n"
+"}\n"
+"\n"
+"QListWidget::item {\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QListWidget::item:selected {\n"
+"    background-color: rgb(173, 216, 230);\n"
+"	color: rgb(50, 50, 50);\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"    height: 10px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QTabBar::tab {\n"
+"	background-color: #F0F0F0;\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"        background-color: #D0D0D0;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal {\n"
+"    background-color: rgb(79, 145, 201);\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {\n"
+"    background: none;\n"
+"    width: 0;\n"
+"}")
         self.listContacts.setFrameShape(QFrame.StyledPanel)
-        self.listContacts.setSpacing(10)
+        self.listContacts.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.listContacts.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.listContacts.setSpacing(0)
 
         self.horizontalLayout_20.addWidget(self.listContacts)
 
@@ -1919,7 +1957,10 @@ class Ui_MainWindow(object):
         self.btn_cancelSend = QPushButton(self.frame_40)
         self.btn_cancelSend.setObjectName(u"btn_cancelSend")
         self.btn_cancelSend.setMinimumSize(QSize(0, 40))
-        self.btn_cancelSend.setFont(font7)
+        font8 = QFont()
+        font8.setPointSize(12)
+        font8.setBold(True)
+        self.btn_cancelSend.setFont(font8)
         self.btn_cancelSend.setStyleSheet(u"#btn_cancelSend {\n"
 "    color: rgb(79, 145, 201);\n"
 "    background-color: rgb(235, 235, 235);\n"
@@ -1938,7 +1979,7 @@ class Ui_MainWindow(object):
         self.btn_confirmSend = QPushButton(self.frame_40)
         self.btn_confirmSend.setObjectName(u"btn_confirmSend")
         self.btn_confirmSend.setMinimumSize(QSize(0, 40))
-        self.btn_confirmSend.setFont(font7)
+        self.btn_confirmSend.setFont(font8)
         self.btn_confirmSend.setStyleSheet(u"#btn_confirmSend{\n"
 "	background-color: rgb(79, 145, 201);\n"
 "	color: rgb(255, 255, 255);\n"
@@ -2206,7 +2247,6 @@ class Ui_MainWindow(object):
         self.btn_paymenyReminderTemplates.setText("")
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"account_statement.docx", None))
         self.btn_accountStatementTemplates.setText("")
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.label_17.setText("")
         self.txt_searchSend.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search by id...", None))
         ___qtablewidgetitem17 = self.tableWidgetSend.horizontalHeaderItem(0)

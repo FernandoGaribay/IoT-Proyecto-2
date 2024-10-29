@@ -1342,7 +1342,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                  <number>15</number>
                                 </property>
                                 <property name="leftMargin">
-                                 <number>15</number>
+                                 <number>9</number>
                                 </property>
                                 <item>
                                  <widget class="QLabel" name="label_4">
@@ -1465,13 +1465,21 @@ QLineEdit:focus{
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QVBoxLayout" name="verticalLayout_18">
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
                              <property name="topMargin">
                               <number>0</number>
                              </property>
                              <item>
                               <widget class="QTableWidget" name="tableWidget">
                                <property name="styleSheet">
-                                <string notr="true">QScrollBar:horizontal {
+                                <string notr="true">QTableWidget {
+	background-color: rgb(255, 255, 255);
+	padding: 9px;
+}
+
+QScrollBar:horizontal {
     height: 10px;
     border-radius: 5px;
 }
@@ -3404,30 +3412,14 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                               <number>0</number>
                              </property>
                              <property name="topMargin">
-                              <number>0</number>
+                              <number>7</number>
                              </property>
                              <property name="rightMargin">
                               <number>0</number>
                              </property>
                              <property name="bottomMargin">
-                              <number>0</number>
+                              <number>7</number>
                              </property>
-                             <item>
-                              <widget class="QLabel" name="label_16">
-                               <property name="font">
-                                <font>
-                                 <pointsize>12</pointsize>
-                                 <bold>true</bold>
-                                </font>
-                               </property>
-                               <property name="text">
-                                <string>Search</string>
-                               </property>
-                               <property name="alignment">
-                                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                               </property>
-                              </widget>
-                             </item>
                              <item>
                               <widget class="QFrame" name="frame_36">
                                <property name="styleSheet">
@@ -3524,7 +3516,12 @@ QLineEdit:focus{
                              <item>
                               <widget class="QTableWidget" name="tableWidgetSend">
                                <property name="styleSheet">
-                                <string notr="true">QScrollBar:horizontal {
+                                <string notr="true">QTableWidget {
+	background-color: rgb(255, 255, 255);
+	padding: 9px;
+}
+
+QScrollBar:horizontal {
     height: 10px;
     border-radius: 5px;
 }
@@ -3771,17 +3768,67 @@ QCheckBox::unchecked {
                              </property>
                              <item>
                               <widget class="QListWidget" name="listContacts">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
+                               </property>
                                <property name="font">
                                 <font>
                                  <pointsize>12</pointsize>
                                  <bold>false</bold>
                                 </font>
                                </property>
+                               <property name="styleSheet">
+                                <string notr="true">QListWidget {
+    background-color: rgb(255, 255, 255);
+    padding: 8px;
+}
+
+QListWidget::item {
+    border-radius: 5px;
+}
+
+QListWidget::item:selected {
+    background-color: rgb(173, 216, 230);
+	color: rgb(50, 50, 50);
+}
+
+QScrollBar:horizontal {
+    height: 10px;
+    border-radius: 5px;
+}
+
+QTabBar::tab {
+	background-color: #F0F0F0;
+}
+
+QTabBar::tab:selected {
+        background-color: #D0D0D0;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: rgb(79, 145, 201);
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: none;
+    width: 0;
+}</string>
+                               </property>
                                <property name="frameShape">
                                 <enum>QFrame::StyledPanel</enum>
                                </property>
+                               <property name="verticalScrollBarPolicy">
+                                <enum>Qt::ScrollBarAlwaysOff</enum>
+                               </property>
+                               <property name="horizontalScrollBarPolicy">
+                                <enum>Qt::ScrollBarAlwaysOn</enum>
+                               </property>
                                <property name="spacing">
-                                <number>10</number>
+                                <number>0</number>
                                </property>
                               </widget>
                              </item>
@@ -3790,12 +3837,6 @@ QCheckBox::unchecked {
                           </item>
                           <item>
                            <widget class="QFrame" name="frame_38">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>0</height>
-                             </size>
-                            </property>
                             <property name="frameShape">
                              <enum>QFrame::NoFrame</enum>
                             </property>
