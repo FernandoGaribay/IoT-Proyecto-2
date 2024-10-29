@@ -547,7 +547,7 @@ class Ui_MainWindow(object):
         self.logoHome = QLabel(self.homePage)
         self.logoHome.setObjectName(u"logoHome")
         self.logoHome.setStyleSheet(u"#logoHome {\n"
-"	background-image: url(:/resources/logo.png);\n"
+"	background-image: url(:/resources/logoBlack.png);\n"
 "    background-position: center;\n"
 "    background-repeat: no-repeat;\n"
 "}\n"
@@ -1831,6 +1831,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_20.setContentsMargins(0, 10, 0, 10)
         self.listContacts = QListWidget(self.frame_37)
         self.listContacts.setObjectName(u"listContacts")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.listContacts.sizePolicy().hasHeightForWidth())
+        self.listContacts.setSizePolicy(sizePolicy2)
         font7 = QFont()
         font7.setPointSize(12)
         font7.setBold(False)
@@ -1883,7 +1888,6 @@ class Ui_MainWindow(object):
 
         self.frame_38 = QFrame(self.frame_33)
         self.frame_38.setObjectName(u"frame_38")
-        self.frame_38.setMinimumSize(QSize(0, 0))
         self.frame_38.setFrameShape(QFrame.NoFrame)
         self.frame_38.setFrameShadow(QFrame.Raised)
         self.verticalLayout_51 = QVBoxLayout(self.frame_38)

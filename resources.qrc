@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/whiteIcon.png</file>
         <file>resources/loginBackground.png</file>
         <file>resources/visiblePass.png</file>
         <file>resources/invisiblePass.png</file>
@@ -12,7 +11,6 @@
         <file>resources/maximizeIcon.png</file>
         <file>resources/minimizeIcon.png</file>
         <file>resources/QuantumBankLogo.png</file>
-        <file>resources/logo.png</file>
         <file>resources/sizeGrip.png</file>
         <file>resources/chatIcon.png</file>
         <file>resources/documentsIcon.png</file>
@@ -28,5 +26,7 @@
         <file>resources/checkIcon.png</file>
         <file>resources/eraserIcon.png</file>
         <file>resources/wordIcon.png</file>
+        <file>resources/logoWhite.png</file>
+        <file>resources/logoBlack.png</file>
     </qresource>
 </RCC>

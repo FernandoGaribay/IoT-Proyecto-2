@@ -1233,7 +1233,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                         <widget class="QLabel" name="logoHome">
                          <property name="styleSheet">
                           <string notr="true">#logoHome {
-	background-image: url(:/resources/logo.png);
+	background-image: url(:/resources/logoBlack.png);
     background-position: center;
     background-repeat: no-repeat;
 }
