@@ -10,6 +10,7 @@ import modules.output_constants as const
 from helpers.word_writter import WordWritter
 from helpers.pdf_writter import PDFWriter
 from helpers.message_box import show_alert
+from helpers.mail_sender import MailSender
 from modules.app_settings import *
 from controllers.contact_controller import ContactController
 from helpers.random_contact_generator import RandomContactGenerator
@@ -424,6 +425,22 @@ class SendCorrespondency():
 
             if self.ui.check_sendEmailSend.isChecked():
                 print("Mandando a email")
+                mail_sender = MailSender()
+
+                recipient_email = contact.email
+                folder_path = output
+                message = (
+                    "Asunto: Correspondencia de Quantum Bank\n\n"
+                    "Estimado cliente,\n\n"
+                    "Le informamos que su correspondencia de Quantum Bank ha sido generada y se encuentra adjunta en este correo para su revisión. "
+                    "Para su seguridad y confidencialidad, le recomendamos abrir el archivo desde un dispositivo seguro.\n\n"
+                    "Si tiene alguna pregunta o requiere asistencia adicional, no dude en contactarnos a través de nuestros canales de atención.\n\n"
+                    "Gracias por elegir Quantum Bank.\n\n"
+                    "Atentamente,\n"
+                    "Equipo de Quantum Bank"
+                )
+                mail_sender.send_email(recipient_email, message, folder_path)
+
             print("\n")
             
     def _create_correspondence_folder(self, contact):
