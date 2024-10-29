@@ -8,6 +8,7 @@ import threading
 
 import modules.output_constants as const
 from helpers.word_writter import WordWritter
+from helpers.pdf_writter import PDFWriter
 from helpers.message_box import show_alert
 from modules.app_settings import *
 from controllers.contact_controller import ContactController
@@ -418,6 +419,9 @@ class SendCorrespondency():
             
             if self.ui.check_generatePdfSend.isChecked():
                 print("Transform to PDF")
+                pdf_writter = PDFWriter()
+                pdf_writter.convert_to_pdf(output)
+
             if self.ui.check_sendEmailSend.isChecked():
                 print("Mandando a email")
             print("\n")
