@@ -15,7 +15,26 @@ from modules.app_settings import *
 from controllers.contact_controller import ContactController
 from helpers.random_contact_generator import RandomContactGenerator
 
+GLOBAL_STATE = False
+
 class UIFunctions():
+
+    def maximize_restore(self):
+        global GLOBAL_STATE
+        status = GLOBAL_STATE
+        if status == False:
+            self.showMaximized()
+            GLOBAL_STATE = True
+            self.ui.maximizeRestoreAppBtn.setToolTip("Restore")
+            self.ui.maximizeRestoreAppBtn.setIcon(QIcon(u":/resources/restoreIcon.png"))
+            self.ui.frame_size_grip.hide()
+        else:
+            GLOBAL_STATE = False
+            self.showNormal()
+            self.resize(self.width()+1, self.height()+1)
+            self.ui.maximizeRestoreAppBtn.setToolTip("Maximize")
+            self.ui.maximizeRestoreAppBtn.setIcon(QIcon(u":/resources/maximizeIcon.png"))
+            self.ui.frame_size_grip.show()
 
     def toggleMenu(self, enable):
             if enable:

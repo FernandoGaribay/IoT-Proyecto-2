@@ -28,5 +28,6 @@
         <file>resources/wordIcon.png</file>
         <file>resources/logoWhite.png</file>
         <file>resources/logoBlack.png</file>
+        <file>resources/restoreIcon.png</file>
     </qresource>
 </RCC>
