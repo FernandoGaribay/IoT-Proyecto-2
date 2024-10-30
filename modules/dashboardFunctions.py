@@ -56,77 +56,41 @@ class UIFunctions():
                 self.animation.setEasingCurve(QEasingCurve.InOutQuart)
                 self.animation.start()
 
-    def toggleLeftBox(self, enable):
-        if enable:
-            # GET WIDTH
-            width = self.ui.extraLeftBox.width()
-            widthRightBox = self.ui.extraRightBox.width()
-            maxExtend = Settings.LEFT_BOX_WIDTH
-            color = Settings.BTN_LEFT_BOX_COLOR
-            standard = 0
-
-            # GET BTN STYLE
-            style = self.ui.toggleLeftBox.styleSheet()
-
-            # SET MAX WIDTH
-            if width == 0:
-                widthExtended = maxExtend
-                # SELECT BTN
-                self.ui.toggleLeftBox.setStyleSheet(style + color)
-                if widthRightBox != 0:
-                    style = self.ui.settingsTopBtn.styleSheet()
-                    self.ui.settingsTopBtn.setStyleSheet(style.replace(Settings.BTN_RIGHT_BOX_COLOR, ''))
-            else:
-                widthExtended = standard
-                # RESET BTN
-                self.ui.toggleLeftBox.setStyleSheet(style.replace(color, ''))
-                
-        UIFunctions.start_box_animation(self, width, widthRightBox, "left")
-
     def toggleRightBox(self, enable):
         if enable:
-            # GET WIDTH
             width = self.ui.extraRightBox.width()
             widthLeftBox = self.ui.extraLeftBox.width()
             maxExtend = Settings.RIGHT_BOX_WIDTH
             color = Settings.BTN_RIGHT_BOX_COLOR
             standard = 0
 
-            # GET BTN STYLE
             style = self.ui.settingsTopBtn.styleSheet()
 
-            # SET MAX WIDTH
             if width == 0:
                 widthExtended = maxExtend
-                # SELECT BTN
                 self.ui.settingsTopBtn.setStyleSheet(style + color)
                 if widthLeftBox != 0:
                     style = self.ui.toggleLeftBox.styleSheet()
                     self.ui.toggleLeftBox.setStyleSheet(style.replace(Settings.BTN_LEFT_BOX_COLOR, ''))
             else:
                 widthExtended = standard
-                # RESET BTN
                 self.ui.settingsTopBtn.setStyleSheet(style.replace(color, ''))
 
             UIFunctions.start_box_animation(self, widthLeftBox, width, "right")
 
     def toggleRightBoxUsers(self, enable):
         if enable:
-            # GET WIDTH
             width = self.ui.menuUsers.width()
-            widthLeftBox = self.ui.extraLeftBox.width()
             maxExtend = Settings.RIGHT_BOX_USERS_WIDTH
             standard = 0
 
-            # SET MAX WIDTH
             if width == 0:
                 widthExtended = maxExtend
                 UIFunctions.USER_DATA_MENU = True
             else:
                 widthExtended = standard
                 UIFunctions.USER_DATA_MENU = False
-            
-            # CLEAR CAMPS
+
             UsersFunctions.clearCamps(self)
             
             self.animation = QPropertyAnimation(self.ui.menuUsers, b"minimumWidth")
@@ -140,12 +104,10 @@ class UIFunctions():
         right_width = 0
         left_width = 0 
 
-        # Check values
         if left_box_width == 0 and direction == "left":
             left_width = 240
         else:
             left_width = 0
-        # Check values
         if right_box_width == 0 and direction == "right":
             right_width = 240
         else:
@@ -466,7 +428,8 @@ class SendCorrespondency():
                     "Atentamente,\n"
                     "Equipo de Quantum Bank"
                 )
-                mail_sender.send_email(recipient_email, message, folder_path)
+                email_thread = threading.Thread(target=mail_sender.send_email, args=(recipient_email, message, folder_path))
+                email_thread.start()
 
             print("\n")
             

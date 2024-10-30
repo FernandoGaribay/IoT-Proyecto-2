@@ -16,11 +16,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QCheckBox,
-    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QListWidget, QListWidgetItem,
-    QMainWindow, QPushButton, QScrollArea, QSizePolicy,
-    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
-    QVBoxLayout, QWidget)
+    QFrame, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QListWidget, QListWidgetItem, QMainWindow,
+    QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -176,14 +175,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_10.addWidget(self.btn_template)
 
-        self.btn_history = QPushButton(self.topMenu)
-        self.btn_history.setObjectName(u"btn_history")
-        self.btn_history.setMinimumSize(QSize(0, 45))
-        self.btn_history.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_history.setStyleSheet(u"background-image: url(:/resources/historyIcon.png);")
-
-        self.verticalLayout_10.addWidget(self.btn_history)
-
 
         self.verticalLayout_8.addWidget(self.topMenu, 0, Qt.AlignTop)
 
@@ -200,7 +191,7 @@ class Ui_MainWindow(object):
         self.toggleLeftBox.setObjectName(u"toggleLeftBox")
         self.toggleLeftBox.setMinimumSize(QSize(0, 45))
         self.toggleLeftBox.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/resources/configIcon.png);\n"
+        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/resources/logoutIcon.png)\n"
 "")
 
         self.verticalLayout_9.addWidget(self.toggleLeftBox)
@@ -213,178 +204,6 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout.addWidget(self.leftMenuBg)
-
-        self.extraLeftBox = QFrame(self.bg_app)
-        self.extraLeftBox.setObjectName(u"extraLeftBox")
-        self.extraLeftBox.setMinimumSize(QSize(0, 0))
-        self.extraLeftBox.setMaximumSize(QSize(0, 16777215))
-        self.extraLeftBox.setFrameShape(QFrame.NoFrame)
-        self.extraLeftBox.setFrameShadow(QFrame.Raised)
-        self.extraColumLayout = QVBoxLayout(self.extraLeftBox)
-        self.extraColumLayout.setSpacing(0)
-        self.extraColumLayout.setObjectName(u"extraColumLayout")
-        self.extraColumLayout.setContentsMargins(0, 0, 0, 0)
-        self.extraTopBg = QFrame(self.extraLeftBox)
-        self.extraTopBg.setObjectName(u"extraTopBg")
-        self.extraTopBg.setMinimumSize(QSize(0, 50))
-        self.extraTopBg.setMaximumSize(QSize(16777215, 50))
-        self.extraTopBg.setStyleSheet(u"#extraTopBg{	\n"
-"	background-color: rgb(79, 145, 201);\n"
-"	border: none;\n"
-"	border-bottom: 2px solid rgb(135, 206, 235);\n"
-"}")
-        self.extraTopBg.setFrameShape(QFrame.NoFrame)
-        self.extraTopBg.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_4 = QVBoxLayout(self.extraTopBg)
-        self.verticalLayout_4.setSpacing(0)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.extraTopLayout = QGridLayout()
-        self.extraTopLayout.setObjectName(u"extraTopLayout")
-        self.extraTopLayout.setHorizontalSpacing(10)
-        self.extraTopLayout.setVerticalSpacing(0)
-        self.extraTopLayout.setContentsMargins(10, -1, 10, -1)
-        self.extraLabel = QLabel(self.extraTopBg)
-        self.extraLabel.setObjectName(u"extraLabel")
-        self.extraLabel.setMinimumSize(QSize(28, 38))
-        self.extraLabel.setFont(font)
-        self.extraLabel.setStyleSheet(u"#extraLabel {\n"
-"	color: rgb(255, 255, 255);\n"
-"}")
-
-        self.extraTopLayout.addWidget(self.extraLabel, 0, 1, 1, 1)
-
-        self.extraCloseColumnBtn = QPushButton(self.extraTopBg)
-        self.extraCloseColumnBtn.setObjectName(u"extraCloseColumnBtn")
-        self.extraCloseColumnBtn.setMinimumSize(QSize(28, 28))
-        self.extraCloseColumnBtn.setMaximumSize(QSize(28, 28))
-        self.extraCloseColumnBtn.setStyleSheet(u"#extraCloseColumnBtn { \n"
-"	background-color: rgba(255, 255, 255, 0); \n"
-"	border: none;  \n"
-"	border-radius: 5px; \n"
-"}\n"
-"#extraCloseColumnBtn:hover { \n"
-"	background-color: rgb(196, 161, 249); \n"
-"	border-style: solid; \n"
-"	border-radius: 4px; \n"
-"}\n"
-"#extraCloseColumnBtn:pressed { \n"
-"	background-color: rgb(180, 141, 238); \n"
-"	border-style: solid; \n"
-"	border-radius: 4px; \n"
-"}")
-        icon = QIcon()
-        icon.addFile(u":/resources/closeIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.extraCloseColumnBtn.setIcon(icon)
-        self.extraCloseColumnBtn.setIconSize(QSize(20, 20))
-        self.extraCloseColumnBtn.setFlat(False)
-
-        self.extraTopLayout.addWidget(self.extraCloseColumnBtn, 0, 3, 1, 1)
-
-        self.extraIcon = QFrame(self.extraTopBg)
-        self.extraIcon.setObjectName(u"extraIcon")
-        self.extraIcon.setMinimumSize(QSize(20, 0))
-        self.extraIcon.setMaximumSize(QSize(20, 20))
-        self.extraIcon.setStyleSheet(u"#extraIcon {\n"
-"	border-image: url(:/resources/configIcon.png) 0 0 0 0 stretch stretch;\n"
-"}")
-        self.extraIcon.setFrameShape(QFrame.NoFrame)
-        self.extraIcon.setFrameShadow(QFrame.Raised)
-
-        self.extraTopLayout.addWidget(self.extraIcon, 0, 0, 1, 1)
-
-
-        self.verticalLayout_4.addLayout(self.extraTopLayout)
-
-
-        self.extraColumLayout.addWidget(self.extraTopBg)
-
-        self.extraContent = QFrame(self.extraLeftBox)
-        self.extraContent.setObjectName(u"extraContent")
-        self.extraContent.setStyleSheet(u"#extraContent {\n"
-"	background-color: rgb(173, 216, 230);\n"
-"}")
-        self.extraContent.setFrameShape(QFrame.NoFrame)
-        self.extraContent.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_5 = QVBoxLayout(self.extraContent)
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.extraTopMenu = QFrame(self.extraContent)
-        self.extraTopMenu.setObjectName(u"extraTopMenu")
-        self.extraTopMenu.setStyleSheet(u"#extraTopMenu .QPushButton {\n"
-"background-position: left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 22px solid transparent;\n"
-"	background-color:transparent;\n"
-"	text-align: left;\n"
-"	padding-left: 44px;\n"
-"	color: rgb(50, 50, 50);\n"
-"}\n"
-"#extraTopMenu .QPushButton:hover {\n"
-"	background-color: rgb(79, 145, 201);\n"
-"}\n"
-"#extraTopMenu .QPushButton:pressed {	\n"
-"	background-color: rgb(66, 123, 170);\n"
-"}")
-        self.extraTopMenu.setFrameShape(QFrame.NoFrame)
-        self.extraTopMenu.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.extraTopMenu)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.pushButton = QPushButton(self.extraTopMenu)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(0, 45))
-        self.pushButton.setStyleSheet(u"background-image: url(:/resources/layersIcon.png)")
-
-        self.verticalLayout_3.addWidget(self.pushButton)
-
-        self.pushButton_2 = QPushButton(self.extraTopMenu)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setMinimumSize(QSize(0, 45))
-        self.pushButton_2.setStyleSheet(u"background-image: url(:/resources/layersIcon.png)")
-
-        self.verticalLayout_3.addWidget(self.pushButton_2)
-
-        self.pushButton_3 = QPushButton(self.extraTopMenu)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setMinimumSize(QSize(0, 45))
-        self.pushButton_3.setStyleSheet(u"background-image: url(:/resources/layersIcon.png)")
-        self.pushButton_3.setIconSize(QSize(8, 8))
-
-        self.verticalLayout_3.addWidget(self.pushButton_3)
-
-
-        self.verticalLayout_5.addWidget(self.extraTopMenu)
-
-        self.extraCenter = QFrame(self.extraContent)
-        self.extraCenter.setObjectName(u"extraCenter")
-        self.extraCenter.setFrameShape(QFrame.NoFrame)
-        self.extraCenter.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_6 = QVBoxLayout(self.extraCenter)
-        self.verticalLayout_6.setSpacing(9)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(9, 9, 9, 9)
-        self.textEdit = QTextEdit(self.extraCenter)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setMinimumSize(QSize(222, 0))
-        self.textEdit.setStyleSheet(u"background: transparent;")
-        self.textEdit.setFrameShape(QFrame.NoFrame)
-        self.textEdit.setLineWrapMode(QTextEdit.WidgetWidth)
-        self.textEdit.setReadOnly(True)
-
-        self.verticalLayout_6.addWidget(self.textEdit)
-
-
-        self.verticalLayout_5.addWidget(self.extraCenter)
-
-
-        self.extraColumLayout.addWidget(self.extraContent)
-
-
-        self.horizontalLayout.addWidget(self.extraLeftBox)
 
         self.contentBox = QFrame(self.bg_app)
         self.contentBox.setObjectName(u"contentBox")
@@ -469,9 +288,9 @@ class Ui_MainWindow(object):
         self.settingsTopBtn.setMaximumSize(QSize(28, 28))
         self.settingsTopBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.settingsTopBtn.setStyleSheet(u"")
-        icon1 = QIcon()
-        icon1.addFile(u":/resources/configIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.settingsTopBtn.setIcon(icon1)
+        icon = QIcon()
+        icon.addFile(u":/resources/configIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.settingsTopBtn.setIcon(icon)
 
         self.horizontalLayout_4.addWidget(self.settingsTopBtn)
 
@@ -480,9 +299,9 @@ class Ui_MainWindow(object):
         self.minimizeAppBtn.setMinimumSize(QSize(28, 28))
         self.minimizeAppBtn.setMaximumSize(QSize(28, 28))
         self.minimizeAppBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon2 = QIcon()
-        icon2.addFile(u":/resources/minimizeIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.minimizeAppBtn.setIcon(icon2)
+        icon1 = QIcon()
+        icon1.addFile(u":/resources/minimizeIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.minimizeAppBtn.setIcon(icon1)
 
         self.horizontalLayout_4.addWidget(self.minimizeAppBtn)
 
@@ -491,9 +310,9 @@ class Ui_MainWindow(object):
         self.maximizeRestoreAppBtn.setMinimumSize(QSize(28, 28))
         self.maximizeRestoreAppBtn.setMaximumSize(QSize(28, 28))
         self.maximizeRestoreAppBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon3 = QIcon()
-        icon3.addFile(u":/resources/maximizeIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.maximizeRestoreAppBtn.setIcon(icon3)
+        icon2 = QIcon()
+        icon2.addFile(u":/resources/maximizeIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.maximizeRestoreAppBtn.setIcon(icon2)
 
         self.horizontalLayout_4.addWidget(self.maximizeRestoreAppBtn)
 
@@ -502,7 +321,9 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setMinimumSize(QSize(28, 28))
         self.closeAppBtn.setMaximumSize(QSize(28, 28))
         self.closeAppBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.closeAppBtn.setIcon(icon)
+        icon3 = QIcon()
+        icon3.addFile(u":/resources/closeIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.closeAppBtn.setIcon(icon3)
 
         self.horizontalLayout_4.addWidget(self.closeAppBtn)
 
@@ -1406,35 +1227,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.addWidget(self.menuUsers)
 
         self.stackedWidget.addWidget(self.usersPage)
-        self.historyPage = QWidget()
-        self.historyPage.setObjectName(u"historyPage")
-        self.verticalLayout_44 = QVBoxLayout(self.historyPage)
-        self.verticalLayout_44.setObjectName(u"verticalLayout_44")
-        self.frame_9 = QFrame(self.historyPage)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setMaximumSize(QSize(16777215, 100))
-        self.frame_9.setFrameShape(QFrame.NoFrame)
-        self.frame_9.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_15 = QHBoxLayout(self.frame_9)
-        self.horizontalLayout_15.setSpacing(0)
-        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.label_16 = QLabel(self.frame_9)
-        self.label_16.setObjectName(u"label_16")
-
-        self.horizontalLayout_15.addWidget(self.label_16, 0, Qt.AlignTop)
-
-
-        self.verticalLayout_44.addWidget(self.frame_9)
-
-        self.frame_6 = QFrame(self.historyPage)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.NoFrame)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_44.addWidget(self.frame_6)
-
-        self.stackedWidget.addWidget(self.historyPage)
         self.templatePage = QWidget()
         self.templatePage.setObjectName(u"templatePage")
         self.verticalLayout_22 = QVBoxLayout(self.templatePage)
@@ -2179,21 +1971,7 @@ class Ui_MainWindow(object):
         self.btn_users.setText(QCoreApplication.translate("MainWindow", u"User Management", None))
         self.btn_send.setText(QCoreApplication.translate("MainWindow", u"Create Correspondence", None))
         self.btn_template.setText(QCoreApplication.translate("MainWindow", u"Edit Template", None))
-        self.btn_history.setText(QCoreApplication.translate("MainWindow", u"Correspondence History", None))
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
-        self.extraCloseColumnBtn.setText("")
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"QuantumBank \u2013 Automation and control of internal correspondence", None))
         self.settingsTopBtn.setText("")
         self.minimizeAppBtn.setText("")
@@ -2264,7 +2042,6 @@ class Ui_MainWindow(object):
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Calculated Age", None))
         self.btn_cancelUsers.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.btn_updateUsers.setText(QCoreApplication.translate("MainWindow", u"Update", None))
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">QuantumBank</span> Templates</p></body></html>", None))
         self.label_29.setText(QCoreApplication.translate("MainWindow", u"Access and modify the available templates.", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Account Summary Template", None))

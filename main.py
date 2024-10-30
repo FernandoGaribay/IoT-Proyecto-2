@@ -1,6 +1,6 @@
 import sys
 
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QLineEdit
 from PySide6.QtCore import Qt
 
 from gui.login import Ui_MainWindow
@@ -18,6 +18,14 @@ class LoginWindow(QMainWindow):
         self.setAttribute(Qt.WA_TranslucentBackground)
 
         self.ui.btnLogIn.clicked.connect(self.handle_login)
+
+        def toggle_password_visibility():
+            if self.ui.txtPassword.echoMode() == QLineEdit.Password:
+                self.ui.txtPassword.setEchoMode(QLineEdit.Normal)
+            else:
+                self.ui.txtPassword.setEchoMode(QLineEdit.Password)
+        self.ui.btnShowPassword.clicked.connect(toggle_password_visibility)
+
 
     def handle_login(self):
         self.dashboard_window = LoginFuctions.validate_log_in(self.ui.txtUsername, self.ui.txtPassword, self)

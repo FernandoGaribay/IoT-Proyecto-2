@@ -31,11 +31,8 @@ class DashboardWindow(QMainWindow):
         widgets.btn_users.clicked.connect(self.buttonClick)
         widgets.btn_send.clicked.connect(self.buttonClick)
         widgets.btn_template.clicked.connect(self.buttonClick)
-        widgets.btn_history.clicked.connect(self.buttonClick)
 
         self.users_functions = UsersFunctions(self.ui)
-        self.users_functions.showContacts()
-
         widgets.btn_updateUsers.clicked.connect(lambda: self.users_functions.addContact())
         widgets.btn_cancelUsers.clicked.connect(lambda: UIFunctions.toggleRightBoxUsers(self, True))
         widgets.btn_deleteUsers.clicked.connect(lambda: self.users_functions.deleteContact())
@@ -61,17 +58,9 @@ class DashboardWindow(QMainWindow):
 
         # Widgets Send Correspondency
         self.send_correspondency = SendCorrespondency(self.ui)
-        self.send_correspondency.showContacts()
-
         widgets.tableWidgetSend.itemClicked.connect(self.send_correspondency.showUserData)
         widgets.listContacts.itemClicked.connect(self.send_correspondency.removeContactFromSending)
         widgets.btn_confirmSend.clicked.connect(self.send_correspondency.confirmSending)
-
-
-        def openCloseLeftBox():
-            UIFunctions.toggleLeftBox(self, True)
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
 
         def openCloseRightBox():
             UIFunctions.toggleRightBox(self, True)
@@ -100,20 +89,17 @@ class DashboardWindow(QMainWindow):
         if btnName == "btn_users":
             widgets.stackedWidget.setCurrentWidget(widgets.usersPage)
             UIFunctions.resetStyle(self, btnName)
+            self.users_functions.showContacts()
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         if btnName == "btn_send":
             widgets.stackedWidget.setCurrentWidget(widgets.sendPage)
             UIFunctions.resetStyle(self, btnName)
+            self.send_correspondency.showContacts()
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         if btnName == "btn_template":
             widgets.stackedWidget.setCurrentWidget(widgets.templatePage)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-
-        if btnName == "btn_history":
-            widgets.stackedWidget.setCurrentWidget(widgets.historyPage)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 

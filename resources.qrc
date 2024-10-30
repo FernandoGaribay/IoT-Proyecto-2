@@ -34,5 +34,6 @@
         <file>resources/languajeIcon.png</file>
         <file>resources/privacityIcon.png</file>
         <file>resources/themesIcon.png</file>
+        <file>resources/logoutIcon.png</file>
     </qresource>
 </RCC>

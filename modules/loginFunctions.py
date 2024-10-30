@@ -6,12 +6,14 @@ class LoginFuctions:
 
     def validate_log_in(txt_username: QLineEdit, txt_password: QLineEdit, parent):
         if is_empy(txt_username) or is_empy(txt_password):
-            show_alert(parent)
-            # return None
+            show_alert(parent, "Username and password cannot be empty.")
+            return
 
-        if txt_username.text() == "" and txt_password.text() == "": # Contraseña eliminada temporalmente
+        if txt_username.text() == "admin" and txt_password.text() == "123":
             from dashboard import DashboardWindow
 
             dashboard_window = DashboardWindow()
             dashboard_window.show()
             return dashboard_window
+        else:
+            show_alert(parent, "Incorrect username or password. Please try again.")
