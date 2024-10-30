@@ -30,6 +30,7 @@ class UIFunctions():
             self.ui.frame_size_grip.hide()
         else:
             GLOBAL_STATE = False
+            self.showNormal()
             self.resize(self.minimumWidth(), self.minimumHeight())
             self.ui.maximizeRestoreAppBtn.setToolTip("Maximize")
             self.ui.maximizeRestoreAppBtn.setIcon(QIcon(u":/resources/maximizeIcon.png"))
