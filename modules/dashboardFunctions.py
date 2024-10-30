@@ -430,7 +430,6 @@ class SendCorrespondency():
                 recipient_email = contact.email
                 folder_path = output
                 message = (
-                    "Asunto: Correspondencia de Quantum Bank\n\n"
                     "Estimado cliente,\n\n"
                     "Le informamos que su correspondencia de Quantum Bank ha sido generada y se encuentra adjunta en este correo para su revisión. "
                     "Para su seguridad y confidencialidad, le recomendamos abrir el archivo desde un dispositivo seguro.\n\n"

@@ -50,7 +50,7 @@ class ContactDAO:
 
     def update_contact(self, contact_id, updated_contact_data):
         contact = updated_contact_data
-        print(f"{type(contact)}")
+
         if updated_contact_data.birth_date:
             contact.age = contact.calculate_age()
 

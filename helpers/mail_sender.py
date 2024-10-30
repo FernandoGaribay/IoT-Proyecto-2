@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import os
-import mail_credentials as credentials
+import modules.mail_credentials as credentials
 
 sender_email = credentials.SENDER_EMAIL
 sender_password = credentials.SENDER_PASSWORD

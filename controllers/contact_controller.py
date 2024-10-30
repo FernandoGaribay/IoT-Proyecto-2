@@ -7,7 +7,6 @@ class ContactController:
         self.ui = ui
 
     def get_fields(self):
-        id = self.ui.txt_idUsers.text()
         name = self.ui.txt_nameUsers.text()
         surname1 = self.ui.txt_lastNameFatherUsers.text()
         surname2 = self.ui.txt_lastNameMotherUsers.text()
@@ -26,6 +25,7 @@ class ContactController:
         age = self.ui.txt_calculatedAgeUsers.text()
         
         return {
+            "id": None if id == "" or id == "None" else self.ui.txt_idUsers.text(),
             "name": name,
             "surname1": surname1,
             "surname2": surname2,
@@ -44,8 +44,11 @@ class ContactController:
         }
 
     def add_contact(self, contact_data):
-        contact = Contact(**contact_data)
-        self.contact_dao.add_contact(contact)
+        if contact_data['id'] is None:
+            contact = Contact(**contact_data)
+            self.contact_dao.add_contact(contact)
+        else:
+            self.update_contact(contact_data['id'], contact_data)
 
     def view_contacts(self):
         contacts = self.contact_dao.get_all_contacts()
