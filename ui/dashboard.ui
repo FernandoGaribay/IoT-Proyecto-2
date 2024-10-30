@@ -4081,9 +4081,8 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                   </property>
                   <property name="styleSheet">
                    <string notr="true">#extraRightBox .QFrame {
-	background-color: rgb(173, 216, 230);
+	background-color: rgb(255, 255, 255);
 	border: none;
-	border-top: 2px solid rgb(79, 145, 201)
 }
 </string>
                   </property>
@@ -4109,7 +4108,7 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <item>
+                   <item alignment="Qt::Qt::AlignTop">
                     <widget class="QFrame" name="contentSettings">
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
@@ -4133,24 +4132,23 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
-                      <item alignment="Qt::Qt::AlignTop">
+                      <item>
                        <widget class="QFrame" name="topMenus">
                         <property name="styleSheet">
-                         <string notr="true">#topMenus .QPushButton {
-background-position: left center;
+                         <string notr="true">#topMenus .QPushButton {	
+	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
-	background-color:transparent;
+	background-color: transparent;
 	text-align: left;
 	padding-left: 44px;
-	color: rgb(50, 50, 50);
 }
 #topMenus .QPushButton:hover {
-	background-color: rgb(79, 145, 201);
+	background-color: rgb(240, 248, 255);
 }
 #topMenus .QPushButton:pressed {	
-	background-color: rgb(66, 123, 170);
+	background-color: rgb(173, 216, 230);
 }</string>
                         </property>
                         <property name="frameShape">
@@ -4183,21 +4181,23 @@ background-position: left center;
                              <height>45</height>
                             </size>
                            </property>
-                           <property name="text">
-                            <string>PushButton</string>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                             <bold>false</bold>
+                            </font>
                            </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QPushButton" name="pushButton_14">
-                           <property name="minimumSize">
+                           <property name="styleSheet">
+                            <string notr="true">background-image: url(:/resources/languajeIcon.png);</string>
+                           </property>
+                           <property name="text">
+                            <string>  Language</string>
+                           </property>
+                           <property name="iconSize">
                             <size>
-                             <width>0</width>
-                             <height>45</height>
+                             <width>20</width>
+                             <height>20</height>
                             </size>
-                           </property>
-                           <property name="text">
-                            <string>PushButton</string>
                            </property>
                           </widget>
                          </item>
@@ -4209,12 +4209,114 @@ background-position: left center;
                              <height>45</height>
                             </size>
                            </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-image: url(:/resources/privacityIcon.png);</string>
+                           </property>
                            <property name="text">
-                            <string>PushButton</string>
+                            <string>  Privacy</string>
+                           </property>
+                           <property name="iconSize">
+                            <size>
+                             <width>20</width>
+                             <height>20</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="pushButton_16">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>45</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-image: url(:/resources/accountIcon.png);</string>
+                           </property>
+                           <property name="text">
+                            <string>  Account</string>
+                           </property>
+                           <property name="iconSize">
+                            <size>
+                             <width>20</width>
+                             <height>20</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="pushButton_14">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>45</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-image: url(:/resources/themesIcon.png);</string>
+                           </property>
+                           <property name="text">
+                            <string>  Themes</string>
+                           </property>
+                           <property name="iconSize">
+                            <size>
+                             <width>20</width>
+                             <height>20</height>
+                            </size>
                            </property>
                           </widget>
                          </item>
                         </layout>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="frame_17">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_45">
+                      <item>
+                       <widget class="QLabel" name="label_28">
+                        <property name="styleSheet">
+                         <string notr="true">background-color: transparent;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Internet de las cosas (2024 Ago- Dic)&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Proyecto Segundo Parcial&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fernando Garibay Ceja&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;21310414&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;7N&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                        <property name="wordWrap">
+                         <bool>true</bool>
+                        </property>
                        </widget>
                       </item>
                      </layout>

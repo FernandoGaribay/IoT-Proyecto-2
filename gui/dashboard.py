@@ -2005,9 +2005,8 @@ class Ui_MainWindow(object):
         self.extraRightBox.setMinimumSize(QSize(0, 0))
         self.extraRightBox.setMaximumSize(QSize(0, 16777215))
         self.extraRightBox.setStyleSheet(u"#extraRightBox .QFrame {\n"
-"	background-color: rgb(173, 216, 230);\n"
+"	background-color: rgb(255, 255, 255);\n"
 "	border: none;\n"
-"	border-top: 2px solid rgb(79, 145, 201)\n"
 "}\n"
 "")
         self.extraRightBox.setFrameShape(QFrame.NoFrame)
@@ -2026,21 +2025,20 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.topMenus = QFrame(self.contentSettings)
         self.topMenus.setObjectName(u"topMenus")
-        self.topMenus.setStyleSheet(u"#topMenus .QPushButton {\n"
-"background-position: left center;\n"
+        self.topMenus.setStyleSheet(u"#topMenus .QPushButton {	\n"
+"	background-position: left center;\n"
 "    background-repeat: no-repeat;\n"
 "	border: none;\n"
 "	border-left: 22px solid transparent;\n"
-"	background-color:transparent;\n"
+"	background-color: transparent;\n"
 "	text-align: left;\n"
 "	padding-left: 44px;\n"
-"	color: rgb(50, 50, 50);\n"
 "}\n"
 "#topMenus .QPushButton:hover {\n"
-"	background-color: rgb(79, 145, 201);\n"
+"	background-color: rgb(240, 248, 255);\n"
 "}\n"
 "#topMenus .QPushButton:pressed {	\n"
-"	background-color: rgb(66, 123, 170);\n"
+"	background-color: rgb(173, 216, 230);\n"
 "}")
         self.topMenus.setFrameShape(QFrame.NoFrame)
         self.topMenus.setFrameShadow(QFrame.Raised)
@@ -2051,26 +2049,65 @@ class Ui_MainWindow(object):
         self.pushButton_4 = QPushButton(self.topMenus)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setMinimumSize(QSize(0, 45))
+        self.pushButton_4.setFont(font7)
+        self.pushButton_4.setStyleSheet(u"background-image: url(:/resources/languajeIcon.png);")
+        self.pushButton_4.setIconSize(QSize(20, 20))
 
         self.verticalLayout_15.addWidget(self.pushButton_4)
-
-        self.pushButton_14 = QPushButton(self.topMenus)
-        self.pushButton_14.setObjectName(u"pushButton_14")
-        self.pushButton_14.setMinimumSize(QSize(0, 45))
-
-        self.verticalLayout_15.addWidget(self.pushButton_14)
 
         self.pushButton_15 = QPushButton(self.topMenus)
         self.pushButton_15.setObjectName(u"pushButton_15")
         self.pushButton_15.setMinimumSize(QSize(0, 45))
+        self.pushButton_15.setFont(font7)
+        self.pushButton_15.setStyleSheet(u"background-image: url(:/resources/privacityIcon.png);")
+        self.pushButton_15.setIconSize(QSize(20, 20))
 
         self.verticalLayout_15.addWidget(self.pushButton_15)
 
+        self.pushButton_16 = QPushButton(self.topMenus)
+        self.pushButton_16.setObjectName(u"pushButton_16")
+        self.pushButton_16.setMinimumSize(QSize(0, 45))
+        self.pushButton_16.setFont(font7)
+        self.pushButton_16.setStyleSheet(u"background-image: url(:/resources/accountIcon.png);")
+        self.pushButton_16.setIconSize(QSize(20, 20))
 
-        self.verticalLayout_14.addWidget(self.topMenus, 0, Qt.AlignTop)
+        self.verticalLayout_15.addWidget(self.pushButton_16)
+
+        self.pushButton_14 = QPushButton(self.topMenus)
+        self.pushButton_14.setObjectName(u"pushButton_14")
+        self.pushButton_14.setMinimumSize(QSize(0, 45))
+        self.pushButton_14.setFont(font7)
+        self.pushButton_14.setStyleSheet(u"background-image: url(:/resources/themesIcon.png);")
+        self.pushButton_14.setIconSize(QSize(20, 20))
+
+        self.verticalLayout_15.addWidget(self.pushButton_14)
 
 
-        self.verticalLayout_13.addWidget(self.contentSettings)
+        self.verticalLayout_14.addWidget(self.topMenus)
+
+
+        self.verticalLayout_13.addWidget(self.contentSettings, 0, Qt.AlignTop)
+
+        self.frame_17 = QFrame(self.extraRightBox)
+        self.frame_17.setObjectName(u"frame_17")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.frame_17.sizePolicy().hasHeightForWidth())
+        self.frame_17.setSizePolicy(sizePolicy4)
+        self.frame_17.setFrameShape(QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_45 = QVBoxLayout(self.frame_17)
+        self.verticalLayout_45.setObjectName(u"verticalLayout_45")
+        self.label_28 = QLabel(self.frame_17)
+        self.label_28.setObjectName(u"label_28")
+        self.label_28.setStyleSheet(u"background-color: transparent;")
+        self.label_28.setWordWrap(True)
+
+        self.verticalLayout_45.addWidget(self.label_28)
+
+
+        self.verticalLayout_13.addWidget(self.frame_17)
 
 
         self.horizontalLayout_6.addWidget(self.extraRightBox)
@@ -2259,9 +2296,11 @@ class Ui_MainWindow(object):
         self.check_sendEmailSend.setText(QCoreApplication.translate("MainWindow", u"Send to registered email", None))
         self.btn_cancelSend.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.btn_confirmSend.setText(QCoreApplication.translate("MainWindow", u" Confirm", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"  Language", None))
+        self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"  Privacy", None))
+        self.pushButton_16.setText(QCoreApplication.translate("MainWindow", u"  Account", None))
+        self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"  Themes", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:700;\">Internet de las cosas (2024 Ago- Dic)</span></p><p align=\"center\"><span style=\" font-size:16pt;\">Proyecto Segundo Parcial</span></p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-size:12pt;\">Fernando Garibay Ceja</span></p><p align=\"center\"><span style=\" font-size:12pt;\">21310414</span></p><p align=\"center\"><span style=\" font-size:12pt;\">7N</span></p></body></html>", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u00a9 2024 QuantumBank. All rights reserved.", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"v1.0.0  ", None))
     # retranslateUi
