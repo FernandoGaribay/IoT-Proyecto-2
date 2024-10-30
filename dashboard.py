@@ -19,7 +19,9 @@ class DashboardWindow(QMainWindow):
         widgets = self.ui
 
         self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
-
+        self.ui.minimizeAppBtn.clicked.connect(lambda: self.showMinimized())
+        self.ui.maximizeRestoreAppBtn.clicked.connect(lambda: UIFunctions.maximize_restore(self))
+        self.ui.closeAppBtn.clicked.connect(lambda: self.close())
 
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))

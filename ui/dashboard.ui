@@ -1064,7 +1064,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_11">
+                 <widget class="QPushButton" name="minimizeAppBtn">
                   <property name="minimumSize">
                    <size>
                     <width>28</width>
@@ -1090,7 +1090,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_12">
+                 <widget class="QPushButton" name="maximizeRestoreAppBtn">
                   <property name="minimumSize">
                    <size>
                     <width>28</width>
@@ -1116,7 +1116,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_13">
+                 <widget class="QPushButton" name="closeAppBtn">
                   <property name="minimumSize">
                    <size>
                     <width>28</width>
