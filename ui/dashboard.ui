@@ -2948,10 +2948,10 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                      <widget class="QWidget" name="templatePage">
                       <layout class="QVBoxLayout" name="verticalLayout_22">
                        <property name="topMargin">
-                        <number>50</number>
+                        <number>40</number>
                        </property>
                        <property name="bottomMargin">
-                        <number>50</number>
+                        <number>40</number>
                        </property>
                        <item>
                         <widget class="QFrame" name="frame_5">
@@ -3046,7 +3046,13 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
-                              <height>400</height>
+                              <height>300</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>300</height>
                              </size>
                             </property>
                             <property name="frameShape">
@@ -3056,85 +3062,61 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QVBoxLayout" name="verticalLayout_30">
-                             <item>
-                              <widget class="QFrame" name="frame_6">
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>70</height>
-                                </size>
+                             <item alignment="Qt::Qt::AlignVCenter">
+                              <widget class="QLabel" name="label_7">
+                               <property name="font">
+                                <font>
+                                 <pointsize>14</pointsize>
+                                 <bold>true</bold>
+                                </font>
                                </property>
-                               <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                               <property name="text">
+                                <string>Account Summary Template</string>
                                </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
+                               <property name="scaledContents">
+                                <bool>true</bool>
                                </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_44">
-                                <item>
-                                 <widget class="QLabel" name="label_7">
-                                  <property name="font">
-                                   <font>
-                                    <pointsize>14</pointsize>
-                                    <bold>true</bold>
-                                   </font>
-                                  </property>
-                                  <property name="text">
-                                   <string>account_summary_template.docx</string>
-                                  </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignCenter</set>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
+                               <property name="alignment">
+                                <set>Qt::AlignCenter</set>
+                               </property>
+                               <property name="wordWrap">
+                                <bool>true</bool>
+                               </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QFrame" name="frame_17">
-                               <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                              <widget class="QPushButton" name="btn_accoutSumaryTemplates">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
                                </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>200</height>
+                                </size>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_15">
-                                <item>
-                                 <widget class="QPushButton" name="btn_accoutSumaryTemplates">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>200</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>200</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true"/>
-                                  </property>
-                                  <property name="text">
-                                   <string/>
-                                  </property>
-                                  <property name="icon">
-                                   <iconset resource="../resources.qrc">
-                                    <normaloff>:/resources/wordIcon.png</normaloff>:/resources/wordIcon.png</iconset>
-                                  </property>
-                                  <property name="iconSize">
-                                   <size>
-                                    <width>150</width>
-                                    <height>150</height>
-                                   </size>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string/>
+                               </property>
+                               <property name="icon">
+                                <iconset resource="../resources.qrc">
+                                 <normaloff>:/resources/wordIcon.png</normaloff>:/resources/wordIcon.png</iconset>
+                               </property>
+                               <property name="iconSize">
+                                <size>
+                                 <width>150</width>
+                                 <height>150</height>
+                                </size>
+                               </property>
                               </widget>
                              </item>
                             </layout>
@@ -3145,7 +3127,13 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
-                              <height>400</height>
+                              <height>300</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>300</height>
                              </size>
                             </property>
                             <property name="frameShape">
@@ -3155,85 +3143,61 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QVBoxLayout" name="verticalLayout_31">
-                             <item>
-                              <widget class="QFrame" name="frame_9">
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>70</height>
-                                </size>
+                             <item alignment="Qt::Qt::AlignVCenter">
+                              <widget class="QLabel" name="label_8">
+                               <property name="font">
+                                <font>
+                                 <pointsize>14</pointsize>
+                                 <bold>true</bold>
+                                </font>
                                </property>
-                               <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                               <property name="text">
+                                <string>Payment Reminder Template</string>
                                </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
+                               <property name="scaledContents">
+                                <bool>true</bool>
                                </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_45">
-                                <item>
-                                 <widget class="QLabel" name="label_8">
-                                  <property name="font">
-                                   <font>
-                                    <pointsize>14</pointsize>
-                                    <bold>true</bold>
-                                   </font>
-                                  </property>
-                                  <property name="text">
-                                   <string>payment_reminder_template.docx</string>
-                                  </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignCenter</set>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
+                               <property name="alignment">
+                                <set>Qt::AlignCenter</set>
+                               </property>
+                               <property name="wordWrap">
+                                <bool>true</bool>
+                               </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QFrame" name="frame_18">
-                               <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                              <widget class="QPushButton" name="btn_paymenyReminderTemplates">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
                                </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>200</height>
+                                </size>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_16">
-                                <item>
-                                 <widget class="QPushButton" name="btn_paymenyReminderTemplates">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>200</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>200</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true"/>
-                                  </property>
-                                  <property name="text">
-                                   <string/>
-                                  </property>
-                                  <property name="icon">
-                                   <iconset resource="../resources.qrc">
-                                    <normaloff>:/resources/wordIcon.png</normaloff>:/resources/wordIcon.png</iconset>
-                                  </property>
-                                  <property name="iconSize">
-                                   <size>
-                                    <width>150</width>
-                                    <height>150</height>
-                                   </size>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string/>
+                               </property>
+                               <property name="icon">
+                                <iconset resource="../resources.qrc">
+                                 <normaloff>:/resources/wordIcon.png</normaloff>:/resources/wordIcon.png</iconset>
+                               </property>
+                               <property name="iconSize">
+                                <size>
+                                 <width>150</width>
+                                 <height>150</height>
+                                </size>
+                               </property>
                               </widget>
                              </item>
                             </layout>
@@ -3244,7 +3208,13 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
-                              <height>400</height>
+                              <height>300</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>300</height>
                              </size>
                             </property>
                             <property name="frameShape">
@@ -3254,85 +3224,61 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QVBoxLayout" name="verticalLayout_32">
-                             <item>
-                              <widget class="QFrame" name="frame_30">
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>70</height>
-                                </size>
+                             <item alignment="Qt::Qt::AlignVCenter">
+                              <widget class="QLabel" name="label_15">
+                               <property name="font">
+                                <font>
+                                 <pointsize>14</pointsize>
+                                 <bold>true</bold>
+                                </font>
                                </property>
-                               <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                               <property name="text">
+                                <string>Account Statement Template</string>
                                </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
+                               <property name="scaledContents">
+                                <bool>true</bool>
                                </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_46">
-                                <item>
-                                 <widget class="QLabel" name="label_15">
-                                  <property name="font">
-                                   <font>
-                                    <pointsize>14</pointsize>
-                                    <bold>true</bold>
-                                   </font>
-                                  </property>
-                                  <property name="text">
-                                   <string>account_statement.docx</string>
-                                  </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignCenter</set>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
+                               <property name="alignment">
+                                <set>Qt::AlignCenter</set>
+                               </property>
+                               <property name="wordWrap">
+                                <bool>true</bool>
+                               </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QFrame" name="frame_31">
-                               <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                              <widget class="QPushButton" name="btn_accountStatementTemplates">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
                                </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>200</height>
+                                </size>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_17">
-                                <item>
-                                 <widget class="QPushButton" name="btn_accountStatementTemplates">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>200</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>200</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true"/>
-                                  </property>
-                                  <property name="text">
-                                   <string/>
-                                  </property>
-                                  <property name="icon">
-                                   <iconset resource="../resources.qrc">
-                                    <normaloff>:/resources/wordIcon.png</normaloff>:/resources/wordIcon.png</iconset>
-                                  </property>
-                                  <property name="iconSize">
-                                   <size>
-                                    <width>150</width>
-                                    <height>150</height>
-                                   </size>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string/>
+                               </property>
+                               <property name="icon">
+                                <iconset resource="../resources.qrc">
+                                 <normaloff>:/resources/wordIcon.png</normaloff>:/resources/wordIcon.png</iconset>
+                               </property>
+                               <property name="iconSize">
+                                <size>
+                                 <width>150</width>
+                                 <height>150</height>
+                                </size>
+                               </property>
                               </widget>
                              </item>
                             </layout>
