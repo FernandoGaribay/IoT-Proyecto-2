@@ -19,6 +19,8 @@ GLOBAL_STATE = False
 
 class UIFunctions():
 
+    USER_DATA_MENU = False
+
     def maximize_restore(self):
         global GLOBAL_STATE
         status = GLOBAL_STATE
@@ -119,9 +121,14 @@ class UIFunctions():
             # SET MAX WIDTH
             if width == 0:
                 widthExtended = maxExtend
+                UIFunctions.USER_DATA_MENU = True
             else:
                 widthExtended = standard
-
+                UIFunctions.USER_DATA_MENU = False
+            
+            # CLEAR CAMPS
+            UsersFunctions.clearCamps(self)
+            
             self.animation = QPropertyAnimation(self.ui.menuUsers, b"minimumWidth")
             self.animation.setDuration(Settings.TIME_ANIMATION)
             self.animation.setStartValue(width)
@@ -282,7 +289,9 @@ class UsersFunctions():
         birth_date = self.ui.txt_birthDayUsers.setText("")
         age = self.ui.txt_calculatedAgeUsers.setText("")
 
-    def showDataUser(self, item):
+    def showUserData(self, item, enable):
+        if not UIFunctions.USER_DATA_MENU:
+            UIFunctions.toggleRightBoxUsers(self, enable)
         controller = ContactController(self.ui)
 
         contact = controller.get_contact_by_id(self._get_fist_column(item))
@@ -372,7 +381,7 @@ class SendCorrespondency():
             self.ui.tableWidgetSend.setItem(row_position, 16, QTableWidgetItem(str(contact.age)))
         print("Data updated")
 
-    def showDataUser(self, item):
+    def showUserData(self, item):
         controller = ContactController(self.ui)
 
         contact = controller.get_contact_by_id(self._get_fist_column(item))

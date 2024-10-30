@@ -6,7 +6,7 @@ class QuantumBankMethods():
     BANK_NAME = "QuantumBank"
     BANK_CONTACT_INFO = "+52 55-1234-5678"
     BANK_EMAIL = "contacto@quantumbank.com"
-    BANK_ADDRESS = "Quantum Bank, Avenida Paseo de la Reforma 1234, Colonia Juárez, C.P. 06600, Ciudad de México, México"
+    BANK_ADDRESS = "Avenida Paseo de la Reforma 1234, Colonia Juárez, C.P. 06600, Ciudad de México, México"
 
     def get_account_number(self):
         return ''.join(str(random.randint(0, 9)) for _ in range(18))
@@ -17,6 +17,12 @@ class QuantumBankMethods():
 
     def get_current_date(self):
         return datetime.now().strftime('%Y-%m-%d')
+
+    def get_previous_month_start(self):
+        current_date = datetime.now()
+        first_day_of_current_month = current_date.replace(day=1)
+        last_day_of_previous_month = first_day_of_current_month - timedelta(days=1)
+        return last_day_of_previous_month.strftime('%Y-%m-%d')
 
     def get_credit_limit(self):
         credit = random.choice([5000, 15000, 50000, 200000, 300000])
@@ -68,12 +74,13 @@ if __name__ == "__main__":
     print("Bank Email:", bank_methods.BANK_EMAIL)
     print("Bank Address:", bank_methods.BANK_ADDRESS)
     print("Account Number:", bank_methods.get_account_number())
-    print("Random Balance:", bank_methods.get_random_balance())
+    print("Random Balance:", bank_methods.get_current_balance())
     print("Current Date:", bank_methods.get_current_date())
-    print("Random Credit Limit:", bank_methods.get_random_credit_limit())
+    print("Random Credit Limit:", bank_methods.get_credit_limit())
     print("Billing Date:", bank_methods.get_billing_date())
     print("Due Date:", bank_methods.get_due_date())
     print("Account Type:", bank_methods.get_account_type())
     print("Account Opening Date:", bank_methods.get_account_opening_date())
     print("Total Amount:", bank_methods.get_total_amount())
     print("Invoice Description:", bank_methods.get_invoice_description())
+    print("Previous Month: ", bank_methods.get_previous_month_start())

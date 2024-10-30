@@ -44,7 +44,7 @@ class ContactController:
         }
 
     def add_contact(self, contact_data):
-        if contact_data['id'] is None:
+        if contact_data['id'] is None or contact_data['id'] == "None":
             contact = Contact(**contact_data)
             self.contact_dao.add_contact(contact)
         else:

@@ -45,7 +45,11 @@ class DashboardWindow(QMainWindow):
         widgets.btn_addUsers.clicked.connect(lambda: UIFunctions.toggleRightBoxUsers(self, True))
         widgets.btn_clearUsers.clicked.connect(lambda: self.users_functions.clearCamps())
 
-        widgets.tableWidget.itemClicked.connect(self.users_functions.showDataUser)
+        def showHideUserData(item):
+            show = not widgets.txt_idUsers.text()
+            print(show)
+            self.users_functions.showUserData(item, show)
+        widgets.tableWidget.itemClicked.connect(showHideUserData)
 
 
         # Widgets Templates
@@ -59,7 +63,7 @@ class DashboardWindow(QMainWindow):
         self.send_correspondency = SendCorrespondency(self.ui)
         self.send_correspondency.showContacts()
 
-        widgets.tableWidgetSend.itemClicked.connect(self.send_correspondency.showDataUser)
+        widgets.tableWidgetSend.itemClicked.connect(self.send_correspondency.showUserData)
         widgets.listContacts.itemClicked.connect(self.send_correspondency.removeContactFromSending)
         widgets.btn_confirmSend.clicked.connect(self.send_correspondency.confirmSending)
 

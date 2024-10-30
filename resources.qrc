@@ -29,5 +29,6 @@
         <file>resources/logoWhite.png</file>
         <file>resources/logoBlack.png</file>
         <file>resources/restoreIcon.png</file>
+        <file>resources/checkMarkIcon.png</file>
     </qresource>
 </RCC>

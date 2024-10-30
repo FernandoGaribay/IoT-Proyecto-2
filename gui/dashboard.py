@@ -1393,7 +1393,7 @@ class Ui_MainWindow(object):
 "    background-color: rgb(66, 123, 170);\n"
 "}")
         icon10 = QIcon()
-        icon10.addFile(u":/resources/checkIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon10.addFile(u":/resources/checkMarkIcon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_updateUsers.setIcon(icon10)
         self.btn_updateUsers.setIconSize(QSize(16, 16))
 
@@ -1408,6 +1408,32 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.usersPage)
         self.historyPage = QWidget()
         self.historyPage.setObjectName(u"historyPage")
+        self.verticalLayout_44 = QVBoxLayout(self.historyPage)
+        self.verticalLayout_44.setObjectName(u"verticalLayout_44")
+        self.frame_9 = QFrame(self.historyPage)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setMaximumSize(QSize(16777215, 100))
+        self.frame_9.setFrameShape(QFrame.NoFrame)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_9)
+        self.horizontalLayout_15.setSpacing(0)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.label_16 = QLabel(self.frame_9)
+        self.label_16.setObjectName(u"label_16")
+
+        self.horizontalLayout_15.addWidget(self.label_16, 0, Qt.AlignTop)
+
+
+        self.verticalLayout_44.addWidget(self.frame_9)
+
+        self.frame_6 = QFrame(self.historyPage)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.NoFrame)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_44.addWidget(self.frame_6)
+
         self.stackedWidget.addWidget(self.historyPage)
         self.templatePage = QWidget()
         self.templatePage.setObjectName(u"templatePage")
@@ -1580,6 +1606,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
         self.frame_32 = QFrame(self.sendPage)
         self.frame_32.setObjectName(u"frame_32")
+        self.frame_32.setMinimumSize(QSize(300, 0))
         self.frame_32.setFrameShape(QFrame.NoFrame)
         self.frame_32.setFrameShadow(QFrame.Raised)
         self.verticalLayout_47 = QVBoxLayout(self.frame_32)
@@ -1698,6 +1725,7 @@ class Ui_MainWindow(object):
         self.tableWidgetSend.horizontalHeader().setCascadingSectionResizes(True)
         self.tableWidgetSend.horizontalHeader().setMinimumSectionSize(40)
         self.tableWidgetSend.horizontalHeader().setDefaultSectionSize(120)
+        self.tableWidgetSend.horizontalHeader().setProperty(u"showSortIndicator", False)
         self.tableWidgetSend.verticalHeader().setVisible(False)
         self.tableWidgetSend.verticalHeader().setMinimumSectionSize(30)
 
@@ -1711,6 +1739,7 @@ class Ui_MainWindow(object):
 
         self.frame_33 = QFrame(self.sendPage)
         self.frame_33.setObjectName(u"frame_33")
+        self.frame_33.setMinimumSize(QSize(400, 0))
         self.frame_33.setFrameShape(QFrame.NoFrame)
         self.frame_33.setFrameShadow(QFrame.Raised)
         self.verticalLayout_48 = QVBoxLayout(self.frame_33)
@@ -1728,8 +1757,6 @@ class Ui_MainWindow(object):
 "    width: 40px;\n"
 "    height: 40px;\n"
 "	image: url(:/resources/wordIcon.png);\n"
-"    margin-left:5px;\n"
-"    margin-right: 5px;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator:checked {\n"
@@ -1869,7 +1896,6 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#pnl_checksExtrasSend .QCheckBox::indicator:checked {\n"
-"    background-color: rgb(79, 145, 201);\n"
 "    background-image: url(:/resources/checkIcon.png);\n"
 "}\n"
 "\n"
@@ -2201,6 +2227,7 @@ class Ui_MainWindow(object):
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Calculated Age", None))
         self.btn_cancelUsers.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.btn_updateUsers.setText(QCoreApplication.translate("MainWindow", u"Update", None))
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">QuantumBank</span> Templates</p></body></html>", None))
         self.label_29.setText(QCoreApplication.translate("MainWindow", u"Access and modify the available templates.", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Account Summary Template", None))
@@ -2231,7 +2258,7 @@ class Ui_MainWindow(object):
         self.check_generatePdfSend.setText(QCoreApplication.translate("MainWindow", u"Convert to PDF", None))
         self.check_sendEmailSend.setText(QCoreApplication.translate("MainWindow", u"Send to registered email", None))
         self.btn_cancelSend.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
-        self.btn_confirmSend.setText(QCoreApplication.translate("MainWindow", u"Confirm", None))
+        self.btn_confirmSend.setText(QCoreApplication.translate("MainWindow", u" Confirm", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))

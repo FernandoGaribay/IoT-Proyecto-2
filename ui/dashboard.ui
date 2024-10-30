@@ -2926,7 +2926,7 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                                </property>
                                <property name="icon">
                                 <iconset resource="../resources.qrc">
-                                 <normaloff>:/resources/checkIcon.png</normaloff>:/resources/checkIcon.png</iconset>
+                                 <normaloff>:/resources/checkMarkIcon.png</normaloff>:/resources/checkMarkIcon.png</iconset>
                                </property>
                                <property name="iconSize">
                                 <size>
@@ -2944,7 +2944,60 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="historyPage"/>
+                     <widget class="QWidget" name="historyPage">
+                      <layout class="QVBoxLayout" name="verticalLayout_44">
+                       <item>
+                        <widget class="QFrame" name="frame_9">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>100</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::NoFrame</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_15">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item alignment="Qt::Qt::AlignTop">
+                           <widget class="QLabel" name="label_16">
+                            <property name="text">
+                             <string>TextLabel</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="frame_6">
+                         <property name="frameShape">
+                          <enum>QFrame::NoFrame</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
                      <widget class="QWidget" name="templatePage">
                       <layout class="QVBoxLayout" name="verticalLayout_22">
                        <property name="topMargin">
@@ -3308,6 +3361,12 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                        </property>
                        <item>
                         <widget class="QFrame" name="frame_32">
+                         <property name="minimumSize">
+                          <size>
+                           <width>300</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="frameShape">
                           <enum>QFrame::NoFrame</enum>
                          </property>
@@ -3508,6 +3567,9 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                                <attribute name="horizontalHeaderDefaultSectionSize">
                                 <number>120</number>
                                </attribute>
+                               <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                                <bool>false</bool>
+                               </attribute>
                                <attribute name="verticalHeaderVisible">
                                 <bool>false</bool>
                                </attribute>
@@ -3559,6 +3621,12 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
                        </item>
                        <item>
                         <widget class="QFrame" name="frame_33">
+                         <property name="minimumSize">
+                          <size>
+                           <width>400</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="frameShape">
                           <enum>QFrame::NoFrame</enum>
                          </property>
@@ -3598,8 +3666,6 @@ QCheckBox::indicator {
     width: 40px;
     height: 40px;
 	image: url(:/resources/wordIcon.png);
-    margin-left:5px;
-    margin-right: 5px;
 }
 
 QCheckBox::indicator:checked {
@@ -3823,7 +3889,6 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
 }
 
 #pnl_checksExtrasSend .QCheckBox::indicator:checked {
-    background-color: rgb(79, 145, 201);
     background-image: url(:/resources/checkIcon.png);
 }
 
@@ -3976,11 +4041,11 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
 }</string>
                                   </property>
                                   <property name="text">
-                                   <string>Confirm</string>
+                                   <string> Confirm</string>
                                   </property>
                                   <property name="icon">
                                    <iconset resource="../resources.qrc">
-                                    <normaloff>:/resources/checkIcon.png</normaloff>:/resources/checkIcon.png</iconset>
+                                    <normaloff>:/resources/checkMarkIcon.png</normaloff>:/resources/checkMarkIcon.png</iconset>
                                   </property>
                                  </widget>
                                 </item>
